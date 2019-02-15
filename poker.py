@@ -31,7 +31,7 @@ def cardFun():
     random.shuffle(cards)
     card1=random.choice(cards)
     card2=random.choice(cards)
-    im1=tk.PhotoImage(file=pics[card1])
+    im1=PhotoImage(file=pics[card1])
     label1=tk.Label(window1,image=im1).place(x=200,y=50)
     im2=PhotoImage(file=pics[card2])
     label2=tk.Label(window2,image=im2).place(x=200,y=50)
@@ -96,11 +96,11 @@ def b_not_compare():
 ###############response###########
 b1=tk.Button(window1,text='bet',width=4,height=10,command=a_compare)
 b1.pack(side='left')
-b2=tk.Button(window1,text='check',width=4,height=10,command=a_not_compare)
+b2=tk.Button(window1,text='not bet',width=4,height=10,command=a_not_compare)
 b2.pack(side='right')
 b3=tk.Button(window2,text='bet',width=4,height=10,command=b_compare)
 b3.pack(side='left')
-b4=tk.Button(window2,text='fold',width=4,height=10,command=b_not_compare)
+b4=tk.Button(window2,text='not bet',width=4,height=10,command=b_not_compare)
 b4.pack(side='right')
 
 ########keep the window#######

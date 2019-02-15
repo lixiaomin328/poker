@@ -1,0 +1,15 @@
+1.0589 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+5.8559 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1156cef28>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x11601c940>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1200]), stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.8559 	EXP 	window1: recordFrameIntervals = False
+6.0217 	EXP 	window1: recordFrameIntervals = True
+6.2055 	EXP 	window1: recordFrameIntervals = False
+6.2865 	EXP 	Created handCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([-0.5,  0.4]), rgb=array([255., 255., 255.]), text='you hand\n    5', units='height', win=Window(...), wrapWidth=1)
+6.2969 	EXP 	Created hand2Capital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([0.5, 0.4]), rgb=array([255., 255., 255.]), text="your opponent's hand\n    X\n", units='height', win=Window(...), wrapWidth=1)
+6.3086 	EXP 	Created decks = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='decks', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='height', win=Window(...), wrapWidth=1)
+6.3089 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+6.3091 	EXP 	New trial (rep=0, index=0): None
+6.3220 	EXP 	handCapital: autoDraw = True
+6.3220 	EXP 	hand2Capital: autoDraw = True
+6.3220 	EXP 	decks: autoDraw = True
+8.6436 	DATA 	Keypress: escape
+8.9078 	EXP 	window1: mouseVisible = True

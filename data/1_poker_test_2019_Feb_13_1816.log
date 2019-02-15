@@ -1,0 +1,59 @@
+1.0549 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+4.8994 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x115280f28>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x115f8ff98>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1200]), stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+4.8994 	EXP 	window1: recordFrameIntervals = False
+5.0657 	EXP 	window1: recordFrameIntervals = True
+5.2492 	EXP 	window1: recordFrameIntervals = False
+5.3291 	EXP 	Created handCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([-0.5,  0.4]), rgb=array([255., 255., 255.]), text='default text', units='height', win=Window(...), wrapWidth=1)
+5.3328 	EXP 	Created hand2Capital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([0.5, 0.4]), rgb=array([255., 255., 255.]), text='default text', units='height', win=Window(...), wrapWidth=1)
+5.3469 	EXP 	Created decks = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='decks', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='height', win=Window(...), wrapWidth=1)
+5.3472 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+5.3474 	EXP 	New trial (rep=0, index=0): None
+5.3826 	EXP 	handCapital: text = 'you hand\n    5'
+5.3826 	EXP 	hand2Capital: text = "your opponent's hand\n    X\n"
+5.3826 	EXP 	handCapital: autoDraw = True
+5.3826 	EXP 	hand2Capital: autoDraw = True
+5.3826 	EXP 	decks: autoDraw = True
+7.5708 	DATA 	Keypress: b
+7.5720 	EXP 	New trial (rep=1, index=0): None
+7.5844 	EXP 	handCapital: autoDraw = False
+7.5844 	EXP 	hand2Capital: autoDraw = False
+7.5844 	EXP 	decks: autoDraw = False
+7.5844 	EXP 	handCapital: text = 'you hand\n    5'
+7.5844 	EXP 	hand2Capital: text = "your opponent's hand\n    X\n"
+7.5844 	EXP 	handCapital: autoDraw = True
+7.5844 	EXP 	hand2Capital: autoDraw = True
+7.5844 	EXP 	decks: autoDraw = True
+8.2357 	DATA 	Mouse: Left button down, pos=(1019,547)
+8.3191 	DATA 	Mouse:  Left button up, pos=(1019,547)
+8.4870 	DATA 	Keypress: b
+8.4881 	EXP 	New trial (rep=2, index=0): None
+8.5020 	EXP 	handCapital: autoDraw = False
+8.5020 	EXP 	hand2Capital: autoDraw = False
+8.5020 	EXP 	decks: autoDraw = False
+8.5020 	EXP 	handCapital: text = 'you hand\n    5'
+8.5020 	EXP 	hand2Capital: text = "your opponent's hand\n    X\n"
+8.5020 	EXP 	handCapital: autoDraw = True
+8.5020 	EXP 	hand2Capital: autoDraw = True
+8.5020 	EXP 	decks: autoDraw = True
+8.8383 	DATA 	Keypress: b
+8.8396 	EXP 	New trial (rep=3, index=0): None
+8.8520 	EXP 	handCapital: autoDraw = False
+8.8520 	EXP 	hand2Capital: autoDraw = False
+8.8520 	EXP 	decks: autoDraw = False
+8.8520 	EXP 	handCapital: text = 'you hand\n    5'
+8.8520 	EXP 	hand2Capital: text = "your opponent's hand\n    X\n"
+8.8520 	EXP 	handCapital: autoDraw = True
+8.8520 	EXP 	hand2Capital: autoDraw = True
+8.8520 	EXP 	decks: autoDraw = True
+9.1042 	DATA 	Keypress: b
+9.1054 	EXP 	New trial (rep=4, index=0): None
+9.1190 	EXP 	handCapital: autoDraw = False
+9.1190 	EXP 	hand2Capital: autoDraw = False
+9.1190 	EXP 	decks: autoDraw = False
+9.1190 	EXP 	handCapital: text = 'you hand\n    5'
+9.1190 	EXP 	hand2Capital: text = "your opponent's hand\n    X\n"
+9.1190 	EXP 	handCapital: autoDraw = True
+9.1190 	EXP 	hand2Capital: autoDraw = True
+9.1190 	EXP 	decks: autoDraw = True
+9.3377 	DATA 	Keypress: b
+9.6027 	EXP 	window1: mouseVisible = True
