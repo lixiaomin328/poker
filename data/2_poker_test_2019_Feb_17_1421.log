@@ -1,0 +1,46 @@
+6.8593 	WARNING 	Couldn't measure a consistent frame rate.
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+6.8599 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x132603d9d0>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x13286a1190>, multiSample=False, name='window1', numSamples=2, pos=[360, 140], screen=1, size=array([2400, 1600]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+7.4526 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x132603d9d0>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1329b47b10>, multiSample=False, name='window1', numSamples=2, pos=[680, 320], screen=0, size=array([2400, 1600]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+7.4526 	EXP 	window1: recordFrameIntervals = False
+7.6181 	EXP 	window1: recordFrameIntervals = True
+7.7056 	WARNING 	t of last frame was 21.20ms (=1/47)
+7.7552 	WARNING 	t of last frame was 21.86ms (=1/45)
+7.9351 	EXP 	window1: recordFrameIntervals = False
+7.9805 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+7.9918 	EXP 	Created hand2Capital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-0.5,  0.8]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+7.9982 	EXP 	Created P1WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P1WaitingWords', opacity=1.0, ori=0, pos=array([-0.5,  0.7]), rgb=array([255., 255., 255.]), text='Wait1', units='norm', win=Window(...), wrapWidth=1)
+8.0024 	EXP 	Created P2WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Wait', units='norm', win=Window(...), wrapWidth=1)
+8.0214 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([-0.2,  0.9]), rgb=array([255., 255., 255.]), text='Your opponent card: \n X', units='norm', win=Window(...), wrapWidth=1)
+8.0380 	EXP 	Created hand2OpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([0.5, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card: \n X', units='norm', win=Window(...), wrapWidth=1)
+8.0619 	EXP 	Created decks = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='decks', opacity=1.0, ori=0, pos=array([-0.5,  0.3]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+8.0802 	EXP 	Created decks2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+8.0805 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+8.0807 	EXP 	New trial (rep=0, index=0): None
+8.1183 	EXP 	handCapital: text = 'you hand\n    2'
+8.1183 	EXP 	handCapital: autoDraw = True
+8.1183 	EXP 	handOpponentCapital: autoDraw = True
+8.1183 	EXP 	decks: autoDraw = True
+8.1183 	EXP 	P1WaitingWords: autoDraw = True
+8.1321 	WARNING 	t of last frame was 1273.02ms (=1/0)
+8.1321 	EXP 	hand2Capital: text = 'your hand\n    5'
+8.1321 	EXP 	hand2Capital: autoDraw = True
+8.1321 	EXP 	hand2OpponentCapital: autoDraw = True
+8.1321 	EXP 	decks2: autoDraw = True
+8.1321 	EXP 	P2WaitingWords: autoDraw = True
+8.1321 	EXP 	decks2: autoDraw = True
+8.1658 	WARNING 	t of last frame was 33.73ms (=1/29)
+8.2154 	WARNING 	t of last frame was 49.55ms (=1/20)
+8.2655 	WARNING 	t of last frame was 33.14ms (=1/30)
+8.2997 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+9.8967 	DATA 	Keypress: b
+16.5621 	DATA 	Keypress: f
+23.6044 	DATA 	Mouse: Left button down, pos=(376,487)
+23.7359 	DATA 	Mouse:  Left button up, pos=(376,487)
+24.8721 	DATA 	Keypress: b
+26.9041 	DATA 	Keypress: f
+36.0063 	DATA 	Mouse: Left button down, pos=(814,247)
+36.1066 	DATA 	Mouse:  Left button up, pos=(814,247)
+36.9416 	DATA 	Keypress: escape

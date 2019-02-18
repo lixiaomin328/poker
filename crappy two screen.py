@@ -9,6 +9,18 @@ from numpy.random import random, randint, normal, shuffle
 import os  # handy system and path functions
 import sys  # to get file system encoding
 import random
+from enum import Enum
+
+class GameStatus(Enum):
+	GAME_NOT_STARTED = 0
+	GAME_PLAYER_1_ROUND_STARTED = 1
+	GAME_PLAYER_1_BET_RESULT = 2
+	GAME_PLAYER_1_CHECK_RESULT = 3
+	GAME_PLAYER_2_ROUND_STARTED = 4
+	GAME_PLAYER_2_BET_RESULT = 5
+	GAME_PLAYER_2_FOLD_RESULT = 6
+	GAME_FINISHED = -1
+
 deckRange = range(2,9)
 # Ensure that relative paths start from the same directory as this script
 _thisDir = os.path.dirname(os.path.abspath(__file__))
@@ -79,6 +91,22 @@ hand2Capital = visual.TextStim(win=win1, name='hand2Capital',
     languageStyle='LTR',
     depth=-1.0);
                                
+P1WaitingWords = visual.TextStim(win=win, name='P1WaitingWords',
+    text='default text',
+    font='Arial',
+    pos=(-0.5,0.7), height=0.1, wrapWidth=None, ori=0, 
+    color='red', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-1.0);
+                               
+P2WaitingWords = visual.TextStim(win=win1, name='P2WaitingWords',
+    text='default text',
+    font='Arial',
+    pos=(0,0), height=0.1, wrapWidth=None, ori=0, 
+    color='red', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-1.0);
+                               
 handOpponentCapital = visual.TextStim(win=win, name='handOpponentCapital',
     text='Your opponent card: \n X',
     font='Arial',
@@ -115,7 +143,7 @@ globalClock = core.Clock()  # to track the time since experiment started
 routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine 
 
 # set up handler to look after randomisation of conditions etc
-trials = data.TrialHandler(nReps=5, method='random', 
+trials = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=[None],
     seed=None, name='trials')
@@ -137,124 +165,172 @@ for thisTrial in trials:
     t = 0
     trialClock.reset()  # clock
     frameN = -1
-    continueRoutine = True
     cards = np.asarray(random.sample(deckRange, 2))
     p1card = str(cards[0])
     p2card = str(cards[1])
     # update component parameters for each repeat
     handCapital.setText('you hand\n    '+p1card)
     hand2Capital.setText('your hand\n    '+p2card)
-    betCheck = event.BuilderKeyResponse()
+    P2WaitingWords.setText('Please wait for player 1 making his decision')
+    player1ActionCheck = event.BuilderKeyResponse()
+    player2ActionCheck = event.BuilderKeyResponse()
+    gameStatus = GameStatus.GAME_NOT_STARTED
     # keep track of which components have finished
-    trialComponents = [handCapital, hand2Capital, decks,decks2, handOpponentCapital,handOpponentCapital,betCheck]
+    trialComponents = [handCapital, hand2Capital, decks,decks2,P1WaitingWords,P2WaitingWords, 
+                       handOpponentCapital,handOpponentCapital,player1ActionCheck, player2ActionCheck,
+                       gameStatus]
     for thisComponent in trialComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
-    
+        
     # -------Start Routine "trial"-------
-    while continueRoutine:
+    while gameStatus != GameStatus.GAME_FINISHED:
         # get current time
         t = trialClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
         # *handCapital* updates
-        if t >= 0.0 and handCapital.status == NOT_STARTED:
+        if gameStatus == GameStatus.GAME_NOT_STARTED:
+            gameStatus = GameStatus.GAME_PLAYER_1_ROUND_STARTED
             # keep track of start time/frame for later
             handCapital.tStart = t
             handCapital.frameNStart = frameN  # exact frame index
             handCapital.setAutoDraw(True)
         
-        # *hand2Capital* updates
-        if t >= 0.0 and hand2Capital.status == NOT_STARTED:
             # keep track of start time/frame for later
             hand2Capital.tStart = t
             hand2Capital.frameNStart = frameN  # exact frame index
             hand2Capital.setAutoDraw(True)
         
-        # *handOpponentCapital* updates
-        if t >= 0.0 and handOpponentCapital.status == NOT_STARTED:
             # keep track of start time/frame for later
             handOpponentCapital.tStart = t
             handOpponentCapital.frameNStart = frameN  # exact frame index
             handOpponentCapital.setAutoDraw(True)
             
-         # *hand2OpponentCapital* updates
-        if t >= 0.0 and hand2OpponentCapital.status == NOT_STARTED:
             # keep track of start time/frame for later
             hand2OpponentCapital.tStart = t
             hand2OpponentCapital.frameNStart = frameN  # exact frame index
             hand2OpponentCapital.setAutoDraw(True)
-        # *decks2* updates
-        if t >= 0.0 and decks2.status == NOT_STARTED:
+            
             # keep track of start time/frame for later
             decks2.tStart = t
             decks2.frameNStart = frameN  # exact frame index
             decks2.setAutoDraw(True)
-        # *decks* updates
-        if t >= 0.0 and decks.status == NOT_STARTED:
+            
             # keep track of start time/frame for later
             decks.tStart = t
             decks.frameNStart = frameN  # exact frame index
             decks.setAutoDraw(True)
-        # *decks2* updates
-        if t >= 0.0 and decks2.status == NOT_STARTED:
+            
+            # keep track of start time/frame for later
+            P1WaitingWords.tStart = t
+            P1WaitingWords.frameNStart = frameN  # exact frame index
+            P1WaitingWords.setAutoDraw(True)
+            
+            # keep track of start time/frame for later
+            P2WaitingWords.tStart = t
+            P2WaitingWords.frameNStart = frameN  # exact frame index
+            P2WaitingWords.setAutoDraw(True)
+            
             # keep track of start time/frame for later
             decks2.tStart = t
             decks2.frameNStart = frameN  # exact frame index
             decks2.setAutoDraw(True)
-        
-        # *betCheck* updates
-        if t >= 0.0 and betCheck.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            betCheck.tStart = t
-            betCheck.frameNStart = frameN  # exact frame index
-            betCheck.status = STARTED
-            # keyboard checking is just starting
-            win.callOnFlip(betCheck.clock.reset)  # t=0 on next screen flip
-            win1.callOnFlip(betCheck.clock.reset)
-            event.clearEvents(eventType='keyboard')
-        if betCheck.status == STARTED:
-            theseKeys = event.getKeys(keyList=['b', 'f', 'space'])
             
-            # check for quit:
-            if "escape" in theseKeys:
-                endExpNow = True
-            if len(theseKeys) > 0:  # at least one key was pressed
-                if betCheck.keys == []:  # then this was the first keypress
-                    betCheck.keys = theseKeys[0]  # just the first key pressed
-                    betCheck.rt = betCheck.clock.getTime()
-                    # a response ends the routine
-                    continueRoutine = False
+            # keep track of start time/frame for later
+            player1ActionCheck.tStart = t
+            player1ActionCheck.frameNStart = frameN  # exact frame index
+            player1ActionCheck.status = STARTED
+            # keyboard checking is just starting
+            win.callOnFlip(player1ActionCheck.clock.reset)  # t=0 on next screen flip
+            win1.callOnFlip(player1ActionCheck.clock.reset)
+            event.clearEvents(eventType='keyboard')
+        elif gameStatus == GameStatus.GAME_PLAYER_1_ROUND_STARTED:            
+            if player1ActionCheck.status == STARTED:
+                theseKeys = event.getKeys(keyList=['b', 'c'])
+                # check for quit:
+                if "escape" in theseKeys:
+                    endExpNow = True
+                if len(theseKeys) > 0:  # at least one key was pressed
+                    if player1ActionCheck.keys == []:  # then this was the first keypress
+                        player1ActionCheck.keys = theseKeys[0]  # just the first key pressed
+                        player1ActionCheck.rt = player1ActionCheck.clock.getTime()
+                        if player1ActionCheck.keys == 'b':
+                            gameStatus = GameStatus.GAME_PLAYER_1_BET_RESULT
+                        elif player1ActionCheck.keys == 'c':
+                            gameStatus = GameStatus.GAME_PLAYER_1_CHECK_RESULT
+        elif gameStatus == GameStatus.GAME_PLAYER_1_BET_RESULT:
+            gameStatus = GameStatus.GAME_PLAYER_2_ROUND_STARTED
+            P1WaitingWords.setText('Please wait for player 2 making his decision')
+            P2WaitingWords.setText('Player one choose to bet,\n now it is your turn')
+            player2ActionCheck.tStart = t
+            player2ActionCheck.frameNStart = frameN
+            player2ActionCheck.status = STARTED
+            # keyboard checking is just starting
+            win.callOnFlip(player2ActionCheck.clock.reset)  # t=0 on next screen flip
+            win1.callOnFlip(player2ActionCheck.clock.reset)
+            event.clearEvents(eventType='keyboard')
+            
+        elif gameStatus == GameStatus.GAME_PLAYER_1_CHECK_RESULT:
+            P2WaitingWords.setText('Player one choose to check,\n you do not need to \n make a decision yourself in \n the current round')
+            gameStatus = GameStatus.GAME_FINISHED
+            # TODO(xiaomin): set up text
+            
+        elif gameStatus == GameStatus.GAME_PLAYER_2_ROUND_STARTED:
+            if player2ActionCheck.status == STARTED:
+                theseKeys = event.getKeys(keyList=['b', 'f'])
+                # check for quit:
+                if "escape" in theseKeys:
+                    endExpNow = True
+                if len(theseKeys) > 0:  # at least one key was pressed
+                    if player2ActionCheck.keys == []:  # then this was the first keypress
+                        player2ActionCheck.keys = theseKeys[0]  # just the first key pressed
+                        player2ActionCheck.rt = player2ActionCheck.clock.getTime()
+                        if player2ActionCheck.keys == 'b':
+                            gameStatus = GameStatus.GAME_PLAYER_2_BET_RESULT
+                        elif player2ActionCheck.keys == 'f':
+                            gameStatus = GameStatus.GAME_PLAYER_2_FOLD_RESULT
+            
+        elif gameStatus == GameStatus.GAME_PLAYER_2_BET_RESULT:
+            gameStatus = GameStatus.GAME_FINISHED
+            # TODO(xiaomin): set up text
+        
+        elif gameStatus == GameStatus.GAME_PLAYER_2_FOLD_RESULT:
+            gameStatus = GameStatus.GAME_FINISHED
+            # TODO(xiaomin): set up text
         
         # check for quit (typically the Esc key)
-        if endExpNow or event.getKeys(keyList=["escape"]):
+        if event.getKeys(keyList=["escape"]):#endExpNow: #or 
+            win.close()
+            win1.close()
             core.quit()
         
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in trialComponents:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
         
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-            win1.flip()
+        win.flip()
+        win1.flip()
+        # check if all components have finished
+        if gameStatus == GameStatus.GAME_FINISHED:  # a component has requested a forced-end of Routine
+            core.wait(2)
+            break
     
     # -------Ending Routine "trial"-------
     for thisComponent in trialComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     # check responses
-    if betCheck.keys in ['', [], None]:  # No response was made
-        betCheck.keys=None
-    trials.addData('betCheck.keys',betCheck.keys)
-    if betCheck.keys != None:  # we had a response
-        trials.addData('betCheck.rt', betCheck.rt)
+    if player1ActionCheck.keys in ['', [], None]:  # No response was made
+        player1ActionCheck.keys=None
+    trials.addData('player1ActionCheck.keys',player1ActionCheck.keys)
+    if player1ActionCheck.keys != None:  # we had a response
+        trials.addData('player1ActionCheck.rt', player1ActionCheck.rt)
+        
+    if player2ActionCheck.keys in ['', [], None]:  # No response was made
+        player2ActionCheck.keys=None
+    trials.addData('player2ActionCheck.keys',player2ActionCheck.keys)
+    if player2ActionCheck.keys != None:  # we had a response
+        trials.addData('player2ActionCheck.rt', player2ActionCheck.rt)
+        
     # the Routine "trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     thisExp.nextEntry()
