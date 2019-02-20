@@ -1,0 +1,14 @@
+1.0482 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+4.4071 	WARNING 	User requested fullscreen with size [1024  768], but screen is actually [1920, 1200]. Using actual size
+4.8416 	WARNING 	Framebuffer object (FBO) not supported on this graphics card
+4.9145 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1152bfe80>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x115fcc828>, multiSample=False, name='window1', numSamples=2, pos=None, screen=0, size=array([1920, 1200]), stereo=False, units='height', useFBO=False, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pygame')
+4.9145 	EXP 	window1: recordFrameIntervals = False
+4.9191 	EXP 	window1: recordFrameIntervals = True
+4.9207 	WARNING 	t of last frame was 0.83ms (=1/1207)
+4.9214 	WARNING 	t of last frame was 0.73ms (=1/1369)
+4.9221 	WARNING 	t of last frame was 0.68ms (=1/1477)
+4.9228 	WARNING 	t of last frame was 0.68ms (=1/1468)
+4.9234 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+4.9265 	EXP 	window1: recordFrameIntervals = False
+4.9366 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Any text\n\nincluding line breaks', units='height', win=Window(...), wrapWidth=1)
+4.9393 	EXP 	text: autoDraw = True

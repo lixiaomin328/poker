@@ -21,7 +21,10 @@ class GameStatus(Enum):
 	GAME_PLAYER_2_FOLD_RESULT = 6
 	GAME_FINISHED = -1
 
+#messy set ups
 deckRange = range(2,9)
+cardImageDir = 'cards/'
+TrialNum = 5
 # Ensure that relative paths start from the same directory as this script
 _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
@@ -56,13 +59,13 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win1 = visual.Window(
-    size=[1200, 800], fullscr=False, screen=1,
+    size=[2024, 1468], pos =(0,0),fullscr=False, screen=1,
     allowGUI=False, allowStencil=False,
     monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
     blendMode='avg', useFBO=True,
     units='norm')
 win = visual.Window(
-    size=[1200, 800],pos = (600,0), fullscr=False, screen=0,
+    size=[1800, 1000],pos = (0,0), fullscr=True, screen=0,
     allowGUI=False, allowStencil=False,
     monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
     blendMode='avg', useFBO=True,
@@ -77,25 +80,39 @@ else:
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
 handCapital = visual.TextStim(win=win, name='handCapital',
-    text='default text',
+    text='Your card',
     font='Arial',
     pos=(-0.7,0.8), height=0.06, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
+imageP1 = visual.ImageStim(
+    win=win, name='image',
+    image="sin", 
+    ori=0, pos=(-0.7,0.55), size=(0.2, 0.35),
+    color=[1,1,1], colorSpace='rgb', opacity=1,
+    flipHoriz=False, flipVert=False,
+    texRes=128, interpolate=True, depth=0.0)
 hand2Capital = visual.TextStim(win=win1, name='hand2Capital',
-    text='default text',
+    text='Your card',
     font='Arial',
     pos=(-0.5,0.8), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
+imageP2 = visual.ImageStim(
+    win=win1, name='image1',
+    image="sin", 
+    ori=0, pos=(-0.5,0.55), size=(0.2, 0.35),
+    color=[1,1,1], colorSpace='rgb', opacity=1,
+    flipHoriz=False, flipVert=False,
+    texRes=128, interpolate=True, depth=0.0)
                                
 P1WaitingWords = visual.TextStim(win=win, name='P1WaitingWords',
     text='default text',
     font='Arial',
     pos=(0,0.2), height=0.1, wrapWidth=None, ori=0, 
-    color='red', colorSpace='rgb', opacity=1, 
+    color='Blue', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
                                
@@ -103,24 +120,39 @@ P2WaitingWords = visual.TextStim(win=win1, name='P2WaitingWords',
     text='default text',
     font='Arial',
     pos=(0,0), height=0.1, wrapWidth=None, ori=0, 
-    color='red', colorSpace='rgb', opacity=1, 
+    color='Blue', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
                                
 handOpponentCapital = visual.TextStim(win=win, name='handOpponentCapital',
-    text='Your opponent card: \n X',
+    text='Your opponent card',
     font='Arial',
     pos=(0.7,0.8), height=0.06, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
 hand2OpponentCapital = visual.TextStim(win=win1, name='hand2OpponentCapital',
-    text='Your opponent card: \n X',
+    text='Your opponent card',
     font='Arial',
     pos=(0.5,0.8), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
+imageOpp1 = visual.ImageStim(
+    win=win, name='image',
+    image=cardImageDir+"back.png", 
+    ori=0, pos=(0.7,0.55), size=(0.2, 0.35),
+    color=[1,1,1], colorSpace='rgb', opacity=1,
+    flipHoriz=False, flipVert=False,
+    texRes=128, interpolate=True, depth=0.0)
+
+imageOpp2 = visual.ImageStim(
+    win=win1, name='image',
+    image=cardImageDir+"back.png", 
+    ori=0, pos=(0.5,0.55), size=(0.2, 0.35),
+    color=[1,1,1], colorSpace='rgb', opacity=1,
+    flipHoriz=False, flipVert=False,
+    texRes=128, interpolate=True, depth=0.0)
                                
 decks = visual.TextStim(win=win, name='decks',
     text='Current decks\n2,3,4,5,6,7,8',
@@ -143,7 +175,7 @@ globalClock = core.Clock()  # to track the time since experiment started
 routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine 
 
 # set up handler to look after randomisation of conditions etc
-trials = data.TrialHandler(nReps=1, method='random', 
+trials = data.TrialHandler(nReps=TrialNum, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=[None],
     seed=None, name='trials')
@@ -169,8 +201,10 @@ for thisTrial in trials:
     p1card = str(cards[0])
     p2card = str(cards[1])
     # update component parameters for each repeat
-    handCapital.setText('you hand\n    '+p1card)
-    hand2Capital.setText('your hand\n    '+p2card)
+    imageP1.setImage(cardImageDir+p1card+'.png')
+    imageP2.setImage(cardImageDir+p2card+'.png')
+#    image.draw()
+    P1WaitingWords.setText('Please choose to bet or check now')
     P2WaitingWords.setText('Please wait for player 1 making his decision')
     player1ActionCheck = event.BuilderKeyResponse()
     player2ActionCheck = event.BuilderKeyResponse()
@@ -178,7 +212,7 @@ for thisTrial in trials:
     # keep track of which components have finished
     trialComponents = [handCapital, hand2Capital, decks,decks2,P1WaitingWords,P2WaitingWords, 
                        handOpponentCapital,handOpponentCapital,player1ActionCheck, player2ActionCheck,
-                       gameStatus]
+                       gameStatus,imageP1,imageP2]
     for thisComponent in trialComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -197,6 +231,42 @@ for thisTrial in trials:
             handCapital.tStart = t
             handCapital.frameNStart = frameN  # exact frame index
             handCapital.setAutoDraw(True)
+            
+            if t >= 0.0 and imageP1.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                imageP1.tStart = t
+                imageP1.frameNStart = frameN  # exact frame index
+                imageP1.setAutoDraw(True)
+            frameRemains = 0.0 + 1- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if imageP1.status == STARTED and t >= frameRemains:
+                imageP1.setAutoDraw(False)
+                
+            if t >= 0.0 and imageP2.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                imageP2.tStart = t
+                imageP2.frameNStart = frameN  # exact frame index
+                imageP2.setAutoDraw(True)
+            frameRemains = 0.0 + 1- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if imageP2.status == STARTED and t >= frameRemains:
+                imageP2.setAutoDraw(False)
+            
+            if t >= 0.0 and imageOpp1.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                imageOpp1.tStart = t
+                imageOpp1.frameNStart = frameN  # exact frame index
+                imageOpp1.setAutoDraw(True)
+            frameRemains = 0.0 + 1- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if imageOpp1.status == STARTED and t >= frameRemains:
+                imageOpp1.setAutoDraw(False)
+                
+            if t >= 0.0 and imageOpp2.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                imageOpp2.tStart = t
+                imageOpp2.frameNStart = frameN  # exact frame index
+                imageOpp2.setAutoDraw(True)
+            frameRemain2 = 0.0 + 1- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if imageOpp2.status == STARTED and t >= frameRemains:
+                imageOpp2.setAutoDraw(False)
         
             # keep track of start time/frame for later
             hand2Capital.tStart = t
