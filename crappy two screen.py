@@ -59,7 +59,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win1 = visual.Window(
-    size=[2024, 1468], pos =(0,0),fullscr=False, screen=1,
+    size=[1800, 1000], pos =(0,0),fullscr=False, screen=1,
     allowGUI=False, allowStencil=False,
     monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
     blendMode='avg', useFBO=True,
@@ -167,7 +167,21 @@ decks2 = visual.TextStim(win=win1, name='decks2',
     pos=(0,-0.7), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-2.0);                        
+    depth=-2.0); 
+Reshuffling = visual.TextStim(win=win, name='handOpponentCapital',
+    text='Reshuffling...',
+    font='Arial',
+    pos=(0,0), height=0.08, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
+Reshuffling1 = visual.TextStim(win=win1, name='handOpponentCapital',
+    text='Reshuffling...',
+    font='Arial',
+    pos=(0,0), height=0.08, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
                        
 
 # Create some handy timers
@@ -227,6 +241,8 @@ for thisTrial in trials:
         # *handCapital* updates
         if gameStatus == GameStatus.GAME_NOT_STARTED:
             gameStatus = GameStatus.GAME_PLAYER_1_ROUND_STARTED
+            Reshuffling.setAutoDraw(False)
+            Reshuffling1.setAutoDraw(False)
             # keep track of start time/frame for later
             handCapital.tStart = t
             handCapital.frameNStart = frameN  # exact frame index
@@ -250,7 +266,7 @@ for thisTrial in trials:
             if imageP2.status == STARTED and t >= frameRemains:
                 imageP2.setAutoDraw(False)
             
-            if t >= 0.0 and imageOpp1.status == NOT_STARTED:
+            if t >= 0.0:
                 # keep track of start time/frame for later
                 imageOpp1.tStart = t
                 imageOpp1.frameNStart = frameN  # exact frame index
@@ -259,7 +275,7 @@ for thisTrial in trials:
             if imageOpp1.status == STARTED and t >= frameRemains:
                 imageOpp1.setAutoDraw(False)
                 
-            if t >= 0.0 and imageOpp2.status == NOT_STARTED:
+            if t >= 0.0:
                 # keep track of start time/frame for later
                 imageOpp2.tStart = t
                 imageOpp2.frameNStart = frameN  # exact frame index
@@ -380,8 +396,25 @@ for thisTrial in trials:
         win.flip()
         win1.flip()
         # check if all components have finished
-        if gameStatus == GameStatus.GAME_FINISHED:  # a component has requested a forced-end of Routine
-            core.wait(2)
+        if gameStatus == GameStatus.GAME_FINISHED: 
+            # a component has requested a forced-end of Routine
+            imageP1.setAutoDraw(False)
+            imageOpp1.setAutoDraw(False)
+            imageP2.setAutoDraw(False)
+            imageOpp2.setAutoDraw(False)
+            handCapital.setAutoDraw(False)
+            hand2Capital.setAutoDraw(False)
+            handOpponentCapital.setAutoDraw(False)
+            hand2OpponentCapital.setAutoDraw(False)
+            P1WaitingWords.setAutoDraw(False)
+            P2WaitingWords.setAutoDraw(False)
+            decks.setAutoDraw(False)
+            decks2.setAutoDraw(False)
+            Reshuffling.setAutoDraw(True)
+            Reshuffling1.setAutoDraw(True)
+            win.flip()
+            win1.flip()
+            core.wait(3)
             break
     
     # -------Ending Routine "trial"-------

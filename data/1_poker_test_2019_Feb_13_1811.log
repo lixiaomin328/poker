@@ -1,6 +1,0 @@
-1.0778 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
-5.0396 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x113752ef0>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1168629e8>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1200]), stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
-5.0397 	EXP 	window1: recordFrameIntervals = False
-5.2056 	EXP 	window1: recordFrameIntervals = True
-5.3894 	EXP 	window1: recordFrameIntervals = False
-5.6525 	EXP 	window1: mouseVisible = True
