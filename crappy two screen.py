@@ -334,7 +334,7 @@ for thisTrial in trials:
             event.clearEvents(eventType='keyboard')
         elif gameStatus == GameStatus.GAME_PLAYER_1_ROUND_STARTED:            
             if player1ActionCheck.status == STARTED:
-                theseKeys = event.getKeys(keyList=['b', 'c'])
+                theseKeys = event.getKeys(keyList=['b', 'h'])
                 # check for quit:
                 if "escape" in theseKeys:
                     endExpNow = True
@@ -344,12 +344,12 @@ for thisTrial in trials:
                         player1ActionCheck.rt = player1ActionCheck.clock.getTime()
                         if player1ActionCheck.keys == 'b':
                             gameStatus = GameStatus.GAME_PLAYER_1_BET_RESULT
-                        elif player1ActionCheck.keys == 'c':
+                        elif player1ActionCheck.keys == 'h':
                             gameStatus = GameStatus.GAME_PLAYER_1_CHECK_RESULT
         elif gameStatus == GameStatus.GAME_PLAYER_1_BET_RESULT:
             gameStatus = GameStatus.GAME_PLAYER_2_ROUND_STARTED
             P1WaitingWords.setText('Please wait for player 2 making his decision')
-            P2WaitingWords.setText('Player one choose to bet,\n now it is your turn')
+            P2WaitingWords.setText('Player one choose to bet,\n press c to call and f to fold?')
             player2ActionCheck.tStart = t
             player2ActionCheck.frameNStart = frameN
             player2ActionCheck.status = STARTED
@@ -359,13 +359,22 @@ for thisTrial in trials:
             event.clearEvents(eventType='keyboard')
             
         elif gameStatus == GameStatus.GAME_PLAYER_1_CHECK_RESULT:
-            P2WaitingWords.setText('Player one choose to check,\n you do not need to \n make a decision yourself in \n the current round')
+            P2WaitingWords.setText('Player one choose to check,\n you do not need to make a decision')
+            win.flip()
+            win1.flip()
+            core.wait(3)
+            if cards[0]>cards[1]:
+                P2WaitingWords.setText('His card is larger and \n You lost')
+                P1WaitingWords.setText('Your card is larger and\n You win')
+            else:
+                P1WaitingWords.setText('His card is larger and You lost \n')
+                P2WaitingWords.setText('Your card is larger and You win \n')
             gameStatus = GameStatus.GAME_FINISHED
             # TODO(xiaomin): set up text
             
         elif gameStatus == GameStatus.GAME_PLAYER_2_ROUND_STARTED:
             if player2ActionCheck.status == STARTED:
-                theseKeys = event.getKeys(keyList=['b', 'f'])
+                theseKeys = event.getKeys(keyList=['c', 'f'])
                 # check for quit:
                 if "escape" in theseKeys:
                     endExpNow = True
@@ -373,12 +382,18 @@ for thisTrial in trials:
                     if player2ActionCheck.keys == []:  # then this was the first keypress
                         player2ActionCheck.keys = theseKeys[0]  # just the first key pressed
                         player2ActionCheck.rt = player2ActionCheck.clock.getTime()
-                        if player2ActionCheck.keys == 'b':
+                        if player2ActionCheck.keys == 'c':
                             gameStatus = GameStatus.GAME_PLAYER_2_BET_RESULT
                         elif player2ActionCheck.keys == 'f':
                             gameStatus = GameStatus.GAME_PLAYER_2_FOLD_RESULT
             
         elif gameStatus == GameStatus.GAME_PLAYER_2_BET_RESULT:
+            if cards[0]>cards[1]:
+                P2WaitingWords.setText('His card is larger and You lost \n the current round')
+                P1WaitingWords.setText('Your card is larger and You win \n the current round')
+            else:
+                P1WaitingWords.setText('His card is larger and You lost \n the current round')
+                P2WaitingWords.setText('Your card is larger and You win \n the current round')
             gameStatus = GameStatus.GAME_FINISHED
             # TODO(xiaomin): set up text
         
