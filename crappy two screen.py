@@ -364,11 +364,14 @@ for thisTrial in trials:
             win1.flip()
             core.wait(3)
             if cards[0]>cards[1]:
-                P2WaitingWords.setText('His card is larger and \n You lost')
-                P1WaitingWords.setText('Your card is larger and\n You win')
+                P2WaitingWords.setText('His card is larger and \n you lost 1 point')
+                P1WaitingWords.setText('Your card is larger and\n you win 1 point')
             else:
-                P1WaitingWords.setText('His card is larger and You lost \n')
-                P2WaitingWords.setText('Your card is larger and You win \n')
+                P1WaitingWords.setText('His card is larger and you lost 1 point \n')
+                P2WaitingWords.setText('Your card is larger and you win 1 point \n')
+            win.flip()
+            win1.flip()
+            core.wait(3)
             gameStatus = GameStatus.GAME_FINISHED
             # TODO(xiaomin): set up text
             
@@ -389,16 +392,23 @@ for thisTrial in trials:
             
         elif gameStatus == GameStatus.GAME_PLAYER_2_BET_RESULT:
             if cards[0]>cards[1]:
-                P2WaitingWords.setText('His card is larger and You lost \n the current round')
-                P1WaitingWords.setText('Your card is larger and You win \n the current round')
+                P2WaitingWords.setText('His card is larger and \nYou lost')
+                P1WaitingWords.setText('Your opponent choose to bet, \n but Your card is larger, you win 3 points')
             else:
-                P1WaitingWords.setText('His card is larger and You lost \n the current round')
-                P2WaitingWords.setText('Your card is larger and You win \n the current round')
+                P1WaitingWords.setText('Your opponent choose to bet, \n and his card is larger, you lost 3 points')
+                P2WaitingWords.setText('Your card is larger and \nYou win')
+            win.flip()
+            win1.flip()
+            core.wait(3)
             gameStatus = GameStatus.GAME_FINISHED
             # TODO(xiaomin): set up text
         
         elif gameStatus == GameStatus.GAME_PLAYER_2_FOLD_RESULT:
-            gameStatus = GameStatus.GAME_FINISHED
+            gameStatus = GameStatus.GAME_FINISHED           
+            P1WaitingWords.setText('Your opponent choose to fold and you win 1 point')
+            win.flip()
+            win1.flip()
+            core.wait(3)
             # TODO(xiaomin): set up text
         
         # check for quit (typically the Esc key)
