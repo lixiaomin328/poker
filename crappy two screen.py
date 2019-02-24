@@ -359,10 +359,14 @@ for thisTrial in trials:
             event.clearEvents(eventType='keyboard')
             
         elif gameStatus == GameStatus.GAME_PLAYER_1_CHECK_RESULT:
+            win.flip()
+            win1.flip()
             P2WaitingWords.setText('Player one choose to check,\n you do not need to make a decision')
+            P1WaitingWords.setAutoDraw(False)
             win.flip()
             win1.flip()
             core.wait(3)
+            P1WaitingWords.setAutoDraw(True)
             if cards[0]>cards[1]:
                 P2WaitingWords.setText('His card is larger and \n you lost 1 point')
                 P1WaitingWords.setText('Your card is larger and\n you win 1 point')
@@ -404,8 +408,11 @@ for thisTrial in trials:
             # TODO(xiaomin): set up text
         
         elif gameStatus == GameStatus.GAME_PLAYER_2_FOLD_RESULT:
-            gameStatus = GameStatus.GAME_FINISHED           
+            gameStatus = GameStatus.GAME_FINISHED
+            win.flip()
+            win1.flip()
             P1WaitingWords.setText('Your opponent choose to fold and you win 1 point')
+            P2WaitingWords.setText('Since you folded, you lose 1 point')
             win.flip()
             win1.flip()
             core.wait(3)
