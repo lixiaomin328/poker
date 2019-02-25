@@ -1,0 +1,267 @@
+422.8065 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1a1ad6ea10>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1a2d2a9110>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=1, size=array([3600, 2000]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+422.8079 	WARNING 	User requested fullscreen with size [1800 1000], but screen is actually [2560, 1440]. Using actual size
+423.9064 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1a1ad6ea10>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1a2d2c2510>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([5120, 2880]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+423.9064 	EXP 	window1: recordFrameIntervals = False
+424.0729 	EXP 	window1: recordFrameIntervals = True
+424.2560 	EXP 	window1: recordFrameIntervals = False
+424.2637 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([-0.7,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+424.2653 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([-0.7 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+424.2730 	EXP 	Created hand2Capital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-0.5,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+424.2860 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.7, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+424.2981 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.5, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+424.2996 	EXP 	Created image1 = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-0.5 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+424.3087 	EXP 	Created P1WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P1WaitingWords', opacity=1.0, ori=0, pos=array([0. , 0.2]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+424.3177 	EXP 	Created P2WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+424.3297 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0.7, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+424.3416 	EXP 	Created hand2OpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([0.5, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+424.3575 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.7 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+424.3650 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.5 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+424.3816 	EXP 	Created decks = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='decks', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+424.3980 	EXP 	Created decks2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+424.4246 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reshuffling...\n putting 1 point to the pot', units='norm', win=Window(...), wrapWidth=1)
+424.4501 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reshuffling...\n putting 1 point to the pot', units='norm', win=Window(...), wrapWidth=1)
+424.4505 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+424.4507 	EXP 	New trial (rep=0, index=0): None
+424.5353 	EXP 	image: image = 'cards/5.png'
+424.5353 	EXP 	P1WaitingWords: text = 'Please choose to bet or check now'
+424.5353 	EXP 	handOpponentCapital: autoDraw = False
+424.5353 	EXP 	handCapital: autoDraw = True
+424.5353 	EXP 	image: autoDraw = True
+424.5353 	EXP 	image: autoDraw = True
+424.5353 	EXP 	handCapital: autoDraw = True
+424.5353 	EXP 	handOpponentCapital: autoDraw = True
+424.5353 	EXP 	decks: autoDraw = True
+424.5353 	EXP 	P1WaitingWords: autoDraw = True
+424.5552 	EXP 	image1: image = 'cards/7.png'
+424.5552 	EXP 	P2WaitingWords: text = 'Please wait for player 1 making his decision'
+424.5552 	EXP 	handOpponentCapital: autoDraw = False
+424.5552 	EXP 	image1: autoDraw = True
+424.5552 	EXP 	image: autoDraw = True
+424.5552 	EXP 	hand2Capital: autoDraw = True
+424.5552 	EXP 	handCapital: autoDraw = True
+424.5552 	EXP 	hand2OpponentCapital: autoDraw = True
+424.5552 	EXP 	decks2: autoDraw = True
+424.5552 	EXP 	P2WaitingWords: autoDraw = True
+424.5552 	EXP 	decks2: autoDraw = True
+442.4423 	DATA 	Keypress: escape
+442.7163 	EXP 	window1: mouseVisible = True
+442.7469 	EXP 	window1: mouseVisible = True
+710.1391 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1a1ad6ea10>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1a2d2a90d0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=1, size=array([3600, 2000]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+710.1404 	WARNING 	User requested fullscreen with size [1800 1000], but screen is actually [2560, 1440]. Using actual size
+710.9933 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1a1ad6ea10>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1a2aa94ad0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([5120, 2880]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+710.9933 	EXP 	window1: recordFrameIntervals = False
+711.1607 	EXP 	window1: recordFrameIntervals = True
+711.3436 	EXP 	window1: recordFrameIntervals = False
+711.3514 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([-0.7,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+711.3530 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([-0.7 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+711.3609 	EXP 	Created hand2Capital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-0.5,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+711.3725 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.7, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+711.3840 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.5, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+711.3855 	EXP 	Created image1 = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-0.5 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+711.3949 	EXP 	Created P1WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P1WaitingWords', opacity=1.0, ori=0, pos=array([0. , 0.2]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+711.4040 	EXP 	Created P2WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+711.4168 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0.7, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+711.4289 	EXP 	Created hand2OpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([0.5, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+711.4574 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.7 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+711.4650 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.5 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+711.4818 	EXP 	Created decks = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='decks', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+711.4983 	EXP 	Created decks2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+711.5221 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reshuffling...\n putting 1 point to the pot', units='norm', win=Window(...), wrapWidth=1)
+711.5463 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reshuffling...\n putting 1 point to the pot', units='norm', win=Window(...), wrapWidth=1)
+711.5467 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+711.5469 	EXP 	New trial (rep=0, index=0): None
+711.6442 	EXP 	image: image = 'cards/2.png'
+711.6442 	EXP 	P1WaitingWords: text = 'Please choose to bet or check now'
+711.6442 	EXP 	handOpponentCapital: autoDraw = False
+711.6442 	EXP 	handCapital: autoDraw = True
+711.6442 	EXP 	image: autoDraw = True
+711.6442 	EXP 	image: autoDraw = True
+711.6442 	EXP 	handCapital: autoDraw = True
+711.6442 	EXP 	handOpponentCapital: autoDraw = True
+711.6442 	EXP 	decks: autoDraw = True
+711.6442 	EXP 	P1WaitingWords: autoDraw = True
+711.6580 	EXP 	image1: image = 'cards/3.png'
+711.6580 	EXP 	P2WaitingWords: text = 'Please wait for player 1 making his decision'
+711.6580 	EXP 	handOpponentCapital: autoDraw = False
+711.6580 	EXP 	image1: autoDraw = True
+711.6580 	EXP 	image: autoDraw = True
+711.6580 	EXP 	hand2Capital: autoDraw = True
+711.6580 	EXP 	handCapital: autoDraw = True
+711.6580 	EXP 	hand2OpponentCapital: autoDraw = True
+711.6580 	EXP 	decks2: autoDraw = True
+711.6580 	EXP 	P2WaitingWords: autoDraw = True
+711.6580 	EXP 	decks2: autoDraw = True
+713.9624 	DATA 	Keypress: b
+714.1294 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+714.1294 	EXP 	P1WaitingWords: text = 'Please wait for player 2 making his decision'
+714.1438 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+714.1438 	EXP 	P2WaitingWords: text = 'Player one choose to bet,\n press c to call and f to fold?'
+730.3464 	DATA 	Keypress: escape
+730.6204 	EXP 	window1: mouseVisible = True
+730.6691 	EXP 	window1: mouseVisible = True
+797.2123 	WARNING 	Couldn't measure a consistent frame rate.
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+797.2126 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1a1ad6ea10>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1a4d241710>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=1, size=array([3600, 2000]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+797.2141 	WARNING 	User requested fullscreen with size [1800 1000], but screen is actually [2560, 1440]. Using actual size
+798.3322 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1a1ad6ea10>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1a4d29ee50>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([5120, 2880]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+798.3322 	EXP 	window1: recordFrameIntervals = False
+798.4981 	EXP 	window1: recordFrameIntervals = True
+798.6826 	EXP 	window1: recordFrameIntervals = False
+798.6903 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([-0.7,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+798.6919 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([-0.7 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+798.6996 	EXP 	Created hand2Capital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-0.5,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+798.7114 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.7, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+798.7229 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.5, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+798.7243 	EXP 	Created image1 = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-0.5 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+798.7334 	EXP 	Created P1WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P1WaitingWords', opacity=1.0, ori=0, pos=array([0. , 0.2]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+798.7427 	EXP 	Created P2WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+798.7546 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0.7, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+798.7666 	EXP 	Created hand2OpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([0.5, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+798.7918 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.7 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+798.7993 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.5 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+798.8158 	EXP 	Created decks = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='decks', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+798.8320 	EXP 	Created decks2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+798.8567 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reshuffling...\n putting 1 point to the pot', units='norm', win=Window(...), wrapWidth=1)
+798.8815 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reshuffling...\n putting 1 point to the pot', units='norm', win=Window(...), wrapWidth=1)
+798.8818 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+798.8821 	EXP 	New trial (rep=0, index=0): None
+798.9651 	EXP 	image: image = 'cards/5.png'
+798.9651 	EXP 	P1WaitingWords: text = 'Press (b) to bet or press (h) to check now'
+798.9651 	EXP 	handOpponentCapital: autoDraw = False
+798.9651 	EXP 	handCapital: autoDraw = True
+798.9651 	EXP 	image: autoDraw = True
+798.9651 	EXP 	image: autoDraw = True
+798.9651 	EXP 	handCapital: autoDraw = True
+798.9651 	EXP 	handOpponentCapital: autoDraw = True
+798.9651 	EXP 	decks: autoDraw = True
+798.9651 	EXP 	P1WaitingWords: autoDraw = True
+798.9805 	WARNING 	t of last frame was 1768.40ms (=1/0)
+798.9805 	EXP 	image1: image = 'cards/2.png'
+798.9805 	EXP 	P2WaitingWords: text = 'Please wait for player 1 making his decision'
+798.9805 	EXP 	handOpponentCapital: autoDraw = False
+798.9805 	EXP 	image1: autoDraw = True
+798.9805 	EXP 	image: autoDraw = True
+798.9805 	EXP 	hand2Capital: autoDraw = True
+798.9805 	EXP 	handCapital: autoDraw = True
+798.9805 	EXP 	hand2OpponentCapital: autoDraw = True
+798.9805 	EXP 	decks2: autoDraw = True
+798.9805 	EXP 	P2WaitingWords: autoDraw = True
+798.9805 	EXP 	decks2: autoDraw = True
+799.0137 	WARNING 	t of last frame was 33.17ms (=1/30)
+799.0472 	WARNING 	t of last frame was 33.51ms (=1/29)
+799.0802 	WARNING 	t of last frame was 32.99ms (=1/30)
+799.1133 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+810.2666 	DATA 	Keypress: b
+810.3775 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+810.3775 	EXP 	P1WaitingWords: text = 'Please wait for player 2 making his decision'
+810.3829 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+810.3829 	EXP 	P2WaitingWords: text = 'Player one choose to bet,\n press c to call and f to fold?'
+819.8864 	DATA 	Keypress: escape
+820.1572 	EXP 	window1: mouseVisible = True
+820.2166 	EXP 	window1: mouseVisible = True
+846.8756 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1a1ad6ea10>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1a2d088850>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=1, size=array([3600, 2000]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+846.8769 	WARNING 	User requested fullscreen with size [1800 1000], but screen is actually [2560, 1440]. Using actual size
+848.0110 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1a1ad6ea10>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1a4d21fc10>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([5120, 2880]), stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType=u'pyglet')
+848.0110 	EXP 	window1: recordFrameIntervals = False
+848.1772 	EXP 	window1: recordFrameIntervals = True
+848.3617 	EXP 	window1: recordFrameIntervals = False
+848.3694 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([-0.7,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+848.3710 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([-0.7 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+848.3796 	EXP 	Created hand2Capital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-0.5,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+848.3913 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.7, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+848.4029 	EXP 	Created handCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.5, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+848.4044 	EXP 	Created image1 = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-0.5 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+848.4135 	EXP 	Created P1WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P1WaitingWords', opacity=1.0, ori=0, pos=array([0. , 0.2]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+848.4225 	EXP 	Created P2WaitingWords = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+848.4343 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0.7, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+848.4463 	EXP 	Created hand2OpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([0.5, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+848.4684 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.7 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+848.4759 	EXP 	Created image = ImageStim(autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.5 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+848.4925 	EXP 	Created decks = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='decks', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+848.5087 	EXP 	Created decks2 = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+848.5328 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reshuffling...\n putting 1 point to the pot', units='norm', win=Window(...), wrapWidth=1)
+848.5588 	EXP 	Created handOpponentCapital = TextStim(alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reshuffling...\n putting 1 point to the pot', units='norm', win=Window(...), wrapWidth=1)
+848.5593 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+848.5596 	EXP 	New trial (rep=0, index=0): None
+848.6605 	EXP 	image: image = 'cards/4.png'
+848.6605 	EXP 	P1WaitingWords: text = 'Press (b) to bet or press (h) to check now'
+848.6605 	EXP 	handOpponentCapital: autoDraw = False
+848.6605 	EXP 	handCapital: autoDraw = True
+848.6605 	EXP 	image: autoDraw = True
+848.6605 	EXP 	image: autoDraw = True
+848.6605 	EXP 	handCapital: autoDraw = True
+848.6605 	EXP 	handOpponentCapital: autoDraw = True
+848.6605 	EXP 	decks: autoDraw = True
+848.6605 	EXP 	P1WaitingWords: autoDraw = True
+848.6758 	EXP 	image1: image = 'cards/2.png'
+848.6758 	EXP 	P2WaitingWords: text = 'Please wait for player 1 making his decision'
+848.6758 	EXP 	handOpponentCapital: autoDraw = False
+848.6758 	EXP 	image1: autoDraw = True
+848.6758 	EXP 	image: autoDraw = True
+848.6758 	EXP 	hand2Capital: autoDraw = True
+848.6758 	EXP 	handCapital: autoDraw = True
+848.6758 	EXP 	hand2OpponentCapital: autoDraw = True
+848.6758 	EXP 	decks2: autoDraw = True
+848.6758 	EXP 	P2WaitingWords: autoDraw = True
+848.6758 	EXP 	decks2: autoDraw = True
+849.5947 	DATA 	Keypress: b
+849.7283 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+849.7283 	EXP 	P1WaitingWords: text = 'Please wait for player 2 making his decision'
+849.7427 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+849.7427 	EXP 	P2WaitingWords: text = 'Player one choose to bet,\n press (c) to call and (f) to fold?'
+852.2291 	DATA 	Keypress: f
+852.3959 	EXP 	P1WaitingWords: text = 'Your opponent choose to fold and you win 1 point'
+852.4094 	EXP 	P2WaitingWords: text = 'Since you folded, you lose 1 point'
+855.4774 	EXP 	image: autoDraw = False
+855.4774 	EXP 	image: autoDraw = False
+855.4774 	EXP 	handCapital: autoDraw = False
+855.4774 	EXP 	handOpponentCapital: autoDraw = False
+855.4774 	EXP 	P1WaitingWords: autoDraw = False
+855.4774 	EXP 	decks: autoDraw = False
+855.4774 	EXP 	handOpponentCapital: autoDraw = True
+855.4956 	EXP 	image1: autoDraw = False
+855.4956 	EXP 	image: autoDraw = False
+855.4956 	EXP 	hand2Capital: autoDraw = False
+855.4956 	EXP 	hand2OpponentCapital: autoDraw = False
+855.4956 	EXP 	P2WaitingWords: autoDraw = False
+855.4956 	EXP 	decks2: autoDraw = False
+855.4956 	EXP 	handOpponentCapital: autoDraw = True
+858.4977 	EXP 	New trial (rep=1, index=0): None
+858.5649 	EXP 	handCapital: autoDraw = False
+858.5649 	EXP 	decks: autoDraw = False
+858.5649 	EXP 	P1WaitingWords: autoDraw = False
+858.5649 	EXP 	handOpponentCapital: autoDraw = False
+858.5649 	EXP 	handOpponentCapital: autoDraw = False
+858.5649 	EXP 	image: autoDraw = False
+858.5649 	EXP 	handCapital: autoDraw = False
+858.5649 	EXP 	image: image = 'cards/2.png'
+858.5649 	EXP 	P1WaitingWords: text = 'Press (b) to bet or press (h) to check now'
+858.5649 	EXP 	handOpponentCapital: autoDraw = False
+858.5649 	EXP 	handCapital: autoDraw = True
+858.5649 	EXP 	image: autoDraw = True
+858.5649 	EXP 	image: autoDraw = True
+858.5649 	EXP 	handCapital: autoDraw = True
+858.5649 	EXP 	handOpponentCapital: autoDraw = True
+858.5649 	EXP 	decks: autoDraw = True
+858.5649 	EXP 	P1WaitingWords: autoDraw = True
+858.5792 	EXP 	hand2Capital: autoDraw = False
+858.5792 	EXP 	decks2: autoDraw = False
+858.5792 	EXP 	P2WaitingWords: autoDraw = False
+858.5792 	EXP 	image1: autoDraw = False
+858.5792 	EXP 	handCapital: autoDraw = False
+858.5792 	EXP 	image1: image = 'cards/8.png'
+858.5792 	EXP 	P2WaitingWords: text = 'Please wait for player 1 making his decision'
+858.5792 	EXP 	handOpponentCapital: autoDraw = False
+858.5792 	EXP 	image1: autoDraw = True
+858.5792 	EXP 	image: autoDraw = True
+858.5792 	EXP 	hand2Capital: autoDraw = True
+858.5792 	EXP 	handCapital: autoDraw = True
+858.5792 	EXP 	hand2OpponentCapital: autoDraw = True
+858.5792 	EXP 	decks2: autoDraw = True
+858.5792 	EXP 	P2WaitingWords: autoDraw = True
+858.5792 	EXP 	decks2: autoDraw = True
+859.1954 	DATA 	Keypress: escape
+859.4658 	EXP 	window1: mouseVisible = True
+859.4872 	EXP 	window1: mouseVisible = True

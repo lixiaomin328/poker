@@ -100,6 +100,20 @@ hand2Capital = visual.TextStim(win=win1, name='hand2Capital',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
+potText1 = visual.TextStim(win=win, name='handCapital',
+    text='Current Pot: \n 2',
+    font='Arial',
+    pos=(0.7,-0.5), height=0.06, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
+potText2 = visual.TextStim(win=win1, name='handCapital',
+    text='Current Pot: \n 2',
+    font='Arial',
+    pos=(0.5,-0.5), height=0.06, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
 imageP2 = visual.ImageStim(
     win=win1, name='image1',
     image="sin", 
@@ -169,14 +183,14 @@ decks2 = visual.TextStim(win=win1, name='decks2',
     languageStyle='LTR',
     depth=-2.0); 
 Reshuffling = visual.TextStim(win=win, name='handOpponentCapital',
-    text='Reshuffling...',
+    text='Reshuffling...\n Contributing 1 point to the pot',
     font='Arial',
     pos=(0,0), height=0.08, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
 Reshuffling1 = visual.TextStim(win=win1, name='handOpponentCapital',
-    text='Reshuffling...',
+    text='Reshuffling...\n Contributing 1 point to the pot',
     font='Arial',
     pos=(0,0), height=0.08, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -218,7 +232,7 @@ for thisTrial in trials:
     imageP1.setImage(cardImageDir+p1card+'.png')
     imageP2.setImage(cardImageDir+p2card+'.png')
 #    image.draw()
-    P1WaitingWords.setText('Please choose to bet or check now')
+    P1WaitingWords.setText('Press (b) to bet or press (h) to check now')
     P2WaitingWords.setText('Please wait for player 1 making his decision')
     player1ActionCheck = event.BuilderKeyResponse()
     player2ActionCheck = event.BuilderKeyResponse()
@@ -226,7 +240,7 @@ for thisTrial in trials:
     # keep track of which components have finished
     trialComponents = [handCapital, hand2Capital, decks,decks2,P1WaitingWords,P2WaitingWords, 
                        handOpponentCapital,handOpponentCapital,player1ActionCheck, player2ActionCheck,
-                       gameStatus,imageP1,imageP2]
+                       gameStatus,imageP1,imageP2,potText1,potText2]
     for thisComponent in trialComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -288,6 +302,14 @@ for thisTrial in trials:
             hand2Capital.tStart = t
             hand2Capital.frameNStart = frameN  # exact frame index
             hand2Capital.setAutoDraw(True)
+            
+            potText1.tStart = t
+            potText1.frameNStart = frameN  # exact frame index
+            potText1.setAutoDraw(True)
+            
+            potText2.tStart = t
+            potText2.frameNStart = frameN  # exact frame index
+            potText2.setAutoDraw(True)
         
             # keep track of start time/frame for later
             handOpponentCapital.tStart = t
@@ -348,8 +370,10 @@ for thisTrial in trials:
                             gameStatus = GameStatus.GAME_PLAYER_1_CHECK_RESULT
         elif gameStatus == GameStatus.GAME_PLAYER_1_BET_RESULT:
             gameStatus = GameStatus.GAME_PLAYER_2_ROUND_STARTED
+            potText1.setText('Current Pot: \n 2 + 2 =4')
+            potText2.setText('Current Pot: \n 2 + 2 =4')
             P1WaitingWords.setText('Please wait for player 2 making his decision')
-            P2WaitingWords.setText('Player one choose to bet,\n press c to call and f to fold?')
+            P2WaitingWords.setText('Player one choose to bet,\n press (c) to call and (f) to fold?')
             player2ActionCheck.tStart = t
             player2ActionCheck.frameNStart = frameN
             player2ActionCheck.status = STARTED
@@ -442,6 +466,8 @@ for thisTrial in trials:
             P2WaitingWords.setAutoDraw(False)
             decks.setAutoDraw(False)
             decks2.setAutoDraw(False)
+            potText1.setAutoDraw(False)
+            potText1.setAutoDraw(False)
             Reshuffling.setAutoDraw(True)
             Reshuffling1.setAutoDraw(True)
             win.flip()
