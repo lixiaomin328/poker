@@ -234,6 +234,8 @@ for thisTrial in trials:
 #    image.draw()
     P1WaitingWords.setText('Press (b) to bet or press (h) to check now')
     P2WaitingWords.setText('Please wait for player 1 making his decision')
+    potText1.setText('Current Pot: \n 2')
+    potText2.setText('Current Pot: \n 2')
     player1ActionCheck = event.BuilderKeyResponse()
     player2ActionCheck = event.BuilderKeyResponse()
     gameStatus = GameStatus.GAME_NOT_STARTED
@@ -467,7 +469,7 @@ for thisTrial in trials:
             decks.setAutoDraw(False)
             decks2.setAutoDraw(False)
             potText1.setAutoDraw(False)
-            potText1.setAutoDraw(False)
+            potText2.setAutoDraw(False)
             Reshuffling.setAutoDraw(True)
             Reshuffling1.setAutoDraw(True)
             win.flip()
