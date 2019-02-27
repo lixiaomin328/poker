@@ -61,13 +61,13 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win1 = visual.Window(
-	size=[2700, 1500], pos =(0,0),fullscr=False, screen=1,
+	size=[1920, 1080], pos =(0,0),fullscr=False, screen=1,
 	allowGUI=False, allowStencil=False,
 	monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
 	blendMode='avg', useFBO=True,
 	units='norm')
 win = visual.Window(
-	size=[1800, 1000],pos = (0,0), fullscr=True, screen=0,
+	size=[2560, 1440],pos = (0,0), fullscr=True, screen=0,
 	allowGUI=False, allowStencil=False,
 	monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
 	blendMode='avg', useFBO=True,
@@ -235,8 +235,8 @@ for thisTrial in trials:
 	imageP1.setImage(cardImageDir+p1card+'.png')
 	imageP2.setImage(cardImageDir+p2card+'.png')
 #    image.draw()
-	P1WaitingWords.setText('Press (b) to bet or press (h) to check now')
-	P2WaitingWords.setText('Please wait for player 1 making his decision')
+	P1WaitingWords.setText('Press (b) to bet \n Press (h) to check')
+	P2WaitingWords.setText('Wait for player 1 making decision')
 	potText1.setText('Current Pot: \n 2')
 	potText2.setText('Current Pot: \n 2')
 	player1ActionCheck = event.BuilderKeyResponse()
@@ -368,7 +368,7 @@ for thisTrial in trials:
 				
 
 				if len(theseKeys) > 0:  # at least one key was pressed
-					core.wait(timeLimit - player1ActionCheck.clock.getTime())
+#					core.wait(timeLimit - player1ActionCheck.clock.getTime())
 					if player1ActionCheck.keys == []:  # then this was the first keypress
 						player1ActionCheck.keys = theseKeys[0]  # just the first key pressed
 						player1ActionCheck.rt = player1ActionCheck.clock.getTime()
@@ -376,19 +376,19 @@ for thisTrial in trials:
 							gameStatus = GameStatus.GAME_PLAYER_1_BET_RESULT
 						elif player1ActionCheck.keys == 'h':
 							gameStatus = GameStatus.GAME_PLAYER_1_CHECK_RESULT
-				elif player1ActionCheck.clock.getTime()>timeLimit:
-					gameStatus = GameStatus.GAME_FINISHED
-					P1WaitingWords.setText(str(len(theseKeys)))
-					P2WaitingWords.setText('Player 1 time out, you win 1 point')
-					win.flip()
-					win1.flip()
-					core.wait(rewardRevealTime)
+#				elif player1ActionCheck.clock.getTime()>timeLimit:
+#					gameStatus = GameStatus.GAME_FINISHED
+#					P1WaitingWords.setText('Time out, you lose 1')
+#					P2WaitingWords.setText('Player 1 time out, you win 1')
+#					win.flip()
+#					win1.flip()
+#					core.wait(rewardRevealTime)
 		elif gameStatus == GameStatus.GAME_PLAYER_1_BET_RESULT:
 			gameStatus = GameStatus.GAME_PLAYER_2_ROUND_STARTED
 			potText1.setText('Current Pot: \n 2 + 2 =4')
 			potText2.setText('Current Pot: \n 2 + 2 =4')
-			P1WaitingWords.setText('Please wait for player 2 making his decision')
-			P2WaitingWords.setText('Player one choose to bet,\n press (c) to call and (f) to fold?')
+			P1WaitingWords.setText('Wait for player 2 making  decision')
+			P2WaitingWords.setText('Player one choose to bet,\n press (c) to call and (f) to fold')
 			player2ActionCheck.tStart = t
 			player2ActionCheck.frameNStart = frameN
 			player2ActionCheck.status = STARTED
@@ -400,18 +400,18 @@ for thisTrial in trials:
 		elif gameStatus == GameStatus.GAME_PLAYER_1_CHECK_RESULT:
 			win.flip()
 			win1.flip()
-			P2WaitingWords.setText('Player one choose to check,\n you do not need to make a decision')
+			P2WaitingWords.setText('Player 1 choose to check,\n you do not need to make a decision')
 			P1WaitingWords.setAutoDraw(False)
 			win.flip()
 			win1.flip()
 			core.wait(3)
 			P1WaitingWords.setAutoDraw(True)
 			if cards[0]>cards[1]:
-				P2WaitingWords.setText('His card is larger and \n you lost 1 point')
-				P1WaitingWords.setText('Your card is larger and\n you win 1 point')
+				P2WaitingWords.setText('Your card is smaller.\n You earn -1')
+				P1WaitingWords.setText('Your card is larger\n You earn +1')
 			else:
-				P1WaitingWords.setText('His card is larger and you lost 1 point \n')
-				P2WaitingWords.setText('Your card is larger and you win 1 point \n')
+				P1WaitingWords.setText('Your card is smaller.\n You earn -1')
+				P2WaitingWords.setText('Your card is larger\n You earn +1')
 			win.flip()
 			win1.flip()
 			core.wait(rewardRevealTime)
@@ -426,7 +426,7 @@ for thisTrial in trials:
 					endExpNow = True
 				
 				if len(theseKeys) > 0:  # at least one key was pressed
-					core.wait(timeLimit - player2ActionCheck.clock.getTime())
+#					core.wait(timeLimit - player2ActionCheck.clock.getTime())
 					if player2ActionCheck.keys == []:  # then this was the first keypress
 						player2ActionCheck.keys = theseKeys[0]  # just the first key pressed
 						player2ActionCheck.rt = player2ActionCheck.clock.getTime()
@@ -434,13 +434,13 @@ for thisTrial in trials:
 							gameStatus = GameStatus.GAME_PLAYER_2_BET_RESULT
 						elif player2ActionCheck.keys == 'f':
 							gameStatus = GameStatus.GAME_PLAYER_2_FOLD_RESULT
-				if player2ActionCheck.clock.getTime()>timeLimit:
-					gameStatus = GameStatus.GAME_FINISHED
-					P2WaitingWords.setText('Time out, you lose 1 point')
-					P1WaitingWords.setText('Player 2 time out, you win 1 point')
-					win.flip()
-					win1.flip()
-					core.wait(rewardRevealTime)
+#				elif player2ActionCheck.clock.getTime()>timeLimit:
+#					gameStatus = GameStatus.GAME_FINISHED
+#					P2WaitingWords.setText('Time out, you lose 1 point')
+#					P1WaitingWords.setText('Player 2 time out, you win 1 point')
+#					win.flip()
+#					win1.flip()
+#					core.wait(rewardRevealTime)
 			
 		elif gameStatus == GameStatus.GAME_PLAYER_2_BET_RESULT:
 			if cards[0]>cards[1]:
