@@ -444,11 +444,11 @@ for thisTrial in trials:
 			
 		elif gameStatus == GameStatus.GAME_PLAYER_2_BET_RESULT:
 			if cards[0]>cards[1]:
-				P2WaitingWords.setText('His card is larger and \nYou lost')
+				P2WaitingWords.setText('His card is larger and \nYou lost 3 points')
 				P1WaitingWords.setText('Your opponent choose to bet, \n but Your card is larger, you win 3 points')
 			else:
 				P1WaitingWords.setText('Your opponent choose to bet, \n and his card is larger, you lost 3 points')
-				P2WaitingWords.setText('Your card is larger and \nYou win')
+				P2WaitingWords.setText('Your card is larger and \nYou win 3 points')
 			win.flip()
 			win1.flip()
 			core.wait(rewardRevealTime)
@@ -505,7 +505,7 @@ for thisTrial in trials:
 			Reshuffling.setText('Waiting for P2 to get prepared')
 			Reshuffling1.setText('P1 is prepared, press (RETURN) to next trial')
 			win.flip()
-			win1.flip()
+			win1.flip() 
 			event.waitKeys(keyList = ["return",'b'])
 			Reshuffling.setText('Reshuffling in 2s...\n Contributing 1 point to the pot. \n')
 			Reshuffling1.setText('Reshuffling in 2s...\n Contributing 1 point to the pot. \n')
@@ -522,6 +522,8 @@ for thisTrial in trials:
 		if hasattr(thisComponent, "setAutoDraw"):
 			thisComponent.setAutoDraw(False)
 	# check responses
+        trials.addData('P1card',cards[0])
+        trials.addData('P2card',cards[1])
 	if player1ActionCheck.keys in ['', [], None]:  # No response was made
 		player1ActionCheck.keys=None
 	trials.addData('player1ActionCheck.keys',player1ActionCheck.keys)
