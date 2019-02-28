@@ -522,8 +522,8 @@ for thisTrial in trials:
 		if hasattr(thisComponent, "setAutoDraw"):
 			thisComponent.setAutoDraw(False)
 	# check responses
-        trials.addData('P1card',cards[0])
-        trials.addData('P2card',cards[1])
+		trials.addData('P1card',cards[0])
+		trials.addData('P2card',cards[1])
 	if player1ActionCheck.keys in ['', [], None]:  # No response was made
 		player1ActionCheck.keys=None
 	trials.addData('player1ActionCheck.keys',player1ActionCheck.keys)
