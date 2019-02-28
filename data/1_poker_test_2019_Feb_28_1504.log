@@ -1,0 +1,130 @@
+1.5075 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+5.6668 	WARNING 	Monitor specification not found. Creating a temporary one...
+7.7661 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x10eb66eb8>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x11244eac8>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=1, size=array([1280, 1024]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+9.6541 	EXP 	Set  sound=C
+9.6548 	EXP 	Set  sound=A
+9.6552 	EXP 	Set  sound=E
+9.6557 	EXP 	Set  sound=E
+15.7180 	DATA 	Keypress: rshift
+15.7181 	DATA 	Keypress: return
+15.8763 	DATA 	Keypress: return
+17.2692 	DATA 	Keypress: escape
+17.2706 	EXP 	window1: units = 'pix'
+17.4337 	EXP 	Created hand2Capital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-0.5,  0.8]), rgb=array([255., 255., 255.]), text='Your card', units='norm', win=Window(...), wrapWidth=1)
+17.4623 	EXP 	Created handCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 0.5, -0.5]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='norm', win=Window(...), wrapWidth=1)
+17.4651 	EXP 	Created image1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-0.5 ,  0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+17.4833 	EXP 	Created P2WaitingWords = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.4999 	EXP 	Created hand2OpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([0.5, 0.8]), rgb=array([255., 255., 255.]), text='Your opponent card', units='norm', win=Window(...), wrapWidth=1)
+17.5983 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0.5 , 0.55]), size=array([0.2 , 0.35]), texRes=128, units='norm', win=Window(...))
+17.6279 	EXP 	Created decks2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([ 0. , -0.7]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='norm', win=Window(...), wrapWidth=1)
+17.6675 	EXP 	Created handOpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+17.6680 	EXP 	Created sequence: random, trialTypes=1, nReps=3, seed=None
+17.6684 	EXP 	New trial (rep=0, index=0): None
+17.7618 	EXP 	image1: image = 'cards/4.png'
+17.7618 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+17.7618 	EXP 	handCapital: text = 'Current Pot: \n 2'
+17.7618 	EXP 	handOpponentCapital: autoDraw = False
+17.7618 	EXP 	image1: autoDraw = True
+17.7618 	EXP 	image: autoDraw = True
+17.7618 	EXP 	hand2Capital: autoDraw = True
+17.7618 	EXP 	handCapital: autoDraw = True
+17.7618 	EXP 	hand2OpponentCapital: autoDraw = True
+17.7618 	EXP 	decks2: autoDraw = True
+17.7618 	EXP 	P2WaitingWords: autoDraw = True
+17.7618 	EXP 	decks2: autoDraw = True
+19.7818 	DATA 	Keypress: b
+19.8777 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+19.8777 	EXP 	P2WaitingWords: text = 'Player one choose to bet,\n press (c) to call and (f) to fold'
+21.3608 	DATA 	Keypress: c
+21.4271 	EXP 	P2WaitingWords: text = 'His card is larger and \nYou lost 3 points'
+25.2359 	DATA 	Keypress: b
+25.2360 	DATA 	Keypress: c
+25.4591 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+25.4591 	EXP 	image1: autoDraw = False
+25.4591 	EXP 	image: autoDraw = False
+25.4591 	EXP 	hand2Capital: autoDraw = False
+25.4591 	EXP 	hand2OpponentCapital: autoDraw = False
+25.4591 	EXP 	P2WaitingWords: autoDraw = False
+25.4591 	EXP 	decks2: autoDraw = False
+25.4591 	EXP 	handCapital: autoDraw = False
+25.4591 	EXP 	handOpponentCapital: autoDraw = True
+26.7971 	DATA 	Keypress: space
+26.8585 	EXP 	handOpponentCapital: text = 'P1 is prepared, press (RETURN) to next trial'
+33.1487 	DATA 	Keypress: return
+33.2099 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\n Contributing 1 point to the pot. \n'
+35.2165 	EXP 	New trial (rep=1, index=0): None
+35.2890 	EXP 	hand2Capital: autoDraw = False
+35.2890 	EXP 	decks2: autoDraw = False
+35.2890 	EXP 	P2WaitingWords: autoDraw = False
+35.2890 	EXP 	image1: autoDraw = False
+35.2890 	EXP 	handCapital: autoDraw = False
+35.2890 	EXP 	image1: image = 'cards/3.png'
+35.2890 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+35.2890 	EXP 	handCapital: text = 'Current Pot: \n 2'
+35.2890 	EXP 	handOpponentCapital: autoDraw = False
+35.2890 	EXP 	image1: autoDraw = True
+35.2890 	EXP 	image: autoDraw = True
+35.2890 	EXP 	hand2Capital: autoDraw = True
+35.2890 	EXP 	handCapital: autoDraw = True
+35.2890 	EXP 	hand2OpponentCapital: autoDraw = True
+35.2890 	EXP 	decks2: autoDraw = True
+35.2890 	EXP 	P2WaitingWords: autoDraw = True
+35.2890 	EXP 	decks2: autoDraw = True
+36.2224 	DATA 	Keypress: b
+36.3220 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+36.3220 	EXP 	P2WaitingWords: text = 'Player one choose to bet,\n press (c) to call and (f) to fold'
+36.7094 	DATA 	Keypress: c
+36.7885 	EXP 	P2WaitingWords: text = 'His card is larger and \nYou lost 3 points'
+40.8370 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+40.8370 	EXP 	image1: autoDraw = False
+40.8370 	EXP 	image: autoDraw = False
+40.8370 	EXP 	hand2Capital: autoDraw = False
+40.8370 	EXP 	hand2OpponentCapital: autoDraw = False
+40.8370 	EXP 	P2WaitingWords: autoDraw = False
+40.8370 	EXP 	decks2: autoDraw = False
+40.8370 	EXP 	handCapital: autoDraw = False
+40.8370 	EXP 	handOpponentCapital: autoDraw = True
+41.9329 	DATA 	Keypress: space
+41.9867 	EXP 	handOpponentCapital: text = 'P1 is prepared, press (RETURN) to next trial'
+42.7726 	DATA 	Keypress: return
+42.8198 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\n Contributing 1 point to the pot. \n'
+44.8261 	EXP 	New trial (rep=2, index=0): None
+44.9024 	EXP 	hand2Capital: autoDraw = False
+44.9024 	EXP 	decks2: autoDraw = False
+44.9024 	EXP 	P2WaitingWords: autoDraw = False
+44.9024 	EXP 	image1: autoDraw = False
+44.9024 	EXP 	handCapital: autoDraw = False
+44.9024 	EXP 	image1: image = 'cards/7.png'
+44.9024 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+44.9024 	EXP 	handCapital: text = 'Current Pot: \n 2'
+44.9024 	EXP 	handOpponentCapital: autoDraw = False
+44.9024 	EXP 	image1: autoDraw = True
+44.9024 	EXP 	image: autoDraw = True
+44.9024 	EXP 	hand2Capital: autoDraw = True
+44.9024 	EXP 	handCapital: autoDraw = True
+44.9024 	EXP 	hand2OpponentCapital: autoDraw = True
+44.9024 	EXP 	decks2: autoDraw = True
+44.9024 	EXP 	P2WaitingWords: autoDraw = True
+44.9024 	EXP 	decks2: autoDraw = True
+46.5552 	DATA 	Keypress: b
+46.6517 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+46.6517 	EXP 	P2WaitingWords: text = 'Player one choose to bet,\n press (c) to call and (f) to fold'
+47.0520 	DATA 	Keypress: c
+47.1183 	EXP 	P2WaitingWords: text = 'Your card is larger and \nYou win 3 points'
+50.9265 	DATA 	Keypress: b
+50.9266 	DATA 	Keypress: space
+50.9880 	DATA 	Keypress: return
+51.1706 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+51.1706 	EXP 	image1: autoDraw = False
+51.1706 	EXP 	image: autoDraw = False
+51.1706 	EXP 	hand2Capital: autoDraw = False
+51.1706 	EXP 	hand2OpponentCapital: autoDraw = False
+51.1706 	EXP 	P2WaitingWords: autoDraw = False
+51.1706 	EXP 	decks2: autoDraw = False
+51.1706 	EXP 	handCapital: autoDraw = False
+51.1706 	EXP 	handOpponentCapital: autoDraw = True
+51.9887 	DATA 	Keypress: space
+52.0165 	EXP 	handOpponentCapital: text = 'P1 is prepared, press (RETURN) to next trial'
+53.1564 	DATA 	Keypress: return
+53.1994 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\n Contributing 1 point to the pot. \n'
+57.6417 	EXP 	window1: mouseVisible = True
