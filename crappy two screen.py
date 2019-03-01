@@ -7,14 +7,14 @@ from numpy import (sin, cos, tan, log, log10, pi, average,
 				   sqrt, std, deg2rad, rad2deg, linspace, asarray)
 from numpy.random import random, randint, normal, shuffle
 import pylink
-from EyeLinkCoreGraphicsPsychoPy import EyeLinkCoreGraphicsPsychoPy
+#from EyeLinkCoreGraphicsPsychoPy import EyeLinkCoreGraphicsPsychoPy
 
 import os  # handy system and path functions
 import sys  # to get file system encoding
 import random
 from enum import Enum
 useGUI = True  #  use the Psychopy GUI module to collect subject information
-dummyMode = False # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
+dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 
 # STEP I: get subject info
 expInfo = {'SubjectNO':'00', 'SubjectInitials':'TEST'}
@@ -28,10 +28,10 @@ else:
     expInfo['SubjectInitials'] = raw_input('Subject Initials (e.g., WZ): ')
 
 # SETP II: established a link to the tracker
-if not dummyMode: 
-    tk = pylink.EyeLink('100.1.1.1')
-else:
-    tk = pylink.EyeLink(None)
+# if not dummyMode: 
+#     tk = pylink.EyeLink('100.1.1.1')
+# else:
+#     tk = pylink.EyeLink(None)
 
 # STEP III: Open an EDF data file EARLY
 # Note that the file name cannot exceeds 8 characters
@@ -39,32 +39,17 @@ else:
 dataFolder = os.getcwd() + '/edfData/'
 if not os.path.exists(dataFolder): os.makedirs(dataFolder)
 dataFileName = expInfo['SubjectNO'] + '_' + expInfo['SubjectInitials'] + '.EDF'
-tk.openDataFile(dataFileName)
-# add personalized data file header (preamble text)
-tk.sendCommand("add_file_preamble_text 'Psychopy GC demo'") 
+# tk.openDataFile(dataFileName)
+# # add personalized data file header (preamble text)
+# tk.sendCommand("add_file_preamble_text 'Psychopy GC demo'") 
 
 # STEP IV: Initialize custom graphics for camera setup & drift correction
-scnWidth, scnHeight = (2560, 1440)
-mon = monitors.Monitor('myMac15', width=53.0, distance=70.0)
-mon.setSizePix((scnWidth, scnHeight))
-
-class GameStatus(Enum):
-	GAME_NOT_STARTED = 0
-	GAME_PLAYER_1_ROUND_STARTED = 1
-	GAME_PLAYER_1_BET_RESULT = 2
-	GAME_PLAYER_1_CHECK_RESULT = 3
-	GAME_PLAYER_2_ROUND_STARTED = 4
-	GAME_PLAYER_2_BET_RESULT = 5
-	GAME_PLAYER_2_FOLD_RESULT = 6
-	GAME_FINISHED = -1
+#scnWidth, scnHeight = (2560, 1440)
 
 
-#messy set ups
-deckRange = range(2,9)
-cardImageDir = 'cards/'
-TrialNum = 3
-timeLimit = 6
-rewardRevealTime = 4
+
+
+
 # Ensure that relative paths start from the same directory as this script
 _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
@@ -81,7 +66,7 @@ expInfo['expName'] = expName
 expInfo['psychopyVersion'] = psychopyVersion
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])
+filename = _thisDir + os.sep + 'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
@@ -92,18 +77,24 @@ thisExp = data.ExperimentHandler(name=expName, version='',
 # save a log file for detail verbose info
 logFile = logging.LogFile(filename+'.log', level=logging.EXP)
 logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
-
+scnWidth, scnHeight = (1920, 1080)
+scnWidth1, scnHeight1 = (2880, 1800)
+# for mon in monitors.getAllMonitors():
+# 	size1 = monitors.Monitor(mon).getSizePix())
+mon = monitors.Monitor('myMac15', width=53.0, distance=70.0)
+mon.setSizePix((scnWidth, scnHeight))
+win1 = visual.Window(
+	size=[scnWidth1, scnHeight1], pos =(0,0),fullscr=False, screen=1,
+	allowGUI=False, allowStencil=False,
+	monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
+	blendMode='avg', useFBO=True,
+	units='pix')
+win = visual.Window((scnWidth, scnHeight), fullscr=True, monitor=mon, color=[0,0,0], units='pix', allowStencil=True,autoLog=False)
 endExpNow = False  # flag for 'escape' or other condition => quit the exp
 # Start Code - component code to be run before the window creation
 
 # Setup the Window
-win1 = visual.Window(
-	size=[1280, 1024], pos =(0,0),fullscr=False, screen=1,
-	allowGUI=False, allowStencil=False,
-	monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
-	blendMode='avg', useFBO=True,
-	units='norm')
-win = visual.Window((scnWidth, scnHeight), fullscr=True, monitor=mon, color=[0,0,0], units='pix', allowStencil=True,autoLog=False)
+
 #win = visual.Window(
 #	(scnWidth, scnHeight), pos = (0,0), fullscr=True, screen=0,
 #	allowGUI=False, allowStencil=True,
@@ -111,148 +102,161 @@ win = visual.Window((scnWidth, scnHeight), fullscr=True, monitor=mon, color=[0,0
 #	blendMode='avg', useFBO=True,
 #	units='norm')
 #eye tracker
-genv = EyeLinkCoreGraphicsPsychoPy(tk, win)
-pylink.openGraphicsEx(genv)
-tk.setOfflineMode()
+# genv = EyeLinkCoreGraphicsPsychoPy(tk, win)
+# pylink.openGraphicsEx(genv)
+# tk.setOfflineMode()
 
-# sampling rate, 250, 500, 1000, or 2000; this command won't work for EyeLInk II/I
-tk.sendCommand('sample_rate 500')
+# # sampling rate, 250, 500, 1000, or 2000; this command won't work for EyeLInk II/I
+# tk.sendCommand('sample_rate 500')
 
-# inform the tracker the resolution of the subject display
-# [see Eyelink Installation Guide, Section 8.4: Customizing Your PHYSICAL.INI Settings ]
-tk.sendCommand("screen_pixel_coords = 0 0 %d %d" % (scnWidth-1, scnHeight-1))
+# # inform the tracker the resolution of the subject display
+# # [see Eyelink Installation Guide, Section 8.4: Customizing Your PHYSICAL.INI Settings ]
+# tk.sendCommand("screen_pixel_coords = 0 0 %d %d" % (scnWidth-1, scnHeight-1))
 
-# save display resolution in EDF data file for Data Viewer integration purposes
-# [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
-tk.sendMessage("DISPLAY_COORDS = 0 0 %d %d" % (scnWidth-1, scnHeight-1))
+# # save display resolution in EDF data file for Data Viewer integration purposes
+# # [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
+# tk.sendMessage("DISPLAY_COORDS = 0 0 %d %d" % (scnWidth-1, scnHeight-1))
 
-# specify the calibration type, H3, HV3, HV5, HV13 (HV = horiztonal/vertical), 
-tk.sendCommand("calibration_type = HV9") # tk.setCalibrationType('HV9') also works, see the Pylink manual
+# # specify the calibration type, H3, HV3, HV5, HV13 (HV = horiztonal/vertical), 
+# tk.sendCommand("calibration_type = HV9") # tk.setCalibrationType('HV9') also works, see the Pylink manual
 
-# specify the proportion of subject display to calibrate/validate (OPTIONAL, useful for wide screen monitors)
-#tk.sendCommand("calibration_area_proportion 0.85 0.83")
-#tk.sendCommand("validation_area_proportion  0.85 0.83")
+# # specify the proportion of subject display to calibrate/validate (OPTIONAL, useful for wide screen monitors)
+# #tk.sendCommand("calibration_area_proportion 0.85 0.83")
+# #tk.sendCommand("validation_area_proportion  0.85 0.83")
 
-# Using a button from the EyeLink Host PC gamepad to accept calibration/dirft check target (optional)
-# tk.sendCommand("button_function 5 'accept_target_fixation'")
+# # Using a button from the EyeLink Host PC gamepad to accept calibration/dirft check target (optional)
+# # tk.sendCommand("button_function 5 'accept_target_fixation'")
 
-# the model of the tracker, 1-EyeLink I, 2-EyeLink II, 3-Newer models (100/1000Plus/DUO)
-eyelinkVer = tk.getTrackerVersion()
+# # the model of the tracker, 1-EyeLink I, 2-EyeLink II, 3-Newer models (100/1000Plus/DUO)
+# eyelinkVer = tk.getTrackerVersion()
 
-#turn off scenelink camera stuff (EyeLink II/I only)
-if eyelinkVer == 2: tk.sendCommand("scene_camera_gazemap = NO")
+# #turn off scenelink camera stuff (EyeLink II/I only)
+# if eyelinkVer == 2: tk.sendCommand("scene_camera_gazemap = NO")
 
-# Set the tracker to parse Events using "GAZE" (or "HREF") data
-tk.sendCommand("recording_parse_type = GAZE")
+# # Set the tracker to parse Events using "GAZE" (or "HREF") data
+# tk.sendCommand("recording_parse_type = GAZE")
 
-# Online parser configuration: 0-> standard/coginitve, 1-> sensitive/psychophysiological
-# the Parser for EyeLink I is more conservative, see below
-# [see Eyelink User Manual, Section 4.3: EyeLink Parser Configuration]
-if eyelinkVer>=2: tk.sendCommand('select_parser_configuration 0')
+# # Online parser configuration: 0-> standard/coginitve, 1-> sensitive/psychophysiological
+# # the Parser for EyeLink I is more conservative, see below
+# # [see Eyelink User Manual, Section 4.3: EyeLink Parser Configuration]
+# if eyelinkVer>=2: tk.sendCommand('select_parser_configuration 0')
 
-# get Host tracking software version
-hostVer = 0
-if eyelinkVer == 3:
-    tvstr  = tk.getTrackerVersionString()
-    vindex = tvstr.find("EYELINK CL")
-    hostVer = int(float(tvstr[(vindex + len("EYELINK CL")):].strip()))
+# # get Host tracking software version
+# hostVer = 0
+# if eyelinkVer == 3:
+#     tvstr  = tk.getTrackerVersionString()
+#     vindex = tvstr.find("EYELINK CL")
+#     hostVer = int(float(tvstr[(vindex + len("EYELINK CL")):].strip()))
 
-# specify the EVENT and SAMPLE data that are stored in EDF or retrievable from the Link
-# See Section 4 Data Files of the EyeLink user manual
-tk.sendCommand("file_event_filter = LEFT,RIGHT,FIXATION,SACCADE,BLINK,MESSAGE,BUTTON,INPUT")
-tk.sendCommand("link_event_filter = LEFT,RIGHT,FIXATION,FIXUPDATE,SACCADE,BLINK,BUTTON,INPUT")
-if hostVer>=4: 
-    tk.sendCommand("file_sample_data  = LEFT,RIGHT,GAZE,AREA,GAZERES,STATUS,HTARGET,INPUT")
-    tk.sendCommand("link_sample_data  = LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,HTARGET,INPUT")
-else:          
-    tk.sendCommand("file_sample_data  = LEFT,RIGHT,GAZE,AREA,GAZERES,STATUS,INPUT")
-    tk.sendCommand("link_sample_data  = LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,INPUT")
-#gazeWindow = visual.Aperture(win, size=200)
-#gazeWindow.enabled=False
-# prepare a gaze-contingent mask
-gazeMask = visual.GratingStim(win, tex='none', mask='circle', size=200, color=[1.0,1.0,1.0])
-#end eyetracking
-# store frame rate of monitor if we can measure it
-expInfo['frameRate'] = win.getActualFrameRate()
-if expInfo['frameRate'] != None:
-	frameDur = 1.0 / round(expInfo['frameRate'])
-else:
-	frameDur = 1.0 / 60.0  # could not measure, so guess
-cond = 1
-tk.setOfflineMode()
-pylink.pumpDelay(50)
-tk.sendMessage('TRIALID')
+# # specify the EVENT and SAMPLE data that are stored in EDF or retrievable from the Link
+# # See Section 4 Data Files of the EyeLink user manual
+# tk.sendCommand("file_event_filter = LEFT,RIGHT,FIXATION,SACCADE,BLINK,MESSAGE,BUTTON,INPUT")
+# tk.sendCommand("link_event_filter = LEFT,RIGHT,FIXATION,FIXUPDATE,SACCADE,BLINK,BUTTON,INPUT")
+# if hostVer>=4: 
+#     tk.sendCommand("file_sample_data  = LEFT,RIGHT,GAZE,AREA,GAZERES,STATUS,HTARGET,INPUT")
+#     tk.sendCommand("link_sample_data  = LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,HTARGET,INPUT")
+# else:          
+#     tk.sendCommand("file_sample_data  = LEFT,RIGHT,GAZE,AREA,GAZERES,STATUS,INPUT")
+#     tk.sendCommand("link_sample_data  = LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,INPUT")
+# #gazeWindow = visual.Aperture(win, size=200)
+# #gazeWindow.enabled=False
+# # prepare a gaze-contingent mask
+# gazeMask = visual.GratingStim(win, tex='none', mask='circle', size=200, color=[1.0,1.0,1.0])
+# #end eyetracking
+# # store frame rate of monitor if we can measure it
+# expInfo['frameRate'] = win.getActualFrameRate()
+# if expInfo['frameRate'] != None:
+# 	frameDur = 1.0 / round(expInfo['frameRate'])
+# else:
+# 	frameDur = 1.0 / 60.0  # could not measure, so guess
 
-# record_status_message : show some info on the host PC
+# tk.setOfflineMode()
+# pylink.pumpDelay(50)
+# tk.sendMessage('TRIALID')
 
-# drift check
-try:
-    err = tk.doDriftCorrect(scnWidth/2, scnHeight/2,1,1)
-except:
-    tk.doTrackerSetup()
-# send the standard "TRIALID" message to mark the start of a trial
-# [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
-tk.sendMessage('TRIALID')
+# # record_status_message : show some info on the host PC
 
-# record_status_message : show some info on the host PC
-tk.sendCommand("record_status_message 'Task: %s'"% cond)
-# send the standard "TRIALID" message to mark the start of a trial
-# [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
-tk.sendMessage('TRIALID')
+# # drift check
+# try:
+#     err = tk.doDriftCorrect(scnWidth/2, scnHeight/2,1,1)
+# except:
+#     tk.doTrackerSetup()
+# # send the standard "TRIALID" message to mark the start of a trial
+# # [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
+# tk.sendMessage('TRIALID')
 
-# record_status_message : show some info on the host PC
-tk.sendCommand("record_status_message 'Task: %s'"% cond)
-error = tk.startRecording(1,1,1,1)
-pylink.pumpDelay(100) # wait for 100 ms to make sure data of interest is recorded
+# # record_status_message : show some info on the host PC
+# # send the standard "TRIALID" message to mark the start of a trial
+# # [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
+# tk.sendMessage('TRIALID')
+# error = tk.startRecording(1,1,1,1)
+# pylink.pumpDelay(100) # wait for 100 ms to make sure data of interest is recorded
 
-#determine which eye(s) are available
-eyeTracked = tk.eyeAvailable() 
-if eyeTracked==2: eyeTracked = 1
-
+# #determine which eye(s) are available
+# eyeTracked = tk.eyeAvailable() 
+# if eyeTracked==2: eyeTracked = 1
+#end of eyetracking block 1
 # enable the gaze-contingent aperture in the 'window' condition
 #if cond=='window': gazeWindow.enabled = True
 #else:              gazeWindow.enabled = False
 # Initialize components for Routine "trial"
+#scnWidth, scnHeight = (2560, 1440)
+# scnWidth, scnHeight
+#messy set ups
+deckRange = range(2,9)
+cardImageDir = 'cards/'
+TrialNum = 3
+timeLimit = 6
+rewardRevealTime = 4
+class GameStatus(Enum):
+	GAME_NOT_STARTED = 0
+	GAME_PLAYER_1_ROUND_STARTED = 1
+	GAME_PLAYER_1_BET_RESULT = 2
+	GAME_PLAYER_1_CHECK_RESULT = 3
+	GAME_PLAYER_2_ROUND_STARTED = 4
+	GAME_PLAYER_2_BET_RESULT = 5
+	GAME_PLAYER_2_FOLD_RESULT = 6
+	GAME_FINISHED = -1
 trialClock = core.Clock()
 handCapital = visual.TextStim(win=win, name='handCapital',
 	text='Your card',
 	font='Arial',
-	pos=(-0.7,0.8), height=0.06, wrapWidth=None, ori=0, 
+	pos=(-0.35*scnWidth,0.4*scnHeight), height=0.04*scnHeight, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=0.0);
 imageP1 = visual.ImageStim(
 	win=win, name='image',
 	image="sin", 
-	ori=0, pos=(-0.7,0.55), size=(0.2, 0.35),
+	ori=0, pos=(-0.351*scnWidth,0.27*scnHeight), size=(0.1*scnWidth, 0.17*scnHeight),
 	color=[1,1,1], colorSpace='rgb', opacity=1,
 	flipHoriz=False, flipVert=False,
 	texRes=128, interpolate=True, depth=0.0)
 hand2Capital = visual.TextStim(win=win1, name='hand2Capital',
 	text='Your card',
 	font='Arial',
-	pos=(-0.5,0.8), height=0.1, wrapWidth=None, ori=0, 
+	pos=(-0.35*scnWidth1,0.4*scnHeight1), height=0.04*scnHeight1, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=-1.0);
 potText1 = visual.TextStim(win=win, name='handCapital',
 	text='Current Pot: \n 2',
 	font='Arial',
-	pos=(0.7,-0.5), height=0.06, wrapWidth=None, ori=0, 
+	pos=(0.35*scnWidth,-0.25*scnHeight), height=0.04*scnHeight, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=0.0);
 potText2 = visual.TextStim(win=win1, name='handCapital',
 	text='Current Pot: \n 2',
 	font='Arial',
-	pos=(0.5,-0.5), height=0.06, wrapWidth=None, ori=0, 
+	pos=(0.35*scnWidth1,-0.25*scnHeight1), height=0.04*scnHeight, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=0.0);
 imageP2 = visual.ImageStim(
 	win=win1, name='image1',
 	image="sin", 
-	ori=0, pos=(-0.5,0.55), size=(0.2, 0.35),
+	ori=0, pos=(-0.35*scnWidth1,0.27*scnHeight1), size=(0.1*scnWidth1, 0.17*scnHeight1),
 	color=[1,1,1], colorSpace='rgb', opacity=1,
 	flipHoriz=False, flipVert=False,
 	texRes=128, interpolate=True, depth=0.0)
@@ -260,7 +264,7 @@ imageP2 = visual.ImageStim(
 P1WaitingWords = visual.TextStim(win=win, name='P1WaitingWords',
 	text='default text',
 	font='Arial',
-	pos=(0,0.2), height=0.1, wrapWidth=None, ori=0, 
+	pos=(0,0), height=0.035*scnHeight, wrapWidth=None, ori=0, 
 	color='Blue', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=-1.0);
@@ -268,7 +272,7 @@ P1WaitingWords = visual.TextStim(win=win, name='P1WaitingWords',
 P2WaitingWords = visual.TextStim(win=win1, name='P2WaitingWords',
 	text='default text',
 	font='Arial',
-	pos=(0,0), height=0.1, wrapWidth=None, ori=0, 
+	pos=(0,0 ), height=0.035*scnHeight1, wrapWidth=1000, ori=0, 
 	color='Blue', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=-1.0);
@@ -276,21 +280,21 @@ P2WaitingWords = visual.TextStim(win=win1, name='P2WaitingWords',
 handOpponentCapital = visual.TextStim(win=win, name='handOpponentCapital',
 	text='Your opponent card',
 	font='Arial',
-	pos=(0.7,0.8), height=0.06, wrapWidth=None, ori=0, 
+	pos=(0.35*scnWidth,0.4*scnHeight), height=0.04*scnHeight, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=0.0);
 hand2OpponentCapital = visual.TextStim(win=win1, name='hand2OpponentCapital',
 	text='Your opponent card',
 	font='Arial',
-	pos=(0.5,0.8), height=0.1, wrapWidth=None, ori=0, 
+	pos=(0.35*scnWidth1,0.4*scnHeight1), height=0.04*scnHeight1, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=-1.0);
 imageOpp1 = visual.ImageStim(
 	win=win, name='image',
 	image=cardImageDir+"back.png", 
-	ori=0, pos=(0.7,0.55), size=(0.2, 0.35),
+	ori=0, pos=(0.3*scnWidth,0.27*scnHeight), size=(0.1*scnWidth, 0.17*scnHeight),
 	color=[1,1,1], colorSpace='rgb', opacity=1,
 	flipHoriz=False, flipVert=False,
 	texRes=128, interpolate=True, depth=0.0)
@@ -298,7 +302,7 @@ imageOpp1 = visual.ImageStim(
 imageOpp2 = visual.ImageStim(
 	win=win1, name='image',
 	image=cardImageDir+"back.png", 
-	ori=0, pos=(0.5,0.55), size=(0.2, 0.35),
+	ori=0, pos=(0.3*scnWidth1,0.27*scnHeight1), size=(0.1*scnWidth1, 0.17*scnHeight1),
 	color=[1,1,1], colorSpace='rgb', opacity=1,
 	flipHoriz=False, flipVert=False,
 	texRes=128, interpolate=True, depth=0.0)
@@ -306,28 +310,28 @@ imageOpp2 = visual.ImageStim(
 decks = visual.TextStim(win=win, name='decks',
 	text='Current decks\n2,3,4,5,6,7,8',
 	font='Arial',
-	pos=(0,-0.7), height=0.05, wrapWidth=None, ori=0, 
+	pos=(0,-0.35*scnHeight), height=0.03*scnHeight, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=-2.0);
 decks2 = visual.TextStim(win=win1, name='decks2',
 	text='Current decks\n2,3,4,5,6,7,8',
 	font='Arial',
-	pos=(0,-0.7), height=0.1, wrapWidth=None, ori=0, 
+	pos=(0,-0.35*scnHeight1), height=0.03*scnHeight1, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=-2.0); 
 Reshuffling = visual.TextStim(win=win, name='handOpponentCapital',
 	text=' Press (SPACE) to enter next trial',
 	font='Arial',
-	pos=(0,0), height=0.08, wrapWidth=None, ori=0, 
+	pos=(0,0), height=0.04*scnHeight, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=0.0);
 Reshuffling1 = visual.TextStim(win=win1, name='handOpponentCapital',
 	text='Waiting for P1 to get prepared for the next trial',
 	font='Arial',
-	pos=(0,0), height=0.08, wrapWidth=None, ori=0, 
+	pos=(0,0), height=0.04*scnHeight, wrapWidth=None, ori=0, 
 	color='white', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=0.0);
@@ -366,11 +370,11 @@ for thisTrial in trials:
 	p1card = str(cards[0])
 	p2card = str(cards[1])
 	# update component parameters for each repeat
-	tk.sendMessage("record_status_message 'Card P1: %d'"% cards[0])
+	#tk.sendMessage("record_status_message 'Card P1: %d'"% cards[0])
 	imageP1.setImage(cardImageDir+p1card+'.png')
 	imageP2.setImage(cardImageDir+p2card+'.png')
 #    image.draw()
-	P1WaitingWords.setText('Press (b) to bet \n Press (h) to check')
+	P1WaitingWords.setText('Press (b) to bet\nPress (h) to check')
 	P2WaitingWords.setText('Wait for player 1 making decision')
 	potText1.setText('Current Pot: \n 2')
 	potText2.setText('Current Pot: \n 2')
@@ -522,8 +526,8 @@ for thisTrial in trials:
 			gameStatus = GameStatus.GAME_PLAYER_2_ROUND_STARTED
 			potText1.setText('Current Pot: \n 2 + 2 =4')
 			potText2.setText('Current Pot: \n 2 + 2 =4')
-			P1WaitingWords.setText('Wait for player 2 making  decision')
-			P2WaitingWords.setText('Player one choose to bet,\n press (c) to call and (f) to fold')
+			P1WaitingWords.setText('Wait for player 2 making decision')
+			P2WaitingWords.setText('Player one bets,\n press (c) to call and (f) to fold')
 			player2ActionCheck.tStart = t
 			player2ActionCheck.frameNStart = frameN
 			player2ActionCheck.status = STARTED
@@ -535,18 +539,18 @@ for thisTrial in trials:
 		elif gameStatus == GameStatus.GAME_PLAYER_1_CHECK_RESULT:
 			win.flip()
 			win1.flip()
-			P2WaitingWords.setText('Player 1 choose to check,\n you do not need to make a decision')
+			P2WaitingWords.setText('Player 1 choose to check,\nyou do not need to make a decision')
 			P1WaitingWords.setAutoDraw(False)
 			win.flip()
 			win1.flip()
 			core.wait(3)
 			P1WaitingWords.setAutoDraw(True)
 			if cards[0]>cards[1]:
-				P2WaitingWords.setText('Your card is smaller.\n You earn -1')
-				P1WaitingWords.setText('Your card is larger\n You earn +1')
+				P2WaitingWords.setText('Your card is smaller.\nYou earn -1')
+				P1WaitingWords.setText('Your card is larger\nYou earn +1')
 			else:
-				P1WaitingWords.setText('Your card is smaller.\n You earn -1')
-				P2WaitingWords.setText('Your card is larger\n You earn +1')
+				P1WaitingWords.setText('Your card is smaller.\nYou earn -1')
+				P2WaitingWords.setText('Your card is larger\nYou earn +1')
 			win.flip()
 			win1.flip()
 			core.wait(rewardRevealTime)
@@ -578,12 +582,14 @@ for thisTrial in trials:
 #					core.wait(rewardRevealTime)
 			
 		elif gameStatus == GameStatus.GAME_PLAYER_2_BET_RESULT:
+			potText1.setText('Current Pot: \n 4 + 2 =6')
+			potText2.setText('Current Pot: \n 4 + 2 =6')
 			if cards[0]>cards[1]:
-				P2WaitingWords.setText('His card is larger and \nYou lost 3 points')
-				P1WaitingWords.setText('Your opponent choose to bet, \n but Your card is larger, you win 3 points')
+				P2WaitingWords.setText('Your card is smaller\nYou earn -3')
+				P1WaitingWords.setText('Your opponent choose to bet.\nYour card is larger, you earn +3')
 			else:
-				P1WaitingWords.setText('Your opponent choose to bet, \n and his card is larger, you lost 3 points')
-				P2WaitingWords.setText('Your card is larger and \nYou win 3 points')
+				P1WaitingWords.setText('Your opponent choose to bet.\nYour card is smaller, you earn -3')
+				P2WaitingWords.setText('Your card is larger\nYou earn +3')
 			win.flip()
 			win1.flip()
 			core.wait(rewardRevealTime)
@@ -594,8 +600,8 @@ for thisTrial in trials:
 			gameStatus = GameStatus.GAME_FINISHED
 			win.flip()
 			win1.flip()
-			P1WaitingWords.setText('Your opponent choose to fold and you win 1 point')
-			P2WaitingWords.setText('Since you folded, you lose 1 point')
+			P1WaitingWords.setText('Your opponent choose to fold and you earn +1')
+			P2WaitingWords.setText('Since you folded, you earn -1')
 			win.flip()
 			win1.flip()
 			core.wait(rewardRevealTime)
@@ -616,7 +622,7 @@ for thisTrial in trials:
 		if gameStatus == GameStatus.GAME_FINISHED: 
 			# a component has requested a forced-end of Routine
 			Reshuffling1.setText('Waiting for P1 to get prepared for the next trial')
-			Reshuffling.setText(' Press (SPACE) to enter next trial')
+			Reshuffling.setText('Press (SPACE) to enter next trial')
 			imageP1.setAutoDraw(False)
 			imageOpp1.setAutoDraw(False)
 			imageP2.setAutoDraw(False)
@@ -642,8 +648,8 @@ for thisTrial in trials:
 			win.flip()
 			win1.flip() 
 			event.waitKeys(keyList = ["return",'b'])
-			Reshuffling.setText('Reshuffling in 2s...\n Contributing 1 point to the pot. \n')
-			Reshuffling1.setText('Reshuffling in 2s...\n Contributing 1 point to the pot. \n')
+			Reshuffling.setText('Reshuffling in 2s...\nContributing 1 point to the pot. \n')
+			Reshuffling1.setText('Reshuffling in 2s...\nContributing 1 point to the pot. \n')
 			win.flip()
 			win1.flip()
 			core.wait(2)
@@ -652,7 +658,7 @@ for thisTrial in trials:
 			#break
 		win.flip()
 		win1.flip()
-	tk.sendMessage('TRIAL_RESULT')
+	#tk.sendMessage('TRIAL_RESULT')
 
 
     # disable the aperture at the end of each trials
@@ -681,21 +687,21 @@ for thisTrial in trials:
 	thisExp.nextEntry()
 	
 # completed 5 repeats of 'trials'
-pylink.pumpDelay(100)
-tk.stopRecording() # stop recording
-# close the EDF data file
-tk.setOfflineMode()
-tk.closeDataFile()
-pylink.pumpDelay(50)
+# pylink.pumpDelay(100)
+# tk.stopRecording() # stop recording
+# # close the EDF data file
+# tk.setOfflineMode()
+# tk.closeDataFile()
+# pylink.pumpDelay(50)
 
-# Get the EDF data and say goodbye
-tk.receiveDataFile(dataFileName, dataFolder + dataFileName)
+# # Get the EDF data and say goodbye
+# tk.receiveDataFile(dataFileName, dataFolder + dataFileName)
 
-#close the link to the tracker
-tk.close()
+# #close the link to the tracker
+# tk.close()
 
-# close the graphics
-pylink.closeGraphics()
+# # close the graphics
+# pylink.closeGraphics()
 # these shouldn't be strictly necessary (should auto-save)
 thisExp.saveAsWideText(filename+'.csv')
 thisExp.saveAsPickle(filename)
