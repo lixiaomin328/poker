@@ -257,7 +257,7 @@ imageP2 = visual.ImageStim(
 P1WaitingWords = visual.TextStim(win=win, name='P1WaitingWords',
 	text='default text',
 	font='Arial',
-	pos=(0,0), height=0.035*scnHeight, wrapWidth=None, ori=0, 
+	pos=(0,0), height=0.035*scnHeight, wrapWidth=1000, ori=0, 
 	color='Blue', colorSpace='rgb', opacity=1, 
 	languageStyle='LTR',
 	depth=-1.0);
@@ -353,13 +353,13 @@ for thisTrial in trials:
 		for paramName in thisTrial:
 			exec('{} = thisTrial[paramName]'.format(paramName))
 	if trials.thisN==0:
-		P1WaitingWords.setText('You will have three practice trials,\n it will not count for the payment')
-		P2WaitingWords.setText('You will have three practice trials,\n it will not count for the payment')
+		P1WaitingWords.setText('You will have three practice trials,\nit will not count towards the payment')
+		P2WaitingWords.setText('You will have three practice trials,\nit will not count towards the payment')
 		P1WaitingWords.setAutoDraw(True)
 		P2WaitingWords.setAutoDraw(True)
 		win.flip()
 		win1.flip()
-		core.wait(3)
+		core.wait(5)
 		P1WaitingWords.setAutoDraw(False)
 		P2WaitingWords.setAutoDraw(False)
 	# ------Prepare to start Routine "trial"-------
