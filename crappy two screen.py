@@ -347,13 +347,21 @@ if thisTrial != None:
 		exec('{} = thisTrial[paramName]'.format(paramName))
 
 for thisTrial in trials:
-	cond=1
 	currentLoop = trials
 	# abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
 	if thisTrial != None:
 		for paramName in thisTrial:
 			exec('{} = thisTrial[paramName]'.format(paramName))
-	
+	if trials.thisN==0:
+		P1WaitingWords.setText('You will have three practice trials,\n it will not count for the payment')
+		P2WaitingWords.setText('You will have three practice trials,\n it will not count for the payment')
+		P1WaitingWords.setAutoDraw(True)
+		P2WaitingWords.setAutoDraw(True)
+		win.flip()
+		win1.flip()
+		core.wait(3)
+		P1WaitingWords.setAutoDraw(False)
+		P2WaitingWords.setAutoDraw(False)
 	# ------Prepare to start Routine "trial"-------
 	t = 0
 	trialClock.reset()  # clock
@@ -362,6 +370,8 @@ for thisTrial in trials:
 	cards = np.asarray(random.sample(deckRange, 2))
 	p1card = str(cards[0])
 	p2card = str(cards[1])
+
+	
 	# update component parameters for each repeat
 	tk.sendMessage("record_status_message 'Card P1: %d'"% cards[0])
 	imageP1.setImage(cardImageDir+p1card+'.png')
@@ -381,7 +391,7 @@ for thisTrial in trials:
 	for thisComponent in trialComponents:
 		if hasattr(thisComponent, 'status'):
 			thisComponent.status = NOT_STARTED
-		
+
 	# -------Start Routine "trial"-------
 	while gameStatus != GameStatus.GAME_FINISHED and conitueRoutine:
 		# get current time
@@ -608,8 +618,12 @@ for thisTrial in trials:
 		# check if all components have finished
 		if gameStatus == GameStatus.GAME_FINISHED: 
 			# a component has requested a forced-end of Routine
-			Reshuffling1.setText('Waiting for P1 to get prepared for the next trial')
-			Reshuffling.setText('Press (SPACE) to enter next trial')
+			if trials.thisN==2:
+				Reshuffling.setText('That is the end of practice trial.\n Press (SPACE) if you are ready')
+				Reshuffling1.setText('Waiting for P1 to get prepared for the next trial')
+			else:
+				Reshuffling1.setText('Waiting for P1 to get prepared for the next trial')
+				Reshuffling.setText('Press (SPACE) to enter next trial')
 			imageP1.setAutoDraw(False)
 			imageOpp1.setAutoDraw(False)
 			imageP2.setAutoDraw(False)
@@ -630,8 +644,12 @@ for thisTrial in trials:
 			win1.flip()
 			conitueRoutine = False
 			event.waitKeys(keyList = ["space"])
-			Reshuffling.setText('Waiting for P2 to get prepared')
-			Reshuffling1.setText('P1 is prepared, press (RETURN) to next trial')
+			if trials.thisN==2:
+				Reshuffling.setText('Waiting for P2 to get prepared')
+				Reshuffling1.setText('That is the end of practice trial.\n Press (Enter) if you are ready')
+			else:    
+				Reshuffling.setText('Waiting for P2 to get prepared')
+				Reshuffling1.setText('P1 is prepared, press (RETURN) to next trial')
 			win.flip()
 			win1.flip() 
 			event.waitKeys(keyList = ["return",'b'])
