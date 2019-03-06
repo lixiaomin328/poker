@@ -500,6 +500,7 @@ for thisTrial in trials:
 			# keyboard checking is just starting
 			win.callOnFlip(player1ActionCheck.clock.reset)  # t=0 on next screen flip
 			win1.callOnFlip(player1ActionCheck.clock.reset)
+			tk.sendMessage("P1 prechoose")
 			event.clearEvents(eventType='keyboard')
 		elif gameStatus == GameStatus.GAME_PLAYER_1_ROUND_STARTED:          
 			if player1ActionCheck.status == STARTED:
@@ -510,6 +511,8 @@ for thisTrial in trials:
 				
 
 				if len(theseKeys) > 0:  # at least one key was pressed
+					tk.sendMessage("P1 choose time")
+
 #					core.wait(timeLimit - player1ActionCheck.clock.getTime())
 					if player1ActionCheck.keys == []:  # then this was the first keypress
 						player1ActionCheck.keys = theseKeys[0]  # just the first key pressed
@@ -537,6 +540,7 @@ for thisTrial in trials:
 			# keyboard checking is just starting
 			win.callOnFlip(player2ActionCheck.clock.reset)  # t=0 on next screen flip
 			win1.callOnFlip(player2ActionCheck.clock.reset)
+			tk.sendMessage("P2 prechoose")
 			event.clearEvents(eventType='keyboard')
 			
 		elif gameStatus == GameStatus.GAME_PLAYER_1_CHECK_RESULT:
@@ -546,6 +550,7 @@ for thisTrial in trials:
 			P1WaitingWords.setAutoDraw(False)
 			win.flip()
 			win1.flip()
+			tk.sendMessage("P1 checked")
 			core.wait(3)
 			P1WaitingWords.setAutoDraw(True)
 			if cards[0]>cards[1]:
@@ -556,6 +561,7 @@ for thisTrial in trials:
 				P2WaitingWords.setText('Your card is larger\nYou earn +1')
 			win.flip()
 			win1.flip()
+			tk.sendMessage("check result revealed")
 			core.wait(rewardRevealTime)
 			gameStatus = GameStatus.GAME_FINISHED
 			# TODO(xiaomin): set up text
@@ -568,6 +574,8 @@ for thisTrial in trials:
 					endExpNow = True
 				
 				if len(theseKeys) > 0:  # at least one key was pressed
+					tk.sendMessage("P2 choose timed")
+
 #					core.wait(timeLimit - player2ActionCheck.clock.getTime())
 					if player2ActionCheck.keys == []:  # then this was the first keypress
 						player2ActionCheck.keys = theseKeys[0]  # just the first key pressed
@@ -595,6 +603,7 @@ for thisTrial in trials:
 				P2WaitingWords.setText('Your card is larger\nYou earn +3')
 			win.flip()
 			win1.flip()
+			tk.sendMessage("bet result revealed")
 			core.wait(rewardRevealTime)
 			gameStatus = GameStatus.GAME_FINISHED
 			# TODO(xiaomin): set up text
@@ -607,6 +616,7 @@ for thisTrial in trials:
 			P2WaitingWords.setText('Since you folded, you earn -1')
 			win.flip()
 			win1.flip()
+			tk.sendMessage("fold result revealed")
 			core.wait(rewardRevealTime)
 
 
