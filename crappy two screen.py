@@ -14,7 +14,7 @@ import sys  # to get file system encoding
 import random
 from enum import Enum
 useGUI = True #  use the Psychopy GUI module to collect subject information
-dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
+dummyMode = False # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 
 # STEP I: get subject info
 expInfo = {'SubjectNO':'00', 'SubjectInitials':'TEST'}
@@ -83,7 +83,7 @@ scnWidth1, scnHeight1 = (2880, 1800)
 mon = monitors.Monitor('myMac15', width=53.0, distance=70.0)
 mon.setSizePix((scnWidth, scnHeight))
 win1 = visual.Window(
-	size=[scnWidth1, scnHeight1], pos =(0,0),fullscr=False, screen=1,
+	size=[scnWidth1, scnHeight1], pos =(0,0),fullscr=False, screen=2,
 	allowGUI=False, allowStencil=False,
 	monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
 	blendMode='avg', useFBO=True,
