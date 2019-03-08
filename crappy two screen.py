@@ -28,6 +28,7 @@ else:
     expInfo['SubjectInitials'] = raw_input('Subject Initials (e.g., WZ): ')
 
  #SETP II: established a link to the tracker
+
 if not dummyMode: 
     tk = pylink.EyeLink('100.1.1.1')
 else:
@@ -52,16 +53,12 @@ os.chdir(_thisDir)
 # Store info about the experiment session
 psychopyVersion = '3.0.3'
 expName = 'poker_test'  # from the Builder filename that created this script
-expInfo = {'participant': '', 'session': '001'}
-dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
-if dlg.OK == False:
-	core.quit()  # user pressed cancel
 expInfo['date'] = data.getDateStr()  # add a simple timestamp
 expInfo['expName'] = expName
 expInfo['psychopyVersion'] = psychopyVersion
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + 'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])
+filename = _thisDir + os.sep + 'data/%s_%s_%s' % (expInfo['SubjectNO'], expName, expInfo['date'])
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
@@ -76,7 +73,7 @@ logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a f
 # STEP IV: Initialize custom graphics for camera setup & drift correction
 #scnWidth, scnHeight = (2560, 1440)
 scnWidth, scnHeight = (1920, 1080)
-scnWidth1, scnHeight1 = (2880, 1800)
+scnWidth1, scnHeight1 = (1920, 1200)
 # for mon in monitors.getAllMonitors():
 # 	size1 = monitors.Monitor(mon).getSizePix())
 ##Window Set up
@@ -193,7 +190,114 @@ if eyeTracked==2:
 #enable the gaze-contingent aperture in the 'window' condition
 
 
+#Eyetracker 2
+if not dummyMode: 
+    tk2 = pylink.EyeLink('100.1.1.11')
+else:
+    tk2 = pylink.EyeLink(None)
+dataFolder = os.getcwd() + '/edfData/'
+dataFileName1 = expInfo['SubjectNO'] + '_'+'.EDF'
+tk2.openDataFile(dataFileName1)
+# add personalized data file header (preamble text)
+tk2.sendCommand("add_file_preamble_text 'Psychopy GC demo'") 
+genv = EyeLinkCoreGraphicsPsychoPy(tk2, win1)
+pylink.openGraphicsEx(genv)
+tk2.setOfflineMode()
 
+ # sampling rate, 250, 500, 1000, or 2000; this command won't work for EyeLInk II/I
+tk2.sendCommand('sample_rate 500')
+
+ # inform the tracker the resolution of the subject display
+ # [see Eyelink Installation Guide, Section 8.4: Customizing Your PHYSICAL.INI Settings ]
+tk2.sendCommand("screen_pixel_coords = 0 0 %d %d" % (scnWidth-1, scnHeight-1))
+
+ # save display resolution in EDF data file for Data Viewer integration purposes
+ # [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
+tk2.sendMessage("DISPLAY_COORDS = 0 0 %d %d" % (scnWidth-1, scnHeight-1))
+
+ # specify the calibration type, H3, HV3, HV5, HV13 (HV = horiztonal/vertical), 
+tk2.sendCommand("calibration_type = HV9") # tk.setCalibrationType('HV9') also works, see the Pylink manual
+
+ # specify the proportion of subject display to calibrate/validate (OPTIONAL, useful for wide screen monitors)
+ #tk.sendCommand("calibration_area_proportion 0.85 0.83")
+ #tk.sendCommand("validation_area_proportion  0.85 0.83")
+
+ # Using a button from the EyeLink Host PC gamepad to accept calibration/dirft check target (optional)
+ # tk.sendCommand("button_function 5 'accept_target_fixation'")
+
+ # the model of the tracker, 1-EyeLink I, 2-EyeLink II, 3-Newer models (100/1000Plus/DUO)
+eyelinkVer = tk2.getTrackerVersion()
+
+ #turn off scenelink camera stuff (EyeLink II/I only)
+if eyelinkVer == 2: 
+    tk2.sendCommand("scene_camera_gazemap = NO")
+
+ # Set the tracker to parse Events using "GAZE" (or "HREF") data
+tk2.sendCommand("recording_parse_type = GAZE")
+
+ # Online parser configuration: 0-> standard/coginitve, 1-> sensitive/psychophysiological
+ # the Parser for EyeLink I is more conservative, see below
+ # [see Eyelink User Manual, Section 4.3: EyeLink Parser Configuration]
+if eyelinkVer>=2: 
+    tk2.sendCommand('select_parser_configuration 0')
+
+ # get Host tracking software version
+hostVer = 0
+if eyelinkVer == 3:
+    tvstr  = tk2.getTrackerVersionString()
+    vindex = tvstr.find("EYELINK CL")
+    hostVer = int(float(tvstr[(vindex + len("EYELINK CL")):].strip()))
+
+ # specify the EVENT and SAMPLE data that are stored in EDF or retrievable from the Link
+ # See Section 4 Data Files of the EyeLink user manual
+tk2.sendCommand("file_event_filter = LEFT,RIGHT,FIXATION,SACCADE,BLINK,MESSAGE,BUTTON,INPUT")
+tk2.sendCommand("link_event_filter = LEFT,RIGHT,FIXATION,FIXUPDATE,SACCADE,BLINK,BUTTON,INPUT")
+if hostVer>=4: 
+    tk2.sendCommand("file_sample_data  = LEFT,RIGHT,GAZE,AREA,GAZERES,STATUS,HTARGET,INPUT")
+    tk2.sendCommand("link_sample_data  = LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,HTARGET,INPUT")
+else:          
+    tk2.sendCommand("file_sample_data  = LEFT,RIGHT,GAZE,AREA,GAZERES,STATUS,INPUT")
+    tk2.sendCommand("link_sample_data  = LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,INPUT")
+ #gazeWindow = visual.Aperture(win, size=200)
+ #gazeWindow.enabled=False
+ # prepare a gaze-contingent mask
+gazeMask = visual.GratingStim(win, tex='none', mask='circle', size=200, color=[1.0,1.0,1.0])
+ #end eyetracking
+ # store frame rate of monitor if we can measure it
+expInfo['frameRate'] = win1.getActualFrameRate()
+if expInfo['frameRate'] != None:
+	frameDur = 1.0 / round(expInfo['frameRate'])
+else:
+	frameDur = 1.0 / 60.0  # could not measure, so guess
+
+tk2.setOfflineMode()
+pylink.pumpDelay(50)
+tk2.sendMessage('TRIALID')
+
+ # record_status_message : show some info on the host PC
+
+ # drift check
+try:
+    err = tk2.doDriftCorrect(scnWidth/2, scnHeight/2,1,1)
+except:
+    tk2.doTrackerSetup()
+ # send the standard "TRIALID" message to mark the start of a trial
+ # [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
+tk2.sendMessage('TRIALID')
+
+ # record_status_message : show some info on the host PC
+ # send the standard "TRIALID" message to mark the start of a trial
+ # [see Data Viewer User Manual, Section 7: Protocol for EyeLink Data to Viewer Integration]
+tk2.sendMessage('TRIALID')
+error2 = tk2.startRecording(1,1,1,1)
+pylink.pumpDelay(100) # wait for 100 ms to make sure data of interest is recorded
+
+ #determine which eye(s) are available
+eyeTracked = tk2.eyeAvailable() 
+if eyeTracked==2: 
+    eyeTracked = 1
+#end of eyetracking block 1
+#enable the gaze-contingent aperture in the 'window' condition
 # Initialize components for Routine "trial"
 #messy set ups for game
 deckRange = range(2,9)
@@ -374,6 +478,7 @@ for thisTrial in trials:
 	
 	# update component parameters for each repeat
 	tk.sendMessage("record_status_message 'Card P1: %d'"% cards[0])
+	tk2.sendMessage("record_status_message 'Card P2: %d'"% cards[1])
 	imageP1.setImage(cardImageDir+p1card+'.png')
 	imageP2.setImage(cardImageDir+p2card+'.png')
 #    image.draw()
@@ -701,17 +806,26 @@ for thisTrial in trials:
 #completed 5 repeats of 'trials'
 pylink.pumpDelay(100)
 tk.stopRecording() # stop recording
+tk2.stopRecording()
  # close the EDF data file
 tk.setOfflineMode()
 tk.closeDataFile()
+tk2.setOfflineMode()
+tk2.closeDataFile()
 pylink.pumpDelay(50)
 
  # Get the EDF data and say goodbye
-tk.receiveDataFile(dataFileName, dataFolder + dataFileName)
-
+#tk.receiveDataFile(dataFileName, dataFolder + dataFileName)
+tk2.receiveDataFile(dataFileName1, dataFolder + dataFileName1)
  #close the link to the tracker
-tk.close()
 
+tk2.close()
+if not dummyMode: 
+    tk3 = pylink.EyeLink('100.1.1.1')
+else:
+    tk3 = pylink.EyeLink(None)
+tk3.receiveDataFile(dataFileName, dataFolder + dataFileName)
+tk3.close()
  # close the graphics
 pylink.closeGraphics()
 # these shouldn't be strictly necessary (should auto-save)

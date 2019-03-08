@@ -1,0 +1,347 @@
+1.2118 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+7.7152 	WARNING 	Monitor specification not found. Creating a temporary one...
+8.3517 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x10e7d0eb8>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x110f4bb00>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=2, size=array([1920, 1200]), stereo=False, units='pix', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+8.3523 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [2560, 1440]. Using actual size
+10.1465 	DATA 	Keypress: return
+10.1961 	EXP 	Set  sound=C
+10.1967 	EXP 	Set  sound=A
+10.1971 	EXP 	Set  sound=E
+10.1977 	EXP 	Set  sound=E
+11.3468 	DATA 	Keypress: return
+11.3490 	DATA 	Keypress: space
+11.3512 	DATA 	Keypress: escape
+12.1989 	DATA 	Keypress: return
+16.8399 	DATA 	Keypress: return
+23.4552 	DATA 	Keypress: escape
+23.4803 	EXP 	window1: units = 'pix'
+23.7740 	EXP 	Set  sound=A
+23.7744 	EXP 	Set  sound=E
+23.7748 	EXP 	Set  sound=E
+23.7749 	EXP 	window1: mouseVisible = False
+23.7760 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=24.0, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([   0., -264.]), rgb=array([1., 1., 1.]), text='', units='pix', win=Window(...), wrapWidth=1024)
+23.8121 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='left', alignVert='top', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=24.0, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-512.,  384.]), rgb=array([1., 1., 1.]), text=str(...), units='pix', win=Window(...), wrapWidth=500)
+23.8132 	EXP 	Created unnamed Line = Line(__class__=<class 'psychopy.visual.line.Line'>, autoDraw=False, autoLog=True, closeShape=False, contrast=1.0, depth=0, fillColor=None, fillColorSpace='rgb', interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineWidth=2.0, name='unnamed Line', opacity=1.0, ori=array(0.), pos=array([0., 0.]), size=array([1., 1.]), units='pix', vertices=array([[0., 0.],
+       [0., 0.]]), win=Window(...), windingRule=None)
+24.8276 	EXP 	window1: recordFrameIntervals = False
+24.9693 	EXP 	window1: recordFrameIntervals = True
+25.1530 	EXP 	window1: recordFrameIntervals = False
+28.5517 	DATA 	Keypress: return
+28.6408 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, image=Image(...), interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([576, 480]), texRes=128, units='pix', win=Window(...))
+28.6733 	EXP 	unnamed TextStim: autoDraw = True
+28.6733 	EXP 	unnamed TextStim: autoDraw = True
+28.6733 	EXP 	unnamed TextStim: autoDraw = True
+28.6733 	EXP 	unnamed TextStim: text = 'Camera:  RIGHT     Threshold:  P=41    CR=181 '
+28.6733 	EXP 	unnamed Line: start = (-288.0, 2157.0)
+28.6733 	EXP 	unnamed Line: end = (288.0, 2157.0)
+28.6733 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.6733 	EXP 	unnamed Line: start = (-2589.0, 240.0)
+28.6733 	EXP 	unnamed Line: end = (-2589.0, -240.0)
+28.6733 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.6733 	EXP 	unnamed Line: start = (-2637.0, 2157.0)
+28.6733 	EXP 	unnamed Line: end = (-2604.0, 2157.0)
+28.6733 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.6733 	EXP 	unnamed Line: start = (-2574.0, 2157.0)
+28.6733 	EXP 	unnamed Line: end = (-2541.0, 2157.0)
+28.6733 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.6733 	EXP 	unnamed Line: start = (-2589.0, 2205.0)
+28.6733 	EXP 	unnamed Line: end = (-2589.0, 2172.0)
+28.6733 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.6733 	EXP 	unnamed Line: start = (-2589.0, 2142.0)
+28.6733 	EXP 	unnamed Line: end = (-2589.0, 2109.0)
+28.6733 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.6733 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.6733 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.6733 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7427 	DATA 	Keypress: return
+28.7468 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, image=Image(...), interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([576, 480]), texRes=128, units='pix', win=Window(...))
+28.7734 	EXP 	unnamed Line: start = (-288.0, 2157.0)
+28.7734 	EXP 	unnamed Line: end = (288.0, 2157.0)
+28.7734 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.7734 	EXP 	unnamed Line: start = (-2589.0, 240.0)
+28.7734 	EXP 	unnamed Line: end = (-2589.0, -240.0)
+28.7734 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.7734 	EXP 	unnamed Line: start = (-2637.0, 2157.0)
+28.7734 	EXP 	unnamed Line: end = (-2604.0, 2157.0)
+28.7734 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.7734 	EXP 	unnamed Line: start = (-2574.0, 2157.0)
+28.7734 	EXP 	unnamed Line: end = (-2541.0, 2157.0)
+28.7734 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.7734 	EXP 	unnamed Line: start = (-2589.0, 2205.0)
+28.7734 	EXP 	unnamed Line: end = (-2589.0, 2172.0)
+28.7734 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.7734 	EXP 	unnamed Line: start = (-2589.0, 2142.0)
+28.7734 	EXP 	unnamed Line: end = (-2589.0, 2109.0)
+28.7734 	EXP 	unnamed Line: lineColor = (1, 1, 1)
+28.7734 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2592.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2595.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7734 	EXP 	unnamed Line: start = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: end = (-2598.0, 2160.0)
+28.7734 	EXP 	unnamed Line: lineColor = (-1, 1, -1)
+28.7744 	EXP 	window1: color = array([0., 0., 0.])
+28.7901 	EXP 	unnamed TextStim: autoDraw = False
+28.7901 	EXP 	unnamed TextStim: autoDraw = False
+28.8067 	EXP 	unnamed TextStim: autoDraw = True
+29.1028 	DATA 	Keypress: space
+32.7704 	DATA 	Keypress: escape
+32.7799 	EXP 	window1: units = 'pix'
+32.7803 	EXP 	window1: color = array([0., 0., 0.])
+32.7945 	EXP 	unnamed TextStim: autoDraw = True
+32.7945 	EXP 	unnamed TextStim: autoDraw = False
+32.7945 	EXP 	unnamed TextStim: autoDraw = False
+32.9354 	EXP 	Created hand2Capital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=48.0, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-672.,  480.]), rgb=array([255., 255., 255.]), text='Your card', units='pix', win=Window(...), wrapWidth=500)
+32.9524 	EXP 	Created handCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 672., -300.]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='pix', win=Window(...), wrapWidth=500)
+32.9546 	EXP 	Created image1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-672.,  324.]), size=array([192., 204.]), texRes=128, units='pix', win=Window(...))
+32.9750 	EXP 	Created P2WaitingWords = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=42.00000000000001, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='pix', win=Window(...), wrapWidth=1000)
+32.9911 	EXP 	Created hand2OpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=48.0, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([672., 480.]), rgb=array([255., 255., 255.]), text='Your opponent card', units='pix', win=Window(...), wrapWidth=500)
+33.0691 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([576., 324.]), size=array([192., 204.]), texRes=128, units='pix', win=Window(...))
+33.1019 	EXP 	Created decks2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=36.0, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([   0., -420.]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='pix', win=Window(...), wrapWidth=500)
+33.1308 	EXP 	Created handOpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='pix', win=Window(...), wrapWidth=500)
+33.1312 	EXP 	Created sequence: random, trialTypes=1, nReps=3, seed=None
+33.1315 	EXP 	New trial (rep=0, index=0): None
+33.1949 	EXP 	P2WaitingWords: text = 'You will have three practice trials,\nit will not count towards the payment'
+33.1949 	EXP 	P2WaitingWords: autoDraw = True
+38.2670 	EXP 	P2WaitingWords: autoDraw = False
+38.2670 	EXP 	image1: image = 'cards/3.png'
+38.2670 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+38.2670 	EXP 	handCapital: text = 'Current Pot: \n 2'
+38.2670 	EXP 	handOpponentCapital: autoDraw = False
+38.2670 	EXP 	image1: autoDraw = True
+38.2670 	EXP 	image: autoDraw = True
+38.2670 	EXP 	hand2Capital: autoDraw = True
+38.2670 	EXP 	handCapital: autoDraw = True
+38.2670 	EXP 	hand2OpponentCapital: autoDraw = True
+38.2670 	EXP 	decks2: autoDraw = True
+38.2670 	EXP 	P2WaitingWords: autoDraw = True
+38.2670 	EXP 	decks2: autoDraw = True
+38.6562 	DATA 	Keypress: b
+38.7677 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+38.7677 	EXP 	P2WaitingWords: text = 'Player one bets,\n press (c) to call and (f) to fold'
+39.4207 	DATA 	Keypress: c
+39.5185 	EXP 	handCapital: text = 'Current Pot: \n 4 + 2 =6'
+39.5185 	EXP 	P2WaitingWords: text = 'Your card is smaller\nYou earn -3'
+43.5396 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+43.5396 	EXP 	image1: autoDraw = False
+43.5396 	EXP 	image: autoDraw = False
+43.5396 	EXP 	hand2Capital: autoDraw = False
+43.5396 	EXP 	hand2OpponentCapital: autoDraw = False
+43.5396 	EXP 	P2WaitingWords: autoDraw = False
+43.5396 	EXP 	decks2: autoDraw = False
+43.5396 	EXP 	handCapital: autoDraw = False
+43.5396 	EXP 	handOpponentCapital: autoDraw = True
+44.4828 	DATA 	Keypress: space
+44.5239 	EXP 	handOpponentCapital: text = 'P1 is prepared, press (RETURN) to next trial'
+44.7856 	DATA 	Keypress: return
+44.8242 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+46.8302 	EXP 	New trial (rep=1, index=0): None
+46.8932 	EXP 	hand2Capital: autoDraw = False
+46.8932 	EXP 	decks2: autoDraw = False
+46.8932 	EXP 	P2WaitingWords: autoDraw = False
+46.8932 	EXP 	image1: autoDraw = False
+46.8932 	EXP 	handCapital: autoDraw = False
+46.8932 	EXP 	image1: image = 'cards/6.png'
+46.8932 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+46.8932 	EXP 	handCapital: text = 'Current Pot: \n 2'
+46.8932 	EXP 	handOpponentCapital: autoDraw = False
+46.8932 	EXP 	image1: autoDraw = True
+46.8932 	EXP 	image: autoDraw = True
+46.8932 	EXP 	hand2Capital: autoDraw = True
+46.8932 	EXP 	handCapital: autoDraw = True
+46.8932 	EXP 	hand2OpponentCapital: autoDraw = True
+46.8932 	EXP 	decks2: autoDraw = True
+46.8932 	EXP 	P2WaitingWords: autoDraw = True
+46.8932 	EXP 	decks2: autoDraw = True
+47.3968 	DATA 	Keypress: b
+47.5272 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+47.5272 	EXP 	P2WaitingWords: text = 'Player one bets,\n press (c) to call and (f) to fold'
+47.6632 	DATA 	Keypress: c
+47.7608 	EXP 	handCapital: text = 'Current Pot: \n 4 + 2 =6'
+47.7608 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +3'
+51.5645 	DATA 	Keypress: return
+51.7986 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+51.7986 	EXP 	image1: autoDraw = False
+51.7986 	EXP 	image: autoDraw = False
+51.7986 	EXP 	hand2Capital: autoDraw = False
+51.7986 	EXP 	hand2OpponentCapital: autoDraw = False
+51.7986 	EXP 	P2WaitingWords: autoDraw = False
+51.7986 	EXP 	decks2: autoDraw = False
+51.7986 	EXP 	handCapital: autoDraw = False
+51.7986 	EXP 	handOpponentCapital: autoDraw = True
+52.2007 	DATA 	Keypress: space
+52.2323 	EXP 	handOpponentCapital: text = 'P1 is prepared, press (RETURN) to next trial'
+52.4251 	DATA 	Keypress: return
+52.4660 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+54.4707 	EXP 	New trial (rep=2, index=0): None
+54.5516 	EXP 	hand2Capital: autoDraw = False
+54.5516 	EXP 	decks2: autoDraw = False
+54.5516 	EXP 	P2WaitingWords: autoDraw = False
+54.5516 	EXP 	image1: autoDraw = False
+54.5516 	EXP 	handCapital: autoDraw = False
+54.5516 	EXP 	image1: image = 'cards/6.png'
+54.5516 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+54.5516 	EXP 	handCapital: text = 'Current Pot: \n 2'
+54.5516 	EXP 	handOpponentCapital: autoDraw = False
+54.5516 	EXP 	image1: autoDraw = True
+54.5516 	EXP 	image: autoDraw = True
+54.5516 	EXP 	hand2Capital: autoDraw = True
+54.5516 	EXP 	handCapital: autoDraw = True
+54.5516 	EXP 	hand2OpponentCapital: autoDraw = True
+54.5516 	EXP 	decks2: autoDraw = True
+54.5516 	EXP 	P2WaitingWords: autoDraw = True
+54.5516 	EXP 	decks2: autoDraw = True
+55.0524 	DATA 	Keypress: space
+55.8532 	DATA 	Keypress: b
+56.0031 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+56.0031 	EXP 	P2WaitingWords: text = 'Player one bets,\n press (c) to call and (f) to fold'
+56.0723 	DATA 	Keypress: c
+56.1700 	EXP 	handCapital: text = 'Current Pot: \n 4 + 2 =6'
+56.1700 	EXP 	P2WaitingWords: text = 'Your card is smaller\nYou earn -3'
+60.2245 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+60.2245 	EXP 	image1: autoDraw = False
+60.2245 	EXP 	image: autoDraw = False
+60.2245 	EXP 	hand2Capital: autoDraw = False
+60.2245 	EXP 	hand2OpponentCapital: autoDraw = False
+60.2245 	EXP 	P2WaitingWords: autoDraw = False
+60.2245 	EXP 	decks2: autoDraw = False
+60.2245 	EXP 	handCapital: autoDraw = False
+60.2245 	EXP 	handOpponentCapital: autoDraw = True
+60.9305 	DATA 	Keypress: space
+60.9752 	EXP 	handOpponentCapital: text = 'That is the end of practice trial.\n Press (Enter) if you are ready'
+61.4138 	DATA 	Keypress: return
+61.4591 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+67.8622 	EXP 	window1: mouseVisible = True
