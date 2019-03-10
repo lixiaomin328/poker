@@ -14,7 +14,7 @@ import sys  # to get file system encoding
 import random
 from enum import Enum
 useGUI = True #  use the Psychopy GUI module to collect subject information
-dummyMode = False # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
+dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 
 # STEP I: get subject info
 expInfo = {'SubjectNO':'00', 'SubjectInitials':'TEST'}
@@ -305,6 +305,7 @@ cardImageDir = 'cards/'
 TrialNum = 3
 timeLimit = 6
 rewardRevealTime = 4
+sessionBreakN = 20
 class GameStatus(Enum):
 	GAME_NOT_STARTED = 0
 	GAME_PLAYER_1_ROUND_STARTED = 1
@@ -463,7 +464,7 @@ for thisTrial in trials:
 		P2WaitingWords.setAutoDraw(True)
 		win.flip()
 		win1.flip()
-		core.wait(5)
+		event.waitKeys(keyList = ["space",'n'])
 		P1WaitingWords.setAutoDraw(False)
 		P2WaitingWords.setAutoDraw(False)
 	# ------Prepare to start Routine "trial"-------
@@ -618,7 +619,7 @@ for thisTrial in trials:
 				if len(theseKeys) > 0:  # at least one key was pressed
 					tk.sendMessage("P1 choose time")
 
-#					core.wait(timeLimit - player1ActionCheck.clock.getTime())
+					core.wait(np.random.normal(0.5,0.1))
 					if player1ActionCheck.keys == []:  # then this was the first keypress
 						player1ActionCheck.keys = theseKeys[0]  # just the first key pressed
 						player1ActionCheck.rt = player1ActionCheck.clock.getTime()
@@ -626,13 +627,13 @@ for thisTrial in trials:
 							gameStatus = GameStatus.GAME_PLAYER_1_BET_RESULT
 						elif player1ActionCheck.keys == 'h':
 							gameStatus = GameStatus.GAME_PLAYER_1_CHECK_RESULT
-#				elif player1ActionCheck.clock.getTime()>timeLimit:
-#					gameStatus = GameStatus.GAME_FINISHED
-#					P1WaitingWords.setText('Time out, you lose 1')
-#					P2WaitingWords.setText('Player 1 time out, you win 1')
-#					win.flip()
-#					win1.flip()
-#					core.wait(rewardRevealTime)
+				elif player1ActionCheck.clock.getTime()>timeLimit:
+					gameStatus = GameStatus.GAME_FINISHED
+					P1WaitingWords.setText('Time out, you earn -2')
+					P2WaitingWords.setText('Player 1 time out, you earn -2')
+					win.flip()
+					win1.flip()
+					core.wait(rewardRevealTime)
 		elif gameStatus == GameStatus.GAME_PLAYER_1_BET_RESULT:
 			gameStatus = GameStatus.GAME_PLAYER_2_ROUND_STARTED
 			potText1.setText('Current Pot: \n 2 + 2 =4')
@@ -689,13 +690,13 @@ for thisTrial in trials:
 							gameStatus = GameStatus.GAME_PLAYER_2_BET_RESULT
 						elif player2ActionCheck.keys == 'f':
 							gameStatus = GameStatus.GAME_PLAYER_2_FOLD_RESULT
-#				elif player2ActionCheck.clock.getTime()>timeLimit:
-#					gameStatus = GameStatus.GAME_FINISHED
-#					P2WaitingWords.setText('Time out, you lose 1 point')
-#					P1WaitingWords.setText('Player 2 time out, you win 1 point')
-#					win.flip()
-#					win1.flip()
-#					core.wait(rewardRevealTime)
+				elif player2ActionCheck.clock.getTime()>timeLimit:
+					gameStatus = GameStatus.GAME_FINISHED
+					P2WaitingWords.setText('Time out, you earn -2')
+					P1WaitingWords.setText('Player 2 time out, you earn +2')
+					win.flip()
+					win1.flip()
+					core.wait(rewardRevealTime)
 			
 		elif gameStatus == GameStatus.GAME_PLAYER_2_BET_RESULT:
 			potText1.setText('Current Pot: \n 4 + 2 =6')
@@ -733,12 +734,6 @@ for thisTrial in trials:
 		# check if all components have finished
 		if gameStatus == GameStatus.GAME_FINISHED: 
 			# a component has requested a forced-end of Routine
-			if trials.thisN==2:
-				Reshuffling.setText('That is the end of practice trial.\n Press (SPACE) if you are ready')
-				Reshuffling1.setText('Waiting for P1 to get prepared for the next trial')
-			else:
-				Reshuffling1.setText('Waiting for P1 to get prepared for the next trial')
-				Reshuffling.setText('Press (SPACE) to enter next trial')
 			imageP1.setAutoDraw(False)
 			imageOpp1.setAutoDraw(False)
 			imageP2.setAutoDraw(False)
@@ -755,19 +750,26 @@ for thisTrial in trials:
 			potText2.setAutoDraw(False)
 			Reshuffling.setAutoDraw(True)
 			Reshuffling1.setAutoDraw(True)
-			win.flip()
-			win1.flip()
-			conitueRoutine = False
-			event.waitKeys(keyList = ["space"])
-			if trials.thisN==2:
-				Reshuffling.setText('Waiting for P2 to get prepared')
-				Reshuffling1.setText('That is the end of practice trial.\n Press (Enter) if you are ready')
-			else:    
-				Reshuffling.setText('Waiting for P2 to get prepared')
-				Reshuffling1.setText('P1 is prepared, press (RETURN) to next trial')
-			win.flip()
-			win1.flip() 
-			event.waitKeys(keyList = ["return",'b'])
+			if trials.thisN==2 or trials.thisN%sessionBreakN==0:
+				if trials.thisN==2:
+					Reshuffling.setText('That is the end of practice trial.\n Press (SPACE) if you are ready')
+					Reshuffling1.setText('Waiting for P1 to get prepared for the next trial')
+				elif trials.thisN%sessionBreakN==0: 
+					Reshuffling1.setText('Waiting for P1 to get prepared for the next trial')
+					Reshuffling.setText('Press (SPACE) to enter next trial')	
+				win.flip()
+				win1.flip()
+				conitueRoutine = False
+				event.waitKeys(keyList = ["space"])
+				if trials.thisN==2:
+					Reshuffling.setText('Waiting for P2 to get prepared')
+					Reshuffling1.setText('That is the end of practice trial.\n Press (Enter) if you are ready')
+				elif trials.thisN%sessionBreakN==0:   
+					Reshuffling.setText('Waiting for P2 to get prepared')
+					Reshuffling1.setText('P1 is prepared, press (RETURN) to next trial')
+				win.flip()
+				win1.flip() 
+				event.waitKeys(keyList = ["return",'b'])
 			Reshuffling.setText('Reshuffling in 2s...\nContributing 1 point to the pot. \n')
 			Reshuffling1.setText('Reshuffling in 2s...\nContributing 1 point to the pot. \n')
 			win.flip()
