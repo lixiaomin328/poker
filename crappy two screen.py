@@ -14,7 +14,7 @@ import sys  # to get file system encoding
 import random
 from enum import Enum
 useGUI = True #  use the Psychopy GUI module to collect subject information
-dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
+dummyMode = False # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 
 # STEP I: get subject info
 expInfo = {'SubjectNO':'00', 'SubjectInitials':'TEST'}
@@ -72,17 +72,19 @@ logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a f
 
 # STEP IV: Initialize custom graphics for camera setup & drift correction
 #scnWidth, scnHeight = (2560, 1440)
-scnWidth, scnHeight = (1920, 1080)
-scnWidth1, scnHeight1 = (1920, 1200)
+scnWidth, scnHeight = (1280, 1024)
+scnWidth1, scnHeight1 = (1280, 1024)
 # for mon in monitors.getAllMonitors():
 # 	size1 = monitors.Monitor(mon).getSizePix())
 ##Window Set up
 mon = monitors.Monitor('myMac15', width=53.0, distance=70.0)
 mon.setSizePix((scnWidth, scnHeight))
-win1 = visual.Window(
-	size=[scnWidth1, scnHeight1], pos =(0,0),fullscr=False, screen=2,
-	allowGUI=False, allowStencil=False,
-	monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
+mon1 = monitors.Monitor('testMonitor', width=53.0, distance=70.0)
+mon1.setSizePix((scnWidth, scnHeight))
+win1 = visual.Window(  
+	(scnWidth1, scnHeight1),fullscr=False, screen=2,
+	allowGUI=False, allowStencil=True,
+	monitor=mon1, color=[0,0,0], colorSpace='rgb',
 	blendMode='avg', useFBO=True,
 	units='pix')
 win = visual.Window((scnWidth, scnHeight), fullscr=True, monitor=mon, color=[0,0,0], units='pix', allowStencil=True,autoLog=False)
@@ -200,8 +202,8 @@ dataFileName1 = expInfo['SubjectNO'] + '_'+'.EDF'
 tk2.openDataFile(dataFileName1)
 # add personalized data file header (preamble text)
 tk2.sendCommand("add_file_preamble_text 'Psychopy GC demo'") 
-genv = EyeLinkCoreGraphicsPsychoPy(tk2, win1)
-pylink.openGraphicsEx(genv)
+genv1 = EyeLinkCoreGraphicsPsychoPy(tk2, win1)
+pylink.openGraphicsEx(genv1)
 tk2.setOfflineMode()
 
  # sampling rate, 250, 500, 1000, or 2000; this command won't work for EyeLInk II/I
@@ -261,7 +263,7 @@ else:
  #gazeWindow = visual.Aperture(win, size=200)
  #gazeWindow.enabled=False
  # prepare a gaze-contingent mask
-gazeMask = visual.GratingStim(win, tex='none', mask='circle', size=200, color=[1.0,1.0,1.0])
+gazeMask = visual.GratingStim(win1, tex='none', mask='circle', size=200, color=[1.0,1.0,1.0])
  #end eyetracking
  # store frame rate of monitor if we can measure it
 expInfo['frameRate'] = win1.getActualFrameRate()
@@ -278,7 +280,7 @@ tk2.sendMessage('TRIALID')
 
  # drift check
 try:
-    err = tk2.doDriftCorrect(scnWidth/2, scnHeight/2,1,1)
+    err = tk2.doDriftCorrect(scnWidth1/2, scnHeight1/2,1,1)
 except:
     tk2.doTrackerSetup()
  # send the standard "TRIALID" message to mark the start of a trial
@@ -302,8 +304,8 @@ if eyeTracked==2:
 #messy set ups for game
 deckRange = range(2,9)
 cardImageDir = 'cards/'
-TrialNum = 3
-timeLimit = 6
+TrialNum =103
+timeLimit = 10
 rewardRevealTime = 4
 sessionBreakN = 20
 class GameStatus(Enum):
@@ -630,14 +632,14 @@ for thisTrial in trials:
 				elif player1ActionCheck.clock.getTime()>timeLimit:
 					gameStatus = GameStatus.GAME_FINISHED
 					P1WaitingWords.setText('Time out, you earn -2')
-					P2WaitingWords.setText('Player 1 time out, you earn -2')
+					P2WaitingWords.setText('Player 1 time out, you earn +2')
 					win.flip()
 					win1.flip()
 					core.wait(rewardRevealTime)
 		elif gameStatus == GameStatus.GAME_PLAYER_1_BET_RESULT:
 			gameStatus = GameStatus.GAME_PLAYER_2_ROUND_STARTED
-			potText1.setText('Current Pot: \n 2 + 2 =4')
-			potText2.setText('Current Pot: \n 2 + 2 =4')
+			potText1.setText('Current Pot: \n 2 + 2 = 4')
+			potText2.setText('Current Pot: \n 2 + 2 = 4')
 			P1WaitingWords.setText('Wait for player 2 making decision')
 			P2WaitingWords.setText('Player one bets,\n press (c) to call and (f) to fold')
 			player2ActionCheck.tStart = t

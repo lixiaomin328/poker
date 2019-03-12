@@ -1,0 +1,14 @@
+1.2322 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+10.5925 	WARNING 	Monitor specification not found. Creating a temporary one...
+10.5926 	WARNING 	Monitor specification not found. Creating a temporary one...
+12.8636 	DATA 	Keypress: space
+13.0616 	EXP 	Set  sound=C
+13.0622 	EXP 	Set  sound=A
+13.0626 	EXP 	Set  sound=E
+13.0630 	EXP 	Set  sound=E
+14.2484 	DATA 	Keypress: return
+14.2500 	DATA 	Keypress: return
+14.2519 	DATA 	Keypress: escape
+15.9637 	DATA 	Keypress: return
+17.8355 	DATA 	Keypress: escape
+17.8576 	EXP 	window1: units = 'pix'

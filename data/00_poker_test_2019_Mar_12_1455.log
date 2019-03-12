@@ -1,0 +1,6 @@
+1.2308 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+7.0493 	WARNING 	Monitor specification not found. Creating a temporary one...
+9.3122 	DATA 	Keypress: space
+9.3122 	DATA 	Keypress: return
+9.3123 	DATA 	Keypress: return
+9.5027 	EXP 	Set  sound=C
