@@ -621,7 +621,7 @@ for thisTrial in trials:
 				if len(theseKeys) > 0:  # at least one key was pressed
 					tk.sendMessage("P1 choose time")
 
-					core.wait(np.random.normal(0.5,0.1))
+					core.wait(np.random.normal(3,0.1))
 					if player1ActionCheck.keys == []:  # then this was the first keypress
 						player1ActionCheck.keys = theseKeys[0]  # just the first key pressed
 						player1ActionCheck.rt = player1ActionCheck.clock.getTime()
