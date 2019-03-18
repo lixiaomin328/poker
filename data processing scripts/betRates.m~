@@ -1,6 +1,10 @@
-function [] = betRates(dataStruct)
-
-dataTable = struct2table(dataStruct);
+%function [] = betRates(dataStruct)
+dataFolder = '../dataMat/';
+dataFiles = dir([dataFolder,'*.mat']);
+for i = 1:length(dataFiles)
+    fileread(dataFiles(i).name);
+end
+dataStruct = 
 
 %% set up P1
 
@@ -44,4 +48,4 @@ hold on
 plot(w, proportionsBetP2)
 legend('Player 1', 'Player 2')
 title('Bet Rate Profiles per Player in Simplified Poker')
-end
+%end
