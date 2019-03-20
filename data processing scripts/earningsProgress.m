@@ -1,4 +1,4 @@
-function [] = earningsProgress(dataStruct)
+function earningsProgress(p1Earnings, p2Earnings)
 
 dataTable = struct2table(dataStruct);
 
