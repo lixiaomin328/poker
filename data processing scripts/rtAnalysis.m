@@ -8,7 +8,7 @@ p1Actions = [];
 p2Actions = [];
 p1rt = [];
 p2rt = [];
-for i = 1:length(dataFiles)
+for i = 2:length(dataFiles)
     load([dataFolder,dataFiles(i).name]);
     p1Cards = [p1Cards;dataStructure.P1card];
     p2Cards = [p2Cards;dataStructure.P2card];

@@ -12,6 +12,8 @@ participantNumber = table2array(dataTable(1,10)); %hard coded bc of change in co
 numPractice = 3; %number of practice trials
 if height(dataTable) > numPractice
     dataTable = dataTable(((numPractice+1):end),:);
+else
+    return
 end
 
 %% make p1Move numerical-- bet=1, check=0, noAction = -1
@@ -41,11 +43,7 @@ for i = 1:length(varNames)
     dataStructure.(varNames{i}) = table2array(dataTable(:,i));
 end
 dataStructure.trials_thisN = dataStructure.trials_thisN -3;
-if participantNumber< 10&&participantNumber>4
-    dataStructure.player1ActionCheck_rt = dataStructure.player1ActionCheck_rt -3;
-elseif participantNumber< 10&&participantNumber<4
-    dataStructure.player1ActionCheck_rt = dataStructure.player1ActionCheck_rt -0.5;
-end
+
 %% write data to a structure saved as a .mat, file named participant #
 
 name = cat(2, 'participant_', int2str(participantNumber));

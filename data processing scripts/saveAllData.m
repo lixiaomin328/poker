@@ -4,5 +4,5 @@ end
 dataFolder = '../data/';
 dataFiles = dir([dataFolder,'*.csv']);
 for i = 1:length(dataFiles)
-    fileread(dataFiles(i).name);
+    fileReadOnly(dataFiles(i).name);
 end

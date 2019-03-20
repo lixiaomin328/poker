@@ -4,7 +4,12 @@ if ~exist('DataMat')
     mkdir('DataMat')
 end
 dataTable = readtable([dataPath,'/',filename], 'ReadRowNames', true); %data into table form
-
+numPractice = 3; %number of practice trials
+if height(dataTable) > numPractice
+    dataTable = dataTable(((numPractice+1):end),:);
+else
+    return
+end
 %% cut out practice trials, saving participant number
 
 participantNumber = table2array(dataTable(1, 10));
@@ -82,6 +87,11 @@ for i = 1:length(varNames)
     dataStructure.(varNames{i}) = table2array(dataTable(:,i));
 end
 dataStructure.trial_thisN = dataStructure.trials_thisN -3;
+if participantNumber< 10&&participantNumber>4
+    dataStructure.player1ActionCheck_rt = dataStructure.player1ActionCheck_rt -3;
+elseif participantNumber< 10&&participantNumber<4
+    dataStructure.player1ActionCheck_rt = dataStructure.player1ActionCheck_rt -0.5;
+end
 %% write data to a structure saved as a .mat, file named participant #
 
 name = cat(2, 'participant_', int2str(participantNumber));
