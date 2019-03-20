@@ -1,3 +1,5 @@
+
+
 from __future__ import absolute_import, division
 from psychopy import locale_setup, sound, gui, visual, core, data, event, logging, clock, hardware,monitors
 from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
@@ -12,9 +14,10 @@ from EyeLinkCoreGraphicsPsychoPy import EyeLinkCoreGraphicsPsychoPy
 import os  # handy system and path functions
 import sys  # to get file system encoding
 import random
+import pandas
 from enum import Enum
 useGUI = True #  use the Psychopy GUI module to collect subject information
-dummyMode = False # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
+dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 
 # STEP I: get subject info
 expInfo = {'SubjectNO':'00', 'SubjectInitials':'TEST'}
@@ -304,7 +307,7 @@ if eyeTracked==2:
 #messy set ups for game
 deckRange = range(2,9)
 cardImageDir = 'cards/'
-TrialNum =103
+TrialNum =1
 timeLimit = 10
 rewardRevealTime = 4
 sessionBreakN = 20
@@ -782,6 +785,7 @@ for thisTrial in trials:
 			#break
 		win.flip()
 		win1.flip()
+
 	tk.sendMessage('TRIAL_RESULT')
 
 	# -------Ending Routine "trial"-------
@@ -806,7 +810,8 @@ for thisTrial in trials:
 	# the Routine "trial" was not non-slip safe, so reset the non-slip timer
 	routineTimer.reset()
 	thisExp.nextEntry()
-	
+
+
 #completed 5 repeats of 'trials'
 pylink.pumpDelay(100)
 tk.stopRecording() # stop recording
@@ -835,9 +840,17 @@ pylink.closeGraphics()
 # these shouldn't be strictly necessary (should auto-save)
 thisExp.saveAsWideText(filename+'.csv')
 thisExp.saveAsPickle(filename)
+path = 'data/'
+payment = paymentOutput(path,'1'+'.csv')
+Reshuffling.setText(str(payment[1]))
+Reshuffling1.setText('End')
+win.flip()
+win1.flip()
+event.waitKeys(keyList = ["space"])
 logging.flush()
 # make sure everything is closed down
 thisExp.abort()  # or data files will save again on exit
 win.close()
 win1.close()
 core.quit()
+
