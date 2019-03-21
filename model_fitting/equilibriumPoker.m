@@ -1,0 +1,9 @@
+p1low = [];
+p1high = [];
+up2 =[];
+for p2 = 2:8
+p1low = floor(2*p2-10);
+p1high = ceil(4+p2/2);
+utility = (3*(p1low-1)-3*(9-p1high))/(p1low-1+9-p1high);
+up2 = [up2;utility];
+end
