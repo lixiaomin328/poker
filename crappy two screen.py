@@ -651,6 +651,7 @@ for thisTrial in trials:
 			win.callOnFlip(player2ActionCheck.clock.reset)  # t=0 on next screen flip
 			win1.callOnFlip(player2ActionCheck.clock.reset)
 			tk.sendMessage("P2 prechoose")
+			tk2.sendMessage("P2 prechoose")
 			event.clearEvents(eventType='keyboard')
 			
 		elif gameStatus == GameStatus.GAME_PLAYER_1_CHECK_RESULT:
@@ -672,6 +673,7 @@ for thisTrial in trials:
 			win.flip()
 			win1.flip()
 			tk.sendMessage("check result revealed")
+			tk2.sendMessage("check result revealed")
 			core.wait(rewardRevealTime)
 			gameStatus = GameStatus.GAME_FINISHED
 			# TODO(xiaomin): set up text
@@ -685,6 +687,7 @@ for thisTrial in trials:
 				
 				if len(theseKeys) > 0:  # at least one key was pressed
 					tk.sendMessage("P2 choose timed")
+					tk2.sendMessage("P2 choose timed")
 
 #					core.wait(timeLimit - player2ActionCheck.clock.getTime())
 					if player2ActionCheck.keys == []:  # then this was the first keypress
