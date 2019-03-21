@@ -4,5 +4,7 @@ end
 dataFolder = '../data/';
 dataFiles = dir([dataFolder,'*.csv']);
 for i = 1:length(dataFiles)
-    fileReadOnly(dataFiles(i).name);
+    if sum(dataFiles(i).name(1:2) == '00') ~= 2
+        fileReadOnly(dataFiles(i).name);
+    end
 end
