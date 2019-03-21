@@ -1,4 +1,5 @@
 [p1Actions,p1Cards,p1rt,p2Cards,p2rt] = getRTandChoice();
+dataMatrix = [p1Actions,p1Cards,p1rt,p2Cards,p2rt];
 %% set up P1 & P2
 
 %for P1 bet

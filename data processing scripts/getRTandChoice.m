@@ -1,4 +1,4 @@
-function [p1Actions,p1Cards,p1rt,p2Cards,p2rt] = getRTandChoice()
+function [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt] = getRTandChoice()
 dataFolder = 'dataMat/';
 dataFiles = dir([dataFolder,'*.mat']);
 p1Cards = [];

@@ -1,18 +1,12 @@
-%function [] = betRates(dataStruct)
-dataFolder = '../dataMat/';
-dataFiles = dir([dataFolder,'*.mat']);
-for i = 1:length(dataFiles)
-    fileread(dataFiles(i).name);
-end
-dataStruct = 
-
+[p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt] = getRTandChoice();
+dataMat = [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt];
+betAlldata = dataMat(find(dataMat(:,1)==1),:);
+betAlldataB = betAlldata(find(betAlldata(:,5)>5));
+betAlldataB = betAlldata(find(betAlldata(:,5)><));
+foldAlldata = dataMat(find(dataMat(:,1)==0),:);
 %% set up P1
-
-p1Cards = dataTable.P1card;
-p1Actions = dataTable.player1ActionCheck_keys;
-
 betChoicesP1 = p1Cards .* p1Actions;
-betChoicesP1(betChoicesP1 == 0) = [];
+betChoicesP1(betChoicesP1 <= 0) = [];
 
 proportionsBetP1 = zeros(1, 7);
 
@@ -21,9 +15,6 @@ for i = 2:8
 end
 
 %% set up P2
-
-p2Cards = dataTable.P2card;
-p2Actions = dataTable.player2ActionCheck_keys;
 p2Call = (p2Actions == 1);
 p2Fold = (p2Actions == 0);
 p2Opportunities = p2Call + p2Fold;
@@ -40,12 +31,12 @@ for i = 2:8
 end
 
 %% plot
-w = 2:1:8;
-plot(w, proportionsBetP1)
-xlabel('Card Value')
-ylabel('Bet Rate per Card')
-hold on
-plot(w, proportionsBetP2)
-legend('Player 1', 'Player 2')
-title('Bet Rate Profiles per Player in Simplified Poker')
-%end
+% w = 2:1:8;
+% plot(w, proportionsBetP1)
+% xlabel('Card Value')
+% ylabel('Bet Rate per Card')
+% hold on
+% plot(w, proportionsBetP2)
+% legend('Player 1', 'Player 2')
+% title('Bet Rate Profiles per Player in Simplified Poker')
+% %end

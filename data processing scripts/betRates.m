@@ -1,18 +1,4 @@
-%function [] = betRates(dataStruct)
-dataFolder = 'dataMat/';
-dataFiles = dir([dataFolder,'*.mat']);
-p1Cards = [];
-p2Cards = [];
-p1Actions = [];
-p2Actions = [];
-for i = 1:length(dataFiles)
-    load([dataFolder,dataFiles(i).name]);
-    p1Cards = [p1Cards;dataStructure.P1card];
-    p2Cards = [p2Cards;dataStructure.P2card];
-    p1Actions = [p1Actions;dataStructure.player1ActionCheck_keys];
-    p2Actions = [p2Actions;dataStructure.player2ActionCheck_keys];
-end
-
+[p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt] = getRTandChoice();
 
 %% set up P1
 betChoicesP1 = p1Cards .* p1Actions;
@@ -41,12 +27,12 @@ for i = 2:8
 end
 
 %% plot
-w = 2:1:8;
-plot(w, proportionsBetP1)
-xlabel('Card Value')
-ylabel('Bet Rate per Card')
-hold on
-plot(w, proportionsBetP2)
-legend('Player 1', 'Player 2')
-title('Bet Rate Profiles per Player in Simplified Poker')
-%end
+% w = 2:1:8;
+% plot(w, proportionsBetP1)
+% xlabel('Card Value')
+% ylabel('Bet Rate per Card')
+% hold on
+% plot(w, proportionsBetP2)
+% legend('Player 1', 'Player 2')
+% title('Bet Rate Profiles per Player in Simplified Poker')
+% %end

@@ -1,5 +1,3 @@
-
-
 from __future__ import absolute_import, division
 from psychopy import locale_setup, sound, gui, visual, core, data, event, logging, clock, hardware,monitors
 from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
@@ -10,7 +8,7 @@ from numpy import (sin, cos, tan, log, log10, pi, average,
 from numpy.random import random, randint, normal, shuffle
 import pylink
 from EyeLinkCoreGraphicsPsychoPy import EyeLinkCoreGraphicsPsychoPy
-
+import earnings2
 import os  # handy system and path functions
 import sys  # to get file system encoding
 import random
@@ -85,7 +83,7 @@ mon.setSizePix((scnWidth, scnHeight))
 mon1 = monitors.Monitor('testMonitor', width=53.0, distance=70.0)
 mon1.setSizePix((scnWidth, scnHeight))
 win1 = visual.Window(  
-	(scnWidth1, scnHeight1),fullscr=False, screen=2,
+	(scnWidth1, scnHeight1),fullscr=False, screen=1,
 	allowGUI=False, allowStencil=True,
 	monitor=mon1, color=[0,0,0], colorSpace='rgb',
 	blendMode='avg', useFBO=True,
@@ -307,7 +305,7 @@ if eyeTracked==2:
 #messy set ups for game
 deckRange = range(2,9)
 cardImageDir = 'cards/'
-TrialNum =1
+TrialNum =5
 timeLimit = 10
 rewardRevealTime = 4
 sessionBreakN = 20
@@ -624,10 +622,11 @@ for thisTrial in trials:
 				if len(theseKeys) > 0:  # at least one key was pressed
 					tk.sendMessage("P1 choose time")
 
-					core.wait(np.random.normal(3,0.1))
+					
 					if player1ActionCheck.keys == []:  # then this was the first keypress
 						player1ActionCheck.keys = theseKeys[0]  # just the first key pressed
 						player1ActionCheck.rt = player1ActionCheck.clock.getTime()
+						core.wait(np.random.normal(3,0.1))
 						if player1ActionCheck.keys == 'b':
 							gameStatus = GameStatus.GAME_PLAYER_1_BET_RESULT
 						elif player1ActionCheck.keys == 'h':
@@ -657,7 +656,7 @@ for thisTrial in trials:
 		elif gameStatus == GameStatus.GAME_PLAYER_1_CHECK_RESULT:
 			win.flip()
 			win1.flip()
-			P2WaitingWords.setText('Player 1 choose to check,\nyou do not need to make a decision')
+			P2WaitingWords.setText('Player 1 chose to check,\nyou do not need to make a decision')
 			P1WaitingWords.setAutoDraw(False)
 			win.flip()
 			win1.flip()
@@ -708,9 +707,9 @@ for thisTrial in trials:
 			potText2.setText('Current Pot: \n 4 + 2 =6')
 			if cards[0]>cards[1]:
 				P2WaitingWords.setText('Your card is smaller\nYou earn -3')
-				P1WaitingWords.setText('Your opponent choose to bet.\nYour card is larger, you earn +3')
+				P1WaitingWords.setText('Your opponent chose to bet.\nYour card is larger, you earn +3')
 			else:
-				P1WaitingWords.setText('Your opponent choose to bet.\nYour card is smaller, you earn -3')
+				P1WaitingWords.setText('Your opponent chose to bet.\nYour card is smaller, you earn -3')
 				P2WaitingWords.setText('Your card is larger\nYou earn +3')
 			win.flip()
 			win1.flip()
@@ -723,7 +722,7 @@ for thisTrial in trials:
 			gameStatus = GameStatus.GAME_FINISHED
 			win.flip()
 			win1.flip()
-			P1WaitingWords.setText('Your opponent choose to fold and you earn +1')
+			P1WaitingWords.setText('Your opponent chose to fold and you earn +1')
 			P2WaitingWords.setText('Since you folded, you earn -1')
 			win.flip()
 			win1.flip()
@@ -841,9 +840,9 @@ pylink.closeGraphics()
 thisExp.saveAsWideText(filename+'.csv')
 thisExp.saveAsPickle(filename)
 path = 'data/'
-payment = paymentOutput(path,'1'+'.csv')
-Reshuffling.setText(str(payment[1]))
-Reshuffling1.setText('End')
+payment = earnings2.paymentOutput(path,filename+'.csv')
+Reshuffling.setText('This is the end. Thank you. You earned ' +str(payment[0])+' points in total')
+Reshuffling1.setText('This is the end. Thank you. You earned ' +str(payment[1])+' points in total')
 win.flip()
 win1.flip()
 event.waitKeys(keyList = ["space"])
