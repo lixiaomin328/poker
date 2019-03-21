@@ -198,7 +198,6 @@ if not dummyMode:
     tk2 = pylink.EyeLink('100.1.1.11')
 else:
     tk2 = pylink.EyeLink(None)
-dataFolder = os.getcwd() + '/edfData/'
 dataFileName1 = expInfo['SubjectNO'] + '_'+'.EDF'
 tk2.openDataFile(dataFileName1)
 # add personalized data file header (preamble text)
