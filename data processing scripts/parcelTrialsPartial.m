@@ -1,10 +1,10 @@
-function [] = parcelTrialsPartial(filename)
-
-dataTable = load(filename, 'data_et'); %load only that variable
+%function [] = parcelTrialsPartial(filename)
+filename = '03_._edf.mat';
+load(['GazeDataMat/',filename], 'data_et'); %load only that variable
 
 %% getting trial number to show
 
-whereMsg = find(contains(dataTable.message,'record_status_message')); 
+whereMsg = find(contains(data_et.message,'record_status_message')); 
 eventStarts = whereMsg(1:2:end, :); %every other line is the start command
 
 %cut out extra columns and whatever happens before first trial starts
