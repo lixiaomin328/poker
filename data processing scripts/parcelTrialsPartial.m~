@@ -56,18 +56,17 @@ for i = 1:length(whereFold) %TRIALS ENDING WITH P2 FOLD--CODED AS 2
 end
 
 for i = 1:length(whereBet) %TRIALS ENDING IN P2 BETTING--CODED AS 3
-    whichTrial = dataTable.trialNumber(whereBet(i), :); 
-    where = find(dataTable.trialNumber == whichTrial);
+    whichTrialB = dataTable.trialNumber(whereBet(i), :); 
+    where = find(dataTable.trialNumber == whichTrialB);
     trialType(where) = 3;
 end
 
 for i = 1:length(whereCheck) %TRIALS ENDING IN CHECK--CODED AS 1
-    whichTrial = dataTable.trialNumber(whereCheck(i), :); 
-    where = find(dataTable.trialNumber == whichTrial);
+    whichTrialC = dataTable.trialNumber(whereCheck(i), :); 
+    where = find(dataTable.trialNumber == whichTrialC);
     trialType(where) = 1;
 end
 
-%add to table
 trialType = trialType';
 dataTable.trialType = trialType;
 
@@ -77,10 +76,10 @@ dataTable.trialType = trialType;
 
 eventType = zeros(1, height(dataTable));
 
-%temporarily cut out time-out trials out of table
-notTimeOut = find(dataTable.trialType ~= 0);
-dataTableNoTimeOut = dataTable(notTimeOut, :);
+notTO = find(dataTable.trialType ~= 0);
+dataTableNoTimeOut = dataTable(notTO, :);
 
+%problem: gives indices that don't correspond
 whereP1See = find(contains(dataTableNoTimeOut.message,'P1 prechoose')); 
 whereP1Decide = find(contains(dataTableNoTimeOut.message,'P1 choose time'));
 
