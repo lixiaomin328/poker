@@ -144,10 +144,10 @@ for j = 1:length(whereFold)
     whereNextMsg = find(contains(dataTable.message(whereFold(j):end),'record_status_message')); 
         whereNextMsg = whereNextMsg + whereFold(j);
 
-    if isempty(whereNextMsg) %#ok<ISMT> %if the last trial is of this type
+    if isempty(whereNextMsg)%if the last trial is of this type
         whereNextMsg = height(dataTable); %next message is end of exp
         eventType(1, whereFold(j):end) = 3; %is there an end tk msg
-    else %#ok<ISMT>
+    else 
         whereNextMsg = whereNextMsg(1, 1);
         eventType(1, whereFold(j):(whereNextMsg - 1)) = 4;
     end
@@ -170,3 +170,5 @@ end
 
 %add to table
 dataTable.eventType = eventType';
+toDelete = (isnan(dataTable.posX)&strcmp(dataTable.message,''));
+dataTable(toDelete,:) = [];
