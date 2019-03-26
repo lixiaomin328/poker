@@ -1,7 +1,7 @@
 %function [] = parcelTrials(filename)
 %dataTable = load(filename, 'data_et'); %load only that variable
 
-filename = '03_._edf.mat';
+filename = '06_._edf.mat';
 load(['GazeDataMat/',filename], 'data_et'); %load only that variable
 
 %% getting trial number to show
@@ -9,12 +9,12 @@ load(['GazeDataMat/',filename], 'data_et'); %load only that variable
 %DEBUG
 dataTable = data_et;
 
-whereMsg = find(contains(dataTable.message,'record_status_message')); 
-eventStarts = whereMsg(1:2:end, :); %every other line is the start command
+whereMsg = find(contains(dataTable.message,'P1 prechoose')); 
+
 
 %cut out extra columns and whatever happens before first trial starts
-dataTable = dataTable(eventStarts(1):end, (cat(2, 1:16, 44:46))); 
-
+dataTable = dataTable(whereMsg(1):end, (cat(2, 1:16, 44:46))); 
+eventStarts= find(contains(dataTable.message,'P1 prechoose')); 
 %to be added as a column that says TRIAL 1, 1, 1, 2, etc
 trialIndex = zeros(1, height(dataTable)); 
 
@@ -124,7 +124,7 @@ end
 for i = 1:length(whereBet) %number of times where bets have been revealed
    %gives index in relation to the whereBet start point, so adjust in next
    %line
-    whereNextMsg = find(contains(dataTable.message((whereBet(i)):(height(dataTable))),'record_status_message')); %gives index
+    whereNextMsg = find(contains(dataTable.message((whereBet(i)):(height(dataTable))),'P1 prechoose')); %gives index
     whereNextMsg = whereNextMsg + whereBet(i);
     
     if isempty(whereNextMsg) %if the last trial is of this type
@@ -141,7 +141,7 @@ end
 %logic same as above
 
 for j = 1:length(whereFold)
-    whereNextMsg = find(contains(dataTable.message(whereFold(j):end),'record_status_message')); 
+    whereNextMsg = find(contains(dataTable.message(whereFold(j):end),'P1 prechoose')); 
         whereNextMsg = whereNextMsg + whereFold(j);
 
     if isempty(whereNextMsg)%if the last trial is of this type
@@ -156,7 +156,7 @@ end
 %CODE 5 for when CHECK REVEALED
 %logic same as above
 for k = 1:length(whereCheck)
-    whereNextMsg = find(contains(dataTable.message(whereCheck(k):end),'record_status_message')); 
+    whereNextMsg = find(contains(dataTable.message(whereCheck(k):end),'P1 prechoose')); 
     whereNextMsg = whereNextMsg + whereCheck(k);
 
     if isempty(whereNextMsg) %if the last trial is of this type
@@ -172,3 +172,5 @@ end
 dataTable.eventType = eventType';
 toDelete = (isnan(dataTable.posX)&strcmp(dataTable.message,''));
 dataTable(toDelete,:) = [];
+recordStatus = contains(dataTable.message,'record_status_message'); 
+dataTable(recordStatus,:) = [];

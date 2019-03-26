@@ -9,8 +9,8 @@ load(['GazeDataMat/',filename], 'data_et'); %load only that variable
 %DEBUG
 dataTable = data_et;
 
-whereMsg = find(contains(dataTable.message,'record_status_message')); 
-eventStarts = whereMsg(1:2:end, :); %every other line is the start command
+whereMsg = find(contains(dataTable.message,'P1 prechoose')); 
+eventStarts = whereMsg(1:end, :); %every other line is the start command
 
 %cut out extra columns and whatever happens before first trial starts
 dataTable = dataTable(eventStarts(1):end, (cat(2, 1:16, 44:46))); 
@@ -124,15 +124,13 @@ end
 for i = 1:length(whereBet) %number of times where bets have been revealed
    %gives index in relation to the whereBet start point, so adjust in next
    %line
-    whereNextMsg = find(contains(dataTable.message((whereBet(i)):(height(dataTable))),'record_status_message')); %gives index
+    whereNextMsg = find(contains(dataTable.message((whereBet(i)):(height(dataTable))),'P1 prechoose')); %gives index
     whereNextMsg = whereNextMsg + whereBet(i);
     
-    if length(whereNextMsg) == 0 %if the last trial is of this type
+    if isempty(whereNextMsg) %if the last trial is of this type
         whereNextMsg = height(dataTable); %next message is end of exp
         eventType(1, whereBet(i):end) = 3; 
-    end 
-    %if this isn't the last
-    if length(whereNextMsg) ~= 0
+    else
         whereNextMsg = whereNextMsg(1, 1);
         eventType(1, whereBet(i):(whereNextMsg - 1)) = 3;
     end
@@ -143,14 +141,13 @@ end
 %logic same as above
 
 for j = 1:length(whereFold)
-    whereNextMsg = find(contains(dataTable.message(whereFold(j):end),'record_status_message')); 
+    whereNextMsg = find(contains(dataTable.message(whereFold(j):end),'P1 prechoose')); 
         whereNextMsg = whereNextMsg + whereFold(j);
 
-    if length(whereNextMsg) == 0 %#ok<ISMT> %if the last trial is of this type
+    if isempty(whereNextMsg)%if the last trial is of this type
         whereNextMsg = height(dataTable); %next message is end of exp
         eventType(1, whereFold(j):end) = 3; %is there an end tk msg
-    end 
-    if length(whereNextMsg) ~= 0 %#ok<ISMT>
+    else 
         whereNextMsg = whereNextMsg(1, 1);
         eventType(1, whereFold(j):(whereNextMsg - 1)) = 4;
     end
@@ -159,14 +156,13 @@ end
 %CODE 5 for when CHECK REVEALED
 %logic same as above
 for k = 1:length(whereCheck)
-    whereNextMsg = find(contains(dataTable.message(whereCheck(k):end),'record_status_message')); 
+    whereNextMsg = find(contains(dataTable.message(whereCheck(k):end),'P1 prechoose')); 
     whereNextMsg = whereNextMsg + whereCheck(k);
 
-    if length(whereNextMsg) == 0 %if the last trial is of this type
+    if isempty(whereNextMsg) %if the last trial is of this type
         whereNextMsg = height(dataTable); %next message is end of exp
         eventType(1, whereCheck(k):end) = 3; %is there an end tk msg
-    end 
-    if length(whereNextMsg) ~= 0
+    else
         whereNextMsg = whereNextMsg(1, 1);
         eventType(1, whereCheck(k):(whereNextMsg - 1)) = 5;
     end
@@ -174,3 +170,7 @@ end
 
 %add to table
 dataTable.eventType = eventType';
+toDelete = (isnan(dataTable.posX)&strcmp(dataTable.message,''));
+dataTable(toDelete,:) = [];
+recordStatus = contains(dataTable.message,'record_status_message'); 
+dataTable(recordStatus,:) = [];
