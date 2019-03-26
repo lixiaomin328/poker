@@ -39,8 +39,8 @@ for i = 1:(length(eventStarts)) %for i = 1:103
 end
 
 %add to table
-trialIndex = trialIndex';
-dataTable.trialNumber = (trialIndex);
+
+dataTable.trialNumber = (trialIndex');
 
 %% getting hand type to show (ex. fold, bet, check)
 
@@ -127,12 +127,10 @@ for i = 1:length(whereBet) %number of times where bets have been revealed
     whereNextMsg = find(contains(dataTable.message((whereBet(i)):(height(dataTable))),'record_status_message')); %gives index
     whereNextMsg = whereNextMsg + whereBet(i);
     
-    if length(whereNextMsg) == 0 %if the last trial is of this type
+    if isempty(whereNextMsg) %if the last trial is of this type
         whereNextMsg = height(dataTable); %next message is end of exp
         eventType(1, whereBet(i):end) = 3; 
-    end 
-    %if this isn't the last
-    if length(whereNextMsg) ~= 0
+    else
         whereNextMsg = whereNextMsg(1, 1);
         eventType(1, whereBet(i):(whereNextMsg - 1)) = 3;
     end
@@ -146,11 +144,10 @@ for j = 1:length(whereFold)
     whereNextMsg = find(contains(dataTable.message(whereFold(j):end),'record_status_message')); 
         whereNextMsg = whereNextMsg + whereFold(j);
 
-    if length(whereNextMsg) == 0 %#ok<ISMT> %if the last trial is of this type
+    if isempty(whereNextMsg) %#ok<ISMT> %if the last trial is of this type
         whereNextMsg = height(dataTable); %next message is end of exp
         eventType(1, whereFold(j):end) = 3; %is there an end tk msg
-    end 
-    if length(whereNextMsg) ~= 0 %#ok<ISMT>
+    else %#ok<ISMT>
         whereNextMsg = whereNextMsg(1, 1);
         eventType(1, whereFold(j):(whereNextMsg - 1)) = 4;
     end
@@ -162,11 +159,10 @@ for k = 1:length(whereCheck)
     whereNextMsg = find(contains(dataTable.message(whereCheck(k):end),'record_status_message')); 
     whereNextMsg = whereNextMsg + whereCheck(k);
 
-    if length(whereNextMsg) == 0 %if the last trial is of this type
+    if isempty(whereNextMsg) %if the last trial is of this type
         whereNextMsg = height(dataTable); %next message is end of exp
         eventType(1, whereCheck(k):end) = 3; %is there an end tk msg
-    end 
-    if length(whereNextMsg) ~= 0
+    else
         whereNextMsg = whereNextMsg(1, 1);
         eventType(1, whereCheck(k):(whereNextMsg - 1)) = 5;
     end
