@@ -4,7 +4,7 @@ load(['GazeDataMat/',filename], 'data_et'); %load only that variable
 
 %% getting trial number to show
 
-whereMsg = find(contains(data_et.message,'P1 prechoose')); 
+whereMsg = find(contains(data_et.message,'P1 prechoose'));  %#ok<NODEF>
 
 %cut out extra columns and whatever happens before first trial starts
 data_et = data_et(whereMsg(1):end, (cat(2, 1:16, 44:46))); 
@@ -23,9 +23,9 @@ struct.both = startDurations;
 %apply array fun
 filledOut = arrayfun(@(x) testfunc(struct.both), struct, 'UniformOutput', false);
 filledOut = filledOut{1};
-filledOut = filledOut';
 
-data_et.trialIndex = filledOut;
+
+data_et.trialIndex = filledOut';
 
 
 %% getting hand type to show (ex. fold, bet, check)
@@ -53,7 +53,7 @@ trialType = trialType';
 data_et.trialType = trialType;
 
 %delete timeout trials
-whereTO = find(data_et.trialType == 0);
+whereTO = data_et.trialType == 0;
 data_et(whereTO, :) = [];
 %0 is code for time out 
 
@@ -69,10 +69,10 @@ whereP2See = find(contains(data_et.message,'P2 prechoose'));
 whereP2Decide = find(contains(data_et.message,'P2 choose timed')); 
 
 %CODE 1 FOR WHEN p1 IS DECIDING
-eventType = eventloop(whereP1See, whereP1Decide, 1, data_et, eventType);
+eventType = eventloop(whereP1See, whereP1Decide, 1, eventType);
 
 %CODE 2 FOR WHEN p2 IS DECIDING
-eventType = eventloop(whereP2See, whereP2Decide, 2, data_et, eventType);
+eventType = eventloop(whereP2See, whereP2Decide, 2, eventType);
 
 
 %% coding for when outcomes revealed 
