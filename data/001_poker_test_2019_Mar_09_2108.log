@@ -1,0 +1,6 @@
+1.2106 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+5.3658 	WARNING 	Monitor specification not found. Creating a temporary one...
+5.3705 	WARNING 	Requested an unavailable screen number - using first available.
+6.1808 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x10efb4e80>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x112635518>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=2, size=array([3840, 2400]), stereo=False, units='pix', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.1818 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [1440, 900]. Using actual size
+8.0856 	EXP 	Set  sound=C
