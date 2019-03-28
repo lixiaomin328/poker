@@ -1,7 +1,7 @@
-%function [] = parcelTrials(filename)
+function parcelTrials(filename)
 %dataTable = load(filename, 'data_et'); %load only that variable
 
-filename = '06_._edf.mat';
+
 load(['GazeDataMat/',filename], 'data_et'); %load only that variable
 
 %% getting trial number to show
@@ -185,3 +185,7 @@ toDelete = (isnan(dataTable.posX)&strcmp(dataTable.message,''));
 dataTable(toDelete,:) = [];
 recordStatus = contains(dataTable.message,'record_status_message'); 
 dataTable(recordStatus,:) = [];
+if ~exist('processedGazeDataMat')
+    mkdir('processedGazeDataMat')
+end
+save(['processedGazeDataMat','/',filename], 'data_et')

@@ -1,20 +1,18 @@
-%function [] = parcelTrials(filename)
+function parcelTrials(filename)
 %dataTable = load(filename, 'data_et'); %load only that variable
 
-filename = '03_._edf.mat';
+filename = '06_._edf.mat';
 load(['GazeDataMat/',filename], 'data_et'); %load only that variable
 
 %% getting trial number to show
 
-%DEBUG
 dataTable = data_et;
 
 whereMsg = find(contains(dataTable.message,'P1 prechoose')); 
-eventStarts = whereMsg(1:end, :); %every other line is the start command
 
 %cut out extra columns and whatever happens before first trial starts
-dataTable = dataTable(eventStarts(1):end, (cat(2, 1:16, 44:46))); 
-
+dataTable = dataTable(whereMsg(1):end, (cat(2, 1:16, 44:46))); 
+eventStarts= find(contains(dataTable.message,'P1 prechoose')); 
 %to be added as a column that says TRIAL 1, 1, 1, 2, etc
 trialIndex = zeros(1, height(dataTable)); 
 
@@ -40,7 +38,7 @@ end
 
 %add to table
 
-dataTable.trialNumber = (trialIndex');
+dataTable.trialNumber = (trialIndex'); 
 
 %% getting hand type to show (ex. fold, bet, check)
 
@@ -54,20 +52,20 @@ whereCheck = find(contains(dataTable.message,'check result revealed'));
 trialType = zeros(1, height(dataTable));
 
 for i = 1:length(whereFold) %TRIALS ENDING WITH P2 FOLD CODED AS 2
-    whichTrialF = dataTable.trialNumber(whereFold(i), :); 
-    where = find(dataTable.trialNumber == whichTrialF);
+    whichTrial = dataTable.trialNumber(whereFold(i), :); 
+    where = find(dataTable.trialNumber == whichTrial);
     trialType(where) = 2;
 end
 
 for i = 1:length(whereBet) %TRIALS ENDING IN P2 BETTING CODED AS 3
-    whichTrialB = dataTable.trialNumber(whereBet(i), :); 
-    where = find(dataTable.trialNumber == whichTrialB);
+    whichTrial = dataTable.trialNumber(whereBet(i), :); 
+    where = find(dataTable.trialNumber == whichTrial);
     trialType(where) = 3;
 end
 
 for i = 1:length(whereCheck) %TRIALS ENDING IN CHECK CODED AS 1
-    whichTrialC = dataTable.trialNumber(whereCheck(i), :); 
-    where = find(dataTable.trialNumber == whichTrialC);
+    whichTrial = dataTable.trialNumber(whereCheck(i), :); 
+    where = find(dataTable.trialNumber == whichTrial);
     trialType(where) = 1;
 end
 
@@ -75,7 +73,7 @@ end
 trialType = trialType';
 dataTable.trialType = trialType;
 
-%events that are still coded as 0 = time out? no tk timeout message
+%0 is code for time out
 
 %% getting 'what's happening' to show
 
@@ -121,10 +119,15 @@ end
  
 %CODE 3 for when BET REVEALED
 
+%create next two lines to keep it from having to search from point to all
+%the way at the end every time
+whereBetMod = cat(1, whereBet, height(dataTable));
+whereBetMod = whereBetMod(2:end);
+
 for i = 1:length(whereBet) %number of times where bets have been revealed
    %gives index in relation to the whereBet start point, so adjust in next
    %line
-    whereNextMsg = find(contains(dataTable.message((whereBet(i)):(height(dataTable))),'P1 prechoose')); %gives index
+    whereNextMsg = find(contains(dataTable.message((whereBet(i)):(whereBetMod(i))),'P1 prechoose')); %gives index
     whereNextMsg = whereNextMsg + whereBet(i);
     
     if isempty(whereNextMsg) %if the last trial is of this type
@@ -140,8 +143,12 @@ end
 %CODE 4 for when FOLD REVEALED
 %logic same as above
 
+whereFoldMod = cat(1, whereFold, height(dataTable));
+whereFoldMod = whereFoldMod(2:end);
+
+
 for j = 1:length(whereFold)
-    whereNextMsg = find(contains(dataTable.message(whereFold(j):end),'P1 prechoose')); 
+    whereNextMsg = find(contains(dataTable.message((whereFold(j)):(whereFoldMod(j))),'P1 prechoose'));
         whereNextMsg = whereNextMsg + whereFold(j);
 
     if isempty(whereNextMsg)%if the last trial is of this type
@@ -155,8 +162,12 @@ end
 
 %CODE 5 for when CHECK REVEALED
 %logic same as above
+
+whereCheckMod = cat(1, whereCheck, height(dataTable));
+whereCheckMod = whereCheckMod(2:end);
+
 for k = 1:length(whereCheck)
-    whereNextMsg = find(contains(dataTable.message(whereCheck(k):end),'P1 prechoose')); 
+    whereNextMsg = find(contains(dataTable.message((whereCheck(k)):(whereCheckMod(k))),'P1 prechoose'));
     whereNextMsg = whereNextMsg + whereCheck(k);
 
     if isempty(whereNextMsg) %if the last trial is of this type
@@ -174,3 +185,4 @@ toDelete = (isnan(dataTable.posX)&strcmp(dataTable.message,''));
 dataTable(toDelete,:) = [];
 recordStatus = contains(dataTable.message,'record_status_message'); 
 dataTable(recordStatus,:) = [];
+if

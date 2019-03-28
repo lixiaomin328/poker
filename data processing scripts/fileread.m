@@ -1,4 +1,4 @@
-function [dataStructure] = fileRead(filename)
+function [dataStructure] = fileread(filename)
 dataPath = '../data';
 if ~exist('DataMat')
     mkdir('DataMat')
