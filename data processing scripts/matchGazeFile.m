@@ -1,5 +1,5 @@
 gazeFolder = 'processedGazeDataMat/';
-allEntries = findConditionalTrial(dataStructure.P2card==7&dataStructure.P2card<dataStructure.P1card);
+allEntries = findConditionalTrial();
 pupilOfInterest = [];
 for i = 1:length(allEntries)
     subId = allEntries(i).subjectId;
@@ -8,5 +8,5 @@ if isempty(filesContain)
     continue;
 end
 load([gazeFolder,filesContain.name])
-pupilOfInterest = [pupilOfInterest;]
+pupilOfInterest = [pupilOfInterest;data_et.pupilSize(allEntries(i).trialNumbers)];
 end
