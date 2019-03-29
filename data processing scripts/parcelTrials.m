@@ -81,12 +81,15 @@ eventType = eventloop(whereP2See, whereP2Decide, 2, eventType);
 whereP2informed = find(contains(data_et.message,'P1 checked'));
 whereCheck = find(contains(data_et.message,'check result revealed'));
 p1ChooseCheck = find((contains(data_et.message,'P1 choose time')) & (data_et.trialType == 1));
-
+p1NotCheck = find((contains(data_et.message,'P1 choose time')) & (data_et.trialType ~= 1));
 eventType = eventloop(whereP2informed, whereCheck, 6, eventType);
 
 
 %'P1 choose time' to 'p1 checked'  TAG AS 7
 eventType = eventloop(p1ChooseCheck, whereP2informed, 7, eventType);
+
+%delay tagged as 8 (p1 choose time to p2 prechoose)
+eventType = eventloop(p1NotCheck, whereP2See, 8, eventType);
 
 
 %% coding for when outcomes revealed 
