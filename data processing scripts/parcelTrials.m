@@ -74,13 +74,20 @@ eventType = eventloop(whereP1See, whereP1Decide, 1, eventType);
 %CODE 2 FOR WHEN p2 IS DECIDING
 eventType = eventloop(whereP2See, whereP2Decide, 2, eventType);
 
-%% when p2 sees p1 checked, but doesn't see result
-%coded as 6
+%% checked-related debugging 
+
+%coded as 6: when p2 sees p1 checked, but doesn't see result
 
 whereP2informed = find(contains(data_et.message,'P1 checked'));
 whereCheck = find(contains(data_et.message,'check result revealed'));
+p1ChooseCheck = find((contains(data_et.message,'P1 choose time')) & (data_et.trialType == 1));
 
 eventType = eventloop(whereP2informed, whereCheck, 6, eventType);
+
+
+%'P1 choose time' to 'p1 checked'  TAG AS 7
+eventType = eventloop(p1ChooseCheck, whereP2informed, 7, eventType);
+
 
 %% coding for when outcomes revealed 
  
