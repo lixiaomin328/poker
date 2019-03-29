@@ -1,4 +1,6 @@
 gazeFolder = 'processedGazeDataMat/';
+pupilInAllCards= cell(8,1);
+%for j = 1:8
 allEntries = findConditionalTrial();
 pupilOfInterest = [];
 for i = 1:length(allEntries)
@@ -10,3 +12,5 @@ end
 load([gazeFolder,filesContain.name])
 pupilOfInterest = [pupilOfInterest;data_et.pupilSize(allEntries(i).trialNumbers)];
 end
+pupilInAllCards{j} = pupilOfInterest;
+%end
