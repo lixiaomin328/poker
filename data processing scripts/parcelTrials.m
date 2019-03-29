@@ -74,13 +74,21 @@ eventType = eventloop(whereP1See, whereP1Decide, 1, eventType);
 %CODE 2 FOR WHEN p2 IS DECIDING
 eventType = eventloop(whereP2See, whereP2Decide, 2, eventType);
 
+%% when p2 sees p1 checked, but doesn't see result
+%coded as 6
+
+whereP2informed = find(contains(data_et.message,'P1 checked'));
+whereCheck = find(contains(data_et.message,'check result revealed'));
+
+eventType = eventloop(whereP2informed, whereCheck, 6, eventType);
 
 %% coding for when outcomes revealed 
  
 %redefine without TO for correct indexing
 whereFold = find(contains(data_et.message,'fold result revealed')); 
 whereBet = find(contains(data_et.message,'bet result revealed')); 
-whereCheck = find(contains(data_et.message,'check result revealed'));
+%defined above: 
+%whereCheck = find(contains(data_et.message,'check result revealed'));
 
 %CODE 3 for when BET REVEALED
 eventType = outcomeloop(whereBet, 3, data_et, eventType);
