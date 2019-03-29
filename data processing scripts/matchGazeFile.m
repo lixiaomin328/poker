@@ -1,4 +1,4 @@
-gazeFolder = 'GazeDataMat/';
+gazeFolder = 'processedGazeDataMat/';
 allEntries = findConditionalTrial(dataStructure.P2card==7&dataStructure.P2card<dataStructure.P1card);
 pupilOfInterest = [];
 for i = 1:length(allEntries)
