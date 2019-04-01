@@ -61,6 +61,11 @@ data_et(whereTO, :) = [];
 
 eventType = zeros(1, height(data_et));
 
+%redefine after the rows were cut out
+whereFold = find(contains(data_et.message,'fold result revealed')); 
+whereBet = find(contains(data_et.message,'bet result revealed')); 
+whereCheck = find(contains(data_et.message,'check result revealed')); 
+
 %use where see and where decide as endpoints for thinking time
 whereP1See = find(contains(data_et.message,'P1 prechoose')); 
 whereP1Decide = find(contains(data_et.message,'P1 choose time'));
@@ -76,20 +81,28 @@ eventType = eventloop(whereP2See, whereP2Decide, 2, eventType);
 
 %% checked-related debugging 
 
-%coded as 6: when p2 sees p1 checked, but doesn't see result
-
 whereP2informed = find(contains(data_et.message,'P1 checked'));
 whereCheck = find(contains(data_et.message,'check result revealed'));
 p1ChooseCheck = find((contains(data_et.message,'P1 choose time')) & (data_et.trialType == 1));
 p1NotCheck = find((contains(data_et.message,'P1 choose time')) & (data_et.trialType ~= 1));
-eventType = eventloop(whereP2informed, whereCheck, 6, eventType);
 
+whereP2DecideBet = find((contains(data_et.message,'P2 choose timed')) & (data_et.trialType == 3));
+whereP2DecideFold = find((contains(data_et.message,'P2 choose timed')) & (data_et.trialType == 2));
+
+%coded as 6: when p2 sees p1 checked, but doesn't see result
+eventType = eventloop(whereP2informed, whereCheck, 6, eventType);
 
 %'P1 choose time' to 'p1 checked'  TAG AS 7
 eventType = eventloop(p1ChooseCheck, whereP2informed, 7, eventType);
 
 %delay tagged as 8 (p1 choose time to p2 prechoose)
 eventType = eventloop(p1NotCheck, whereP2See, 8, eventType);
+
+%between P2 choosing and bet outcome revealed coded as 9
+eventType = eventloop(whereP2DecideBet, whereBet, 9, eventType);
+
+%between P2 choosing and fold outcome revealed coded as 10
+eventType = eventloop(whereP2DecideFold, whereFold, 10, eventType);
 
 
 %% coding for when outcomes revealed 
@@ -111,6 +124,9 @@ eventType = outcomeloop(whereCheck, 5, data_et, eventType);
 
 %% add to table
 data_et.eventType = eventType';
+
+
+
 toDelete = (isnan(data_et.posX)&strcmp(data_et.message,''));
 data_et(toDelete,:) = [];
 recordStatus = contains(data_et.message,'record_status_message'); 
