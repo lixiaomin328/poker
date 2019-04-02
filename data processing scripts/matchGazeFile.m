@@ -4,7 +4,7 @@ pupilInAllCards= cell(8,1);
 for k = 2:8
     allEntries = findConditionalTrial(k);
     pupilOfInterestAllPeople = [];
-for i = 1:length(allEntries)
+for i = 2%1:length(allEntries)
     pupilOfInterest = [];
         
         
@@ -14,7 +14,7 @@ for i = 1:length(allEntries)
             continue;
         end
         load([gazeFolder,filesContain.name])
-        baseline = mean(data_et.pupilSize(~isnan(data_et.pupilSize)));
+        baseline = median(data_et.pupilSize(~isnan(data_et.pupilSize)));
         stdPupil = std(data_et.pupilSize(~isnan(data_et.pupilSize)));
         %to add all the pupil entries for each trial
         for j = 1:length(allEntries(i).trialNumbers)
