@@ -4,10 +4,10 @@
 %%seeking.
 %%saliencyResampled: saliency distribution
 %% Optimazion
-x = fmincon(@(x)modelDiff(x,proportionsBetP1,proportionsBetP2),1.5);%x = lambda,taus,tauh,miu
-
+x = fmincon(@(x)modelDiff(x,proportionsBetP1,proportionsBetP2),[3,0.01],[],[],[],[],[0.5,0.1],[5,1/7]);%x = lambda,taus,tauh,miu
+%%
 %x = (xs+xh)./2; if doing matching, uncomment this line.
-[betRatep1,betRatep2,numberLevel,p1,p2] = texasCH(x);
+[betRatep1,betRatep2,numberLevel,p1,p2] = texasCH(x(1),x(2));
 % plot comparison figure
 figure
 logLikelihood(betRatep1,proportionsBetP1)

@@ -1,7 +1,9 @@
 function gazePreparation(saveDir,filename,dataPath)
     addpath('/Users/lixiaomin/Documents/GitHub/poker/edf-converter')
     edf = Edf2Mat([dataPath,filename]);
+    newpupil = deblink(dataPath,[filename(1:4),'asc']);
     t = struct2table(edf.Samples);
+    t.pupilSize = newpupil';
     t2 = struct2table(edf.Events.Messages);
     t_mod = t2.time';
     t_mod2 = t2.info';
@@ -29,7 +31,7 @@ function gazePreparation(saveDir,filename,dataPath)
     t_com3 = outerjoin(t_com2,fix,'MergeKeys',true);
     t_com4 = outerjoin(t_com3,sacc,'MergeKeys',true);
     data_et = outerjoin(t_com4,t,'MergeKeys',true);
-    %save([saveDir filename(1:4) '_edf.mat'],'data_et');    
+    save([saveDir filename(1:4) '_edf.mat'],'data_et');    
     %writetable(data_full,['edf' num2str(k)]);
-    writetable(data_et,[saveDir filename(1:4) '_eye_tracking_data.csv'],'Delimiter',',','QuoteStrings',true)
+    %writetable(data_et,[saveDir filename(1:4) '_eye_tracking_data.csv'],'Delimiter',',','QuoteStrings',true)
 end
