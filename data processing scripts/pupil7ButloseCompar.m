@@ -1,8 +1,8 @@
 %%With different card
 gazeFolder = 'processedGazeDataMat/';
-pupilInAllCards= cell(8,1);
-for k = 2:8
-    allEntries = findConditionalTrial(k);
+pupilInAllCOnditions= cell(2,1);
+for k = 1:length(pupilInAllCOnditions)
+    allEntries = findCustomizedConditionalTrial(k);
     pupilOfInterestAllPeople = [];
     for i = 1:length(allEntries)
         pupilOfInterest = [];
@@ -19,7 +19,7 @@ for k = 2:8
         %to add all the pupil entries for each trial
         for j = 1:length(allEntries(i).trialNumbers)
             what = (allEntries(i).trialNumbers(j));
-            where = find(data_et.trialIndex == what& data_et.eventType==1);
+            where = find(data_et.trialIndex == what& data_et.eventType==3);
             if isempty(where)
                 continue;
             end
@@ -34,25 +34,25 @@ for k = 2:8
         pupilOfInterest = pupilOfInterest(~isnan(pupilOfInterest(:,1)),:);
         pupilOfInterestAllPeople = [pupilOfInterestAllPeople;pupilOfInterest];
     end
-    pupilInAllCards{k} = pupilOfInterestAllPeople;
+    pupilInAllCOnditions{k} = pupilOfInterestAllPeople;
 end
 %% plot out
-meanVector = cell(length(pupilInAllCards),1);
-countVector = cell(length(pupilInAllCards),1);
-for i = 2:length(pupilInAllCards)
+meanVector = cell(length(pupilInAllCOnditions),1);
+countVector = cell(length(pupilInAllCOnditions),1);
+for i = 1:length(pupilInAllCOnditions)
 
-    for j = 1:max(pupilInAllCards{i}(:,3))+1
-        indexBin = find(pupilInAllCards{i}(:,3)==j-1);
+    for j = 1:max(pupilInAllCOnditions{i}(:,3))+1
+        indexBin = find(pupilInAllCOnditions{i}(:,3)==j-1);
         
-    meanVector{i} = [meanVector{i};mean(pupilInAllCards{i}(indexBin,1))];
+    meanVector{i} = [meanVector{i};mean(pupilInAllCOnditions{i}(indexBin,1))];
     countVector{i} = [countVector{i};length(indexBin)];    
     end
 end
 %%
-for i = 2:8
+for i = 1:2
     lastBin = find(countVector{i}>1000,1,'last');
 plot(0.6*[1:1:lastBin],meanVector{i}(1:lastBin))
 hold on
 end
 
-legend('2','3','4','5','6','7','8')
+legend('win','lose')
