@@ -18,12 +18,15 @@ useGUI = True #  use the Psychopy GUI module to collect subject information
 dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 
 #LABJACK
-from psychopy.hardware import labjacks
+#note--need all the labjack files in the same dir
+from psychopy.hardware.labjacks import U3
 import time
-p_port = labjacks.U3()
-# initial set port to zero
-byte=0
-p_port.setData(byte, endian='big', address=6008)
+d = U3()
+###WORKING CODE set to FIO4
+configDict = d.configIO()
+configDict["FIOAnalog"]
+d.configIO(FIOAnalog = 15)
+d.getFeedback(u3.BitDirWrite(4,1)) #set low setup
 
 
 # STEP I: get subject info
@@ -622,11 +625,10 @@ for thisTrial in trials:
             tk.sendMessage("P1 prechoose")
             
             #LABJACK
-            byte=1 #whatever code we want (what is the range?)
-            p_port.setData(byte)
-            time.sleep(.005)     # wait 
-            p_port.setData(0)   # zero port
-            #
+            d.getFeedback(u3.BitStateWrite(4,0)) #set high
+            d.getFeedback(u3.BitStateWrite(4,1)) #set low
+
+
             
             event.clearEvents(eventType='keyboard')
         elif gameStatus == GameStatus.GAME_PLAYER_1_ROUND_STARTED:          
@@ -641,11 +643,10 @@ for thisTrial in trials:
                     tk.sendMessage("P1 choose time")
                     
                     #LABJACK
-                    byte=2 #whatever code we want (what is the range?)
-                    p_port.setData(byte)
-                    time.sleep(.005)     # wait 
-                    p_port.setData(0)   # zero port
-                     #
+                    d.getFeedback(u3.BitStateWrite(4,0)) #set high
+                    d.getFeedback(u3.BitStateWrite(4,1)) #set low
+
+
                     
                     
                 
@@ -680,10 +681,10 @@ for thisTrial in trials:
             tk2.sendMessage("P2 prechoose")
             
             #LABJACK
-            byte=3 #whatever code we want (what is the range?)
-            p_port.setData(byte)
-            time.sleep(.005)     # wait
-            p_port.setData(0)   # zero port
+            d.getFeedback(u3.BitStateWrite(4,0)) #set high
+            d.getFeedback(u3.BitStateWrite(4,1)) #set low
+
+
             
             event.clearEvents(eventType='keyboard')
             
@@ -698,10 +699,10 @@ for thisTrial in trials:
             tk.sendMessage("P1 checked")
             
             #LABJACK
-            byte=4 #whatever code we want (what is the range?)
-            p_port.setData(byte)
-            time.sleep(.005)     # wait
-            p_port.setData(0)   # zero port
+            d.getFeedback(u3.BitStateWrite(4,0)) #set high
+            d.getFeedback(u3.BitStateWrite(4,1)) #set low
+
+
             
             
             core.wait(3)
@@ -718,11 +719,10 @@ for thisTrial in trials:
             tk2.sendMessage("check result revealed")
             
             #LABJACK
-            byte=5 #whatever code we want (what is the range?)
-            p_port.setData(byte)
-            time.sleep(.005)     # wait
-            p_port.setData(0)   # zero port
-            
+            d.getFeedback(u3.BitStateWrite(4,0)) #set high
+            d.getFeedback(u3.BitStateWrite(4,1)) #set low
+
+
             
             core.wait(rewardRevealTime)
             gameStatus = GameStatus.GAME_FINISHED
@@ -740,10 +740,10 @@ for thisTrial in trials:
                     tk2.sendMessage("P2 choose timed")
                     
                     #LABJACK
-                    byte=6#whatever code we want (what is the range?)
-                    p_port.setData(byte)
-                    time.sleep(.005)     # wait
-                    p_port.setData(0)   # zero port
+                    d.getFeedback(u3.BitStateWrite(4,0)) #set high
+                    d.getFeedback(u3.BitStateWrite(4,1)) #set low
+
+
 
 #                    core.wait(timeLimit - player2ActionCheck.clock.getTime())
                     if player2ActionCheck.keys == []:  # then this was the first keypress
@@ -775,11 +775,10 @@ for thisTrial in trials:
             tk.sendMessage("bet result revealed")
             
             #LABJACK
-            byte=7#whatever code we want (what is the range?)
-            p_port.setData(byte)
-            time.sleep(.005)     # wait
-            p_port.setData(0)   # zero port
-            
+            d.getFeedback(u3.BitStateWrite(4,0)) #set high
+            d.getFeedback(u3.BitStateWrite(4,1)) #set low
+
+
             
             core.wait(rewardRevealTime)
             gameStatus = GameStatus.GAME_FINISHED
@@ -796,10 +795,10 @@ for thisTrial in trials:
             tk.sendMessage("fold result revealed")
             
             #LABJACK
-            byte=8#whatever code we want (what is the range?)
-            p_port.setData(byte)
-            time.sleep(.005)     # wait
-            p_port.setData(0)   # zero port
+            d.getFeedback(u3.BitStateWrite(4,0)) #set high
+            d.getFeedback(u3.BitStateWrite(4,1)) #set low
+
+
             
             
             core.wait(rewardRevealTime)
@@ -926,7 +925,7 @@ logging.flush()
 thisExp.abort()  # or data files will save again on exit
 
 #LABJACK close
-p_port.close()
+d.close()
 
 win.close()
 win1.close()
