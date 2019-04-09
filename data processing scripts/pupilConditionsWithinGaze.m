@@ -5,7 +5,7 @@ pupilInAllConditions = cell(length(conditions),1);
 for k = 1:length(conditions)
     pupilOfInterestAllPeople =[];
 for i = 1:length(gazeFile)
-        load([gazeFolder,filesContain.name])
+        load([gazeFolder,gazeFile(i).name])
         baseline = mean(data_et.pupilSize(~isnan(data_et.pupilSize)));
         stdPupil = std(data_et.pupilSize(~isnan(data_et.pupilSize)));
         %to add all the pupil entries for each trial
