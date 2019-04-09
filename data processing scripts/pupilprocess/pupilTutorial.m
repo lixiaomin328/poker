@@ -19,7 +19,7 @@ addpath(thispath);
 % ascFile = regexprep(edfFile, 'edf', 'asc');
 
 % set path to FieldTrip - get this from http://www.fieldtriptoolbox.org/download
-addpath('~/Desktop/pupilprocess/fieldtrip-master');
+addpath('~/Documents/fieldtrip');
 ft_defaults;
 
 % ============================================== %

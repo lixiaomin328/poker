@@ -1,11 +1,12 @@
+%fixation analysis
 %%With different card
 gazeFolder = 'processedGazeDataMat/';
 pupilInAllCards= cell(8,1);
 for k = 2:8
     allEntries = findConditionalTrial(k);
     pupilOfInterestAllPeople = [];
-    for i = 2%1:length(allEntries)
-        pupilOfInterest = [];
+    for i = 1:length(allEntries)
+        fixationOfInterest = [];
         
         
         subId = allEntries(i).subjectId;
@@ -14,25 +15,20 @@ for k = 2:8
             continue;
         end
         load([gazeFolder,filesContain.name])
-        baseline = median(data_et.pupilSize(~isnan(data_et.pupilSize)));
-        stdPupil = std(data_et.pupilSize(~isnan(data_et.pupilSize)));
         %to add all the pupil entries for each trial
-        for j = 5%1:length(allEntries(i).trialNumbers)
+        for j = 2%1:length(allEntries(i).trialNumbers)
             what = (allEntries(i).trialNumbers(j));
             where = find(data_et.trialIndex == what& data_et.eventType==1);
-            if where==[]
+            if isempty(where)
                 continue;
-                
+            end
             %per person per trial all pupil and timestamp
-            new=[data_et.pupilSize(where)./baseline,data_et.time(where)];
+            new=[data_et.FixPosX(where),data_et.FixPosY(where),data_et.time(where)];
             cluster = new(:,2)-new(1,2);
-            cluster = cluster/500;
-            cluster = round(cluster);
-            new = [new,cluster];
-            pupilOfInterest = [pupilOfInterest;new];
+            fixationOfInterest = [fixationOfInterest;new];
         end
-        pupilOfInterest = pupilOfInterest(~isnan(pupilOfInterest(:,1)),:);
-        pupilOfInterestAllPeople = [pupilOfInterestAllPeople;pupilOfInterest];
+        fixationOfInterest = fixationOfInterest(~isnan(fixationOfInterest(:,1)),:);
+        pupilOfInterestAllPeople = [pupilOfInterestAllPeople;fixationOfInterest];
     end
     pupilInAllCards{k} = pupilOfInterestAllPeople;
 end

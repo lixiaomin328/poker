@@ -15,7 +15,7 @@ posttrig =  round(cfg.trialdef.post * cfg.fsample);
 
 trl = [];
 session = cfg.session;
-for j = 1:length(value)-3, % loop through the trials and create the trial matrix on each trl
+for j = 1:length(value)-3 % loop through the trials and create the trial matrix on each trl
     
     % check that this is really a fixation trigger
     if (~isempty(strfind(value{j}, 'blinkbreak_end')) && ~isempty(strfind(value{j+2}, 'ref'))) || ...
