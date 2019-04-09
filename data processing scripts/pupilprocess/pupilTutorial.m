@@ -19,26 +19,27 @@ addpath(thispath);
 % ascFile = regexprep(edfFile, 'edf', 'asc');
 
 % set path to FieldTrip - get this from http://www.fieldtriptoolbox.org/download
-addpath('~/Documents/fieldtrip');
+
+addpath('~/Documents/GitHub/fieldtrip');
 ft_defaults;
 
 % ============================================== %
 % 1. convert edf file to asc
 % ============================================== %
 % 
-% if ~exist(ascFile, 'file'),
-%     if ismac,
-%         edf2ascPath = [thispath '/edf2asc-mac'];
-%     elseif isunix,
-%         edf2ascPath = [thispath '/edf2asc-linux'];
-%     else
-%         error('Sorry, I don''t have an edf2asc converter for Windows')
-%     end
-%     % use this converter to create the asc file
-%     % failsafe mode avoids errors when some samples are missing
-%     system(sprintf('%s %s -failsafe -input', edf2ascPath, edfFile));
-% end
-% assert(exist(ascFile, 'file') > 1, 'Edf not properly converted');
+if ~exist(ascFile, 'file'),
+    if ismac,
+        edf2ascPath = [thispath '/edf2asc-mac'];
+    elseif isunix,
+        edf2ascPath = [thispath '/edf2asc-linux'];
+    else
+        error('Sorry, I don''t have an edf2asc converter for Windows')
+    end
+    % use this converter to create the asc file
+    % failsafe mode avoids errors when some samples are missing
+    system(sprintf('%s %s -failsafe -input', edf2ascPath, edfFile));
+end
+assert(exist(ascFile, 'file') > 1, 'Edf not properly converted');
 
 % ============================================== %
 % 2. create a FieldTrip-style data structure
