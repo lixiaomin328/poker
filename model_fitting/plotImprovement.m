@@ -8,9 +8,8 @@ for i = 1:numel(lines)
 end
 
 %% add x, y label
-xlabel('Saliency level');
-ylabel('Probability Density');
-set(gca,'FontSize',36);
+xlabel('Time');
+ylabel('Pupil Size');
+set(gca,'FontSize',20);
 
 %% add legend
-legend('Level 0','Level 1', 'Level 2','Level 3','Level 4');
