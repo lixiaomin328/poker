@@ -42,9 +42,9 @@ for i = 1:length(varNames)
 end
 dataStructure.trials_thisN = dataStructure.trials_thisN -3;
 if participantNumber< 10&&participantNumber>4
-    dataStructure.player1ActionCheck_rt = dataStructure.player1ActionCheck_rt -3;
+    dataStructure.player1ActionCheck_rt(dataStructure.player1ActionCheck_rt>3) = dataStructure.player1ActionCheck_rt(dataStructure.player1ActionCheck_rt>3) -3;
 elseif participantNumber< 10&&participantNumber<4
-    dataStructure.player1ActionCheck_rt = dataStructure.player1ActionCheck_rt -0.5;
+    dataStructure.player1ActionCheck_rt( dataStructure.player1ActionCheck_rt>0.5) = dataStructure.player1ActionCheck_rt( dataStructure.player1ActionCheck_rt>0.5) -0.5;
 end
 %% write data to a structure saved as a .mat, file named participant #
 
