@@ -1,5 +1,5 @@
 %function[] = rtAnalysis(dataStruct)
-[p1Actions,p1Cards,p1rt,p2Cards,p2rt] = getRTandChoice();
+[p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt] = getRTandChoice();
 
 
 %% set up P1 rt per fold or call on each card
