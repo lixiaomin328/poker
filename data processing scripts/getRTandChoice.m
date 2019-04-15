@@ -9,6 +9,10 @@ p1rt = [];
 p2rt = [];
 for i = 1:length(dataFiles)
     load([dataFolder,dataFiles(i).name]);
+<<<<<<< HEAD
+=======
+    %[normRtP1, normRtP2] = normRT(dataStructure);
+>>>>>>> b06689dcd753c61fc50f7dddcae53afaa0a91524
     p1Cards = [p1Cards;dataStructure.P1card];
     p2Cards = [p2Cards;dataStructure.P2card];
     p1Actions = [p1Actions;dataStructure.player1ActionCheck_keys];
