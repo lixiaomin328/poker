@@ -9,7 +9,7 @@ p1rt = [];
 p2rt = [];
 for i = 1:length(dataFiles)
     load([dataFolder,dataFiles(i).name]);
-    [normRtP1, normRtP2] = normRT(dataStructure);
+    %[normRtP1, normRtP2] = normRT(dataStructure);
     p1Cards = [p1Cards;dataStructure.P1card];
     p2Cards = [p2Cards;dataStructure.P2card];
     p1Actions = [p1Actions;dataStructure.player1ActionCheck_keys];
