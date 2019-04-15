@@ -22,11 +22,7 @@ for i = 2:8
     p2CallRT(1, i-1) = mean(p2rt(whenCall));
     whenFold = find((p2Cards == i) & (foldChoicesP2 == i)); %give indexes
     p2FoldRT(1, i-1) = mean(p2rt(whenFold));
-    p2rtCardi = p2rt(find(p2Cards ==i));
-    p1rtCardi = p1rt(find(p1Cards ==i));
-    p1RtByCard = [p1RtByCard;mean(p1rtCardi(~isnan(p1rtCardi)))];
-
-    p2RtByCard = [p2RtByCard;mean(p2rtCardi(~isnan(p2rtCardi)))];
+    p1RtByCard = [p1RtByCard;mean()];
 end
 
 
@@ -34,7 +30,7 @@ end
 %% plot
 w = 2:1:8;
 
-subplot(3,1,1)
+subplot(2,1,1)
 plot(w, p1BetRT)
 hold on
 plot(w, p1CheckRT)
@@ -43,7 +39,7 @@ title('Reaction Times by Card for P1 Decisions')
 xlabel('Card Value')
 ylabel('Reaction Time (s)')
 
-subplot(3,1,2)
+subplot(2,1,2)
 plot(w, p2CallRT)
 hold on
 plot(w, p2FoldRT)
@@ -52,13 +48,5 @@ title('Reaction Times by Card for P2 Decisions')
 xlabel('Card Value')
 ylabel('Reaction Time (s)')
 
-subplot(3,1,3)
-plot(w, p1RtByCard)
-hold on
-plot(w, p2RtByCard)
-legend('p1 RT', 'P2 RT')
-title('Reaction Times by Cards')
-xlabel('Card Value')
-ylabel('Reaction Time (s)')
 %
 
