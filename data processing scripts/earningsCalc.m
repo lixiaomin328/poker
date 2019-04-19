@@ -1,4 +1,4 @@
-function  [p1Earnings,p2Earnings]= earningsCalc(p1Move, p2Move, p1Card, p2Card)
+function  [p1Earnings,p2Earnings, indicatorWin]= earningsCalc(p1Move, p2Move, p1Card, p2Card)
 %% create move profiles
 betCall = ((p1Move == 1) & (p2Move == 1));
 betFold = ((p1Move == 1) & (p2Move == 0));

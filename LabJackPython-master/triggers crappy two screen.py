@@ -20,7 +20,7 @@ dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip cal
 #LABJACK
 #note--need all the labjack files in the same dir
 #ADD IMPORT LINE IF NEEDED
-os.chdir("/Users/virginiafedrigo/poker/LabJackPython-master")
+#os.chdir("/Users/virginiafedrigo/Desktop/LabJackPython-master")
 import time
 from psychopy.hardware.labjacks import u3
 d = u3.U3() #d is the object labjack
