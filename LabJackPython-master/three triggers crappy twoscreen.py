@@ -24,11 +24,21 @@ dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip cal
 import time
 from psychopy.hardware.labjacks import u3
 d = u3.U3() #d is the object labjack
-###WORKING CODE set to FIO4
+#WORKING CODE set to FIO4 : for starting decisions (when P1, P2 decision periods start)
 configDict = d.configIO()
 configDict["FIOAnalog"]
 d.configIO(FIOAnalog = 15)
 d.getFeedback(u3.BitDirWrite(4,0)) #set low setup
+#TEST CODE set to FIO5 : for decision made (ending of P1, P2 decision period)
+configDict = d.configIO()
+configDict["FIOAnalog"]
+d.configIO(FIOAnalog = 15)
+d.getFeedback(u3.BitDirWrite(5,0)) #set low setup
+#TEST CODE set to FIO6 : for outcome revealed (any)
+configDict = d.configIO()
+configDict["FIOAnalog"]
+d.configIO(FIOAnalog = 15)
+d.getFeedback(u3.BitDirWrite(6,0)) #set low setup
 
 
 # STEP I: get subject info
@@ -626,7 +636,7 @@ for thisTrial in trials:
             win1.callOnFlip(player1ActionCheck.clock.reset)
             tk.sendMessage("P1 prechoose")
             
-            #LABJACK
+            #LABJACK : FIO4 FOR DECISION START
             d.getFeedback(u3.BitStateWrite(4,1)) #set high
             d.getFeedback(u3.BitStateWrite(4,0)) #set low
 
@@ -644,9 +654,9 @@ for thisTrial in trials:
                 if len(theseKeys) > 0:  # at least one key was pressed
                     tk.sendMessage("P1 choose time")
                     
-                    #LABJACK
-                    d.getFeedback(u3.BitStateWrite(4,1)) #set high
-                    d.getFeedback(u3.BitStateWrite(4,0)) #set low
+                    #LABJACK : FIO5 FOR DECISION MADE
+                    d.getFeedback(u3.BitStateWrite(5,1)) #set high
+                    d.getFeedback(u3.BitStateWrite(5,0)) #set low
 
 
                     
@@ -682,7 +692,7 @@ for thisTrial in trials:
             tk.sendMessage("P2 prechoose")
             tk2.sendMessage("P2 prechoose")
             
-            #LABJACK
+            #LABJACK : FIO4 FOR DECISION START
             d.getFeedback(u3.BitStateWrite(4,1)) #set high
             d.getFeedback(u3.BitStateWrite(4,0)) #set low
 
@@ -700,11 +710,8 @@ for thisTrial in trials:
             win1.flip()
             tk.sendMessage("P1 checked")
             
-            #LABJACK
-            d.getFeedback(u3.BitStateWrite(4,1)) #set high
-            d.getFeedback(u3.BitStateWrite(4,0)) #set low
-
-
+            
+            
             
             
             core.wait(3)
@@ -720,9 +727,9 @@ for thisTrial in trials:
             tk.sendMessage("check result revealed")
             tk2.sendMessage("check result revealed")
             
-            #LABJACK
-            d.getFeedback(u3.BitStateWrite(4,1)) #set high
-            d.getFeedback(u3.BitStateWrite(4,0)) #set low
+            #LABJACK : FIO6 FOR OUTCOME SHOWN
+            d.getFeedback(u3.BitStateWrite(6,1)) #set high
+            d.getFeedback(u3.BitStateWrite(6,0)) #set low
 
 
             
@@ -741,9 +748,9 @@ for thisTrial in trials:
                     tk.sendMessage("P2 choose timed")
                     tk2.sendMessage("P2 choose timed")
                     
-                    #LABJACK
-                    d.getFeedback(u3.BitStateWrite(4,1)) #set high
-                    d.getFeedback(u3.BitStateWrite(4,0)) #set low
+                    #LABJACK : FIO5 FOR DECISION MADE
+                    d.getFeedback(u3.BitStateWrite(5,1)) #set high
+                    d.getFeedback(u3.BitStateWrite(5,0)) #set low
 
 
 
@@ -776,9 +783,9 @@ for thisTrial in trials:
             win1.flip()
             tk.sendMessage("bet result revealed")
             
-            #LABJACK
-            d.getFeedback(u3.BitStateWrite(4,1)) #set high
-            d.getFeedback(u3.BitStateWrite(4,0)) #set low
+            #LABJACK : FIO6 FOR RESULT REVEALED
+            d.getFeedback(u3.BitStateWrite(6,1)) #set high
+            d.getFeedback(u3.BitStateWrite(6,0)) #set low
 
 
             
@@ -796,9 +803,9 @@ for thisTrial in trials:
             win1.flip()
             tk.sendMessage("fold result revealed")
             
-            #LABJACK
-            d.getFeedback(u3.BitStateWrite(4,1)) #set high
-            d.getFeedback(u3.BitStateWrite(4,0)) #set low
+            #LABJACK : FIO6 FOR RESULT REVEALED
+            d.getFeedback(u3.BitStateWrite(6,1)) #set high
+            d.getFeedback(u3.BitStateWrite(6,0)) #set low
 
 
             

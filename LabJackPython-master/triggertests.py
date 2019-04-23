@@ -1,6 +1,6 @@
 import time
 import os
-os.chdir("/Users/virginiafedrigo/Desktop/LabJackPython-master")
+os.chdir("/Users/virginiafedrigo/poker/LabJackPython-master")
 from psychopy.hardware.labjacks import u3
 
 
