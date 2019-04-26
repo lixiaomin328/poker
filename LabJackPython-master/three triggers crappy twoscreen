@@ -1,4 +1,4 @@
-  #from __future__ import absolute_import, division #is this commented out? 
+  from __future__ import absolute_import, division #is this commented out? 
 from psychopy import locale_setup, sound, gui, visual, core, data, event, logging, clock, hardware,monitors
 from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
                                 STOPPED, FINISHED, PRESSED, RELEASED, FOREVER)
@@ -15,7 +15,7 @@ import random
 import pandas
 from enum import Enum
 useGUI = True #  use the Psychopy GUI module to collect subject information
-dummyMode = False # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
+dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 
 #LABJACK
 #note--need all the labjack files in the same dir
@@ -106,13 +106,13 @@ mon = monitors.Monitor('myMac15', width=53.0, distance=70.0)
 mon.setSizePix((scnWidth, scnHeight))
 mon1 = monitors.Monitor('testMonitor', width=53.0, distance=70.0)
 mon1.setSizePix((scnWidth, scnHeight))
-win = visual.Window((scnWidth, scnHeight), screen=0, fullscr=True, monitor=mon, color=[0,0,0], units='pix', allowStencil=True,autoLog=False)
 win1 = visual.Window(  
-    (scnWidth1, scnHeight1), screen=2, fullscr=False,
+    (scnWidth1, scnHeight1),fullscr=False, screen=1,
     allowGUI=False, allowStencil=True,
     monitor=mon1, color=[0,0,0], colorSpace='rgb',
     blendMode='avg', useFBO=True,
     units='pix')
+win = visual.Window((scnWidth, scnHeight), fullscr=True, monitor=mon, color=[0,0,0], units='pix', allowStencil=True,autoLog=False)
 endExpNow = False  # flag for 'escape' or other condition => quit the exp
 # Start Code - component code to be run before the window creation
 
@@ -328,7 +328,7 @@ if eyeTracked==2:
 #messy set ups for game
 deckRange = range(2,9)
 cardImageDir = 'cards/'
-TrialNum = 100
+TrialNum =5
 timeLimit = 10
 rewardRevealTime = 4
 sessionBreakN = 20
@@ -939,3 +939,4 @@ d.close()
 win.close()
 win1.close()
 core.quit()
+
