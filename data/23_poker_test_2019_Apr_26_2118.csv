@@ -1,0 +1,6 @@
+﻿trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,P1card,P2card,player1ActionCheck.keys,player1ActionCheck.rt,player2ActionCheck.keys,player2ActionCheck.rt,SubjectNO,SubjectInitials,date,expName,psychopyVersion,frameRate,
+0,0,0,0,5,6,b,1.343775254999855,c,1.2185140540004795,23,TEST,2019_Apr_26_2118,poker_test,3.0.3,385.3831865004104,
+1,0,1,0,7,3,h,0.7523723390004307,None,,23,TEST,2019_Apr_26_2118,poker_test,3.0.3,385.3831865004104,
+2,0,2,0,3,6,h,1.1511429300007876,None,,23,TEST,2019_Apr_26_2118,poker_test,3.0.3,385.3831865004104,
+3,0,3,0,4,5,h,0.7849986649998755,None,,23,TEST,2019_Apr_26_2118,poker_test,3.0.3,385.3831865004104,
+4,0,4,0,5,3,h,1.0845226559995353,None,,23,TEST,2019_Apr_26_2118,poker_test,3.0.3,385.3831865004104,

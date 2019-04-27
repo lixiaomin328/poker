@@ -13,9 +13,9 @@ import pandas
 import sys
 import numpy as np
 def paymentOutput(path,filename):
-    path='data/'
-    filename = '04_poker_test_2019_Mar_13_1025'+'.csv'
-    df = pandas.read_csv(path+filename, header = 0)
+    #path='data/'
+    #filename = '04_poker_test_2019_Mar_13_1025'+'.csv'
+    df = pandas.read_csv(filename, header = 0)
     	   
     df = df.drop(columns = ['trials.thisRepN','trials.thisTrialN', 'trials.thisN', 'trials.thisIndex','SubjectNO', 'date', 
     	    'expName', 'psychopyVersion', 'frameRate', 'SubjectInitials', 'Unnamed: 16'])
