@@ -15,7 +15,7 @@ import random
 import pandas
 from enum import Enum
 useGUI = True #  use the Psychopy GUI module to collect subject information
-dummyMode = False # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
+dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 
 #LABJACK
 #note--need all the labjack files in the same dir
@@ -328,7 +328,7 @@ if eyeTracked==2:
 #messy set ups for game
 deckRange = range(2,9)
 cardImageDir = 'cards/'
-TrialNum = 100
+TrialNum = 4 #CHANGE HERE
 timeLimit = 10
 rewardRevealTime = 4
 sessionBreakN = 20

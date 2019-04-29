@@ -13,12 +13,12 @@ import pandas
 import sys
 import numpy as np
 def paymentOutput(path,filename):
-    path='data/'
+    #path='data/'
     #filename = '04_poker_test_2019_Mar_13_1025'+'.csv'
-    df = pandas.read_csv(path+filename, header = 0)
+    df = pandas.read_csv(filename, header = 0)
     	   
     df = df.drop(columns = ['trials.thisRepN','trials.thisTrialN', 'trials.thisN', 'trials.thisIndex','SubjectNO', 'date', 
-    	    'expName', 'psychopyVersion', 'frameRate', 'SubjectInitials', 'Unnamed: 16'])
+    	    'expName', 'psychopyVersion', 'frameRate', 'SubjectInitials'])
     
     df = df.drop([0, 1, 2])
     
