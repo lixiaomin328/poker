@@ -328,7 +328,7 @@ if eyeTracked==2:
 #messy set ups for game
 deckRange = range(2,9)
 cardImageDir = 'cards/'
-TrialNum = 4 #CHANGE HERE
+TrialNum = 40 #CHANGE HERE
 timeLimit = 10
 rewardRevealTime = 4
 sessionBreakN = 20

@@ -1,0 +1,662 @@
+1.1795 	WARNING 	sounddevice audio lib was requested but not loaded: sounddevice not working
+5.1056 	WARNING 	Monitor specification not found. Creating a temporary one...
+6.3239 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=True, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x10e7d2da0>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x11302a240>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=2, size=array([1280, 1024]), stereo=False, units='pix', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+7.6012 	EXP 	Set  sound=C
+7.6017 	EXP 	Set  sound=A
+7.6021 	EXP 	Set  sound=E
+7.6025 	EXP 	Set  sound=E
+8.0732 	DATA 	Keypress: escape
+8.2026 	DATA 	Keypress: return
+8.4505 	DATA 	Keypress: return
+9.1958 	DATA 	Keypress: space
+9.8746 	DATA 	Keypress: return
+10.1786 	DATA 	Keypress: escape
+10.1788 	EXP 	window1: units = 'pix'
+10.3019 	EXP 	Set  sound=A
+10.3023 	EXP 	Set  sound=E
+10.3027 	EXP 	Set  sound=E
+10.3028 	EXP 	window1: mouseVisible = False
+10.3039 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=24.0, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([   0., -264.]), rgb=array([1., 1., 1.]), text='', units='pix', win=Window(...), wrapWidth=1280)
+10.3384 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='left', alignVert='top', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=24.0, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-640.,  512.]), rgb=array([1., 1., 1.]), text=str(...), units='pix', win=Window(...), wrapWidth=500)
+10.3395 	EXP 	Created unnamed Line = Line(__class__=<class 'psychopy.visual.line.Line'>, autoDraw=False, autoLog=True, closeShape=False, contrast=1.0, depth=0, fillColor=None, fillColorSpace='rgb', interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineWidth=2.0, name='unnamed Line', opacity=1.0, ori=array(0.), pos=array([0., 0.]), size=array([1., 1.]), units='pix', vertices=array([[0., 0.],
+       [0., 0.]]), win=Window(...), windingRule=None)
+10.3421 	EXP 	Created unnamed GratingStim = GratingStim(__class__=<class 'psychopy.visual.grating.GratingStim'>, autoDraw=False, autoLog=True, blendmode='avg', color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, interpolate=False, mask='circle', maskParams=None, name='unnamed GratingStim', opacity=1.0, ori=0.0, phase=array([0., 0.]), pos=array([0., 0.]), rgbPedestal=array([0., 0., 0.]), sf=array([0.005, 0.005]), size=array([200., 200.]), tex='none', texRes=128, units='pix', win=Window(...))
+10.3421 	EXP 	window1: recordFrameIntervals = False
+10.4571 	DATA 	Keypress: escape
+10.4889 	EXP 	window1: recordFrameIntervals = True
+10.6723 	EXP 	window1: recordFrameIntervals = False
+10.8184 	DATA 	Keypress: return
+11.0670 	DATA 	Keypress: space
+11.3945 	DATA 	Keypress: return
+11.7065 	DATA 	Keypress: escape
+11.7068 	EXP 	window1: units = 'pix'
+11.7071 	EXP 	window1: color = array([0., 0., 0.])
+11.7218 	EXP 	unnamed TextStim: autoDraw = True
+11.7218 	EXP 	unnamed TextStim: autoDraw = False
+11.7218 	EXP 	unnamed TextStim: autoDraw = False
+11.8417 	EXP 	Created hand2Capital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=40.96, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-448. ,  409.6]), rgb=array([255., 255., 255.]), text='Your card', units='pix', win=Window(...), wrapWidth=500)
+11.8585 	EXP 	Created handCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=40.96, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 448., -256.]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='pix', win=Window(...), wrapWidth=500)
+11.8606 	EXP 	Created image1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-448.  ,  276.48]), size=array([128.  , 174.08]), texRes=128, units='pix', win=Window(...))
+11.8752 	EXP 	Created P2WaitingWords = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=35.84, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='pix', win=Window(...), wrapWidth=1000)
+11.8891 	EXP 	Created hand2OpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=40.96, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([448. , 409.6]), rgb=array([255., 255., 255.]), text='Your opponent card', units='pix', win=Window(...), wrapWidth=500)
+11.9659 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([384.  , 276.48]), size=array([128.  , 174.08]), texRes=128, units='pix', win=Window(...))
+11.9918 	EXP 	Created decks2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=30.72, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([   0. , -358.4]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='pix', win=Window(...), wrapWidth=500)
+12.0197 	EXP 	Created handOpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=40.96, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='pix', win=Window(...), wrapWidth=500)
+12.0205 	EXP 	Created sequence: random, trialTypes=1, nReps=20, seed=None
+12.0209 	EXP 	New trial (rep=0, index=0): None
+12.0739 	DATA 	Keypress: return
+12.0883 	EXP 	P2WaitingWords: text = 'You will have three practice trials,\nit will not count towards the payment'
+12.0883 	EXP 	P2WaitingWords: autoDraw = True
+12.2672 	DATA 	Keypress: space
+12.3383 	EXP 	P2WaitingWords: autoDraw = False
+12.3383 	EXP 	image1: image = 'cards/5.png'
+12.3383 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+12.3383 	EXP 	handCapital: text = 'Current Pot: \n 2'
+12.3383 	EXP 	handOpponentCapital: autoDraw = False
+12.3383 	EXP 	image1: autoDraw = True
+12.3383 	EXP 	image: autoDraw = True
+12.3383 	EXP 	hand2Capital: autoDraw = True
+12.3383 	EXP 	handCapital: autoDraw = True
+12.3383 	EXP 	hand2OpponentCapital: autoDraw = True
+12.3383 	EXP 	decks2: autoDraw = True
+12.3383 	EXP 	P2WaitingWords: autoDraw = True
+12.3383 	EXP 	decks2: autoDraw = True
+15.3068 	DATA 	Keypress: h
+18.2201 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+21.2693 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+25.3016 	EXP 	image1: autoDraw = False
+25.3016 	EXP 	image: autoDraw = False
+25.3016 	EXP 	hand2Capital: autoDraw = False
+25.3016 	EXP 	hand2OpponentCapital: autoDraw = False
+25.3016 	EXP 	P2WaitingWords: autoDraw = False
+25.3016 	EXP 	decks2: autoDraw = False
+25.3016 	EXP 	handCapital: autoDraw = False
+25.3016 	EXP 	handOpponentCapital: autoDraw = True
+25.3016 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+26.0192 	DATA 	Keypress: space
+26.0680 	EXP 	handOpponentCapital: text = 'P1 is prepared, press (RETURN) to next trial'
+26.7466 	DATA 	Keypress: return
+26.8012 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+28.8088 	EXP 	New trial (rep=1, index=0): None
+28.8673 	EXP 	hand2Capital: autoDraw = False
+28.8673 	EXP 	decks2: autoDraw = False
+28.8673 	EXP 	P2WaitingWords: autoDraw = False
+28.8673 	EXP 	image1: autoDraw = False
+28.8673 	EXP 	handCapital: autoDraw = False
+28.8673 	EXP 	image1: image = 'cards/7.png'
+28.8673 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+28.8673 	EXP 	handCapital: text = 'Current Pot: \n 2'
+28.8673 	EXP 	handOpponentCapital: autoDraw = False
+28.8673 	EXP 	image1: autoDraw = True
+28.8673 	EXP 	image: autoDraw = True
+28.8673 	EXP 	hand2Capital: autoDraw = True
+28.8673 	EXP 	handCapital: autoDraw = True
+28.8673 	EXP 	hand2OpponentCapital: autoDraw = True
+28.8673 	EXP 	decks2: autoDraw = True
+28.8673 	EXP 	P2WaitingWords: autoDraw = True
+28.8673 	EXP 	decks2: autoDraw = True
+29.2212 	DATA 	Keypress: h
+32.2164 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+35.2656 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+39.0710 	DATA 	Keypress: h
+39.2979 	EXP 	image1: autoDraw = False
+39.2979 	EXP 	image: autoDraw = False
+39.2979 	EXP 	hand2Capital: autoDraw = False
+39.2979 	EXP 	hand2OpponentCapital: autoDraw = False
+39.2979 	EXP 	P2WaitingWords: autoDraw = False
+39.2979 	EXP 	decks2: autoDraw = False
+39.2979 	EXP 	handCapital: autoDraw = False
+39.2979 	EXP 	handOpponentCapital: autoDraw = True
+39.2979 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+41.3053 	EXP 	New trial (rep=2, index=0): None
+41.3640 	EXP 	hand2Capital: autoDraw = False
+41.3640 	EXP 	decks2: autoDraw = False
+41.3640 	EXP 	P2WaitingWords: autoDraw = False
+41.3640 	EXP 	image1: autoDraw = False
+41.3640 	EXP 	handCapital: autoDraw = False
+41.3640 	EXP 	image1: image = 'cards/4.png'
+41.3640 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+41.3640 	EXP 	handCapital: text = 'Current Pot: \n 2'
+41.3640 	EXP 	handOpponentCapital: autoDraw = False
+41.3640 	EXP 	image1: autoDraw = True
+41.3640 	EXP 	image: autoDraw = True
+41.3640 	EXP 	hand2Capital: autoDraw = True
+41.3640 	EXP 	handCapital: autoDraw = True
+41.3640 	EXP 	hand2OpponentCapital: autoDraw = True
+41.3640 	EXP 	decks2: autoDraw = True
+41.3640 	EXP 	P2WaitingWords: autoDraw = True
+41.3640 	EXP 	decks2: autoDraw = True
+41.8832 	DATA 	Keypress: space
+42.2660 	DATA 	Keypress: h
+45.1632 	DATA 	Keypress: h
+45.4629 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+48.5121 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+52.5611 	EXP 	image1: autoDraw = False
+52.5611 	EXP 	image: autoDraw = False
+52.5611 	EXP 	hand2Capital: autoDraw = False
+52.5611 	EXP 	hand2OpponentCapital: autoDraw = False
+52.5611 	EXP 	P2WaitingWords: autoDraw = False
+52.5611 	EXP 	decks2: autoDraw = False
+52.5611 	EXP 	handCapital: autoDraw = False
+52.5611 	EXP 	handOpponentCapital: autoDraw = True
+52.5611 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+54.7389 	DATA 	Keypress: space
+54.7938 	EXP 	handOpponentCapital: text = 'That is the end of practice trial.\n Press (Enter) if you are ready'
+55.3625 	DATA 	Keypress: return
+55.4104 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+57.4178 	EXP 	New trial (rep=3, index=0): None
+57.4765 	EXP 	hand2Capital: autoDraw = False
+57.4765 	EXP 	decks2: autoDraw = False
+57.4765 	EXP 	P2WaitingWords: autoDraw = False
+57.4765 	EXP 	image1: autoDraw = False
+57.4765 	EXP 	handCapital: autoDraw = False
+57.4765 	EXP 	image1: image = 'cards/8.png'
+57.4765 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+57.4765 	EXP 	handCapital: text = 'Current Pot: \n 2'
+57.4765 	EXP 	handOpponentCapital: autoDraw = False
+57.4765 	EXP 	image1: autoDraw = True
+57.4765 	EXP 	image: autoDraw = True
+57.4765 	EXP 	hand2Capital: autoDraw = True
+57.4765 	EXP 	handCapital: autoDraw = True
+57.4765 	EXP 	hand2OpponentCapital: autoDraw = True
+57.4765 	EXP 	decks2: autoDraw = True
+57.4765 	EXP 	P2WaitingWords: autoDraw = True
+57.4765 	EXP 	decks2: autoDraw = True
+60.8447 	DATA 	Keypress: h
+64.0081 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+67.0573 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+71.0896 	EXP 	image1: autoDraw = False
+71.0896 	EXP 	image: autoDraw = False
+71.0896 	EXP 	hand2Capital: autoDraw = False
+71.0896 	EXP 	hand2OpponentCapital: autoDraw = False
+71.0896 	EXP 	P2WaitingWords: autoDraw = False
+71.0896 	EXP 	decks2: autoDraw = False
+71.0896 	EXP 	handCapital: autoDraw = False
+71.0896 	EXP 	handOpponentCapital: autoDraw = True
+71.0896 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+73.0973 	EXP 	New trial (rep=4, index=0): None
+73.1557 	EXP 	hand2Capital: autoDraw = False
+73.1557 	EXP 	decks2: autoDraw = False
+73.1557 	EXP 	P2WaitingWords: autoDraw = False
+73.1557 	EXP 	image1: autoDraw = False
+73.1557 	EXP 	handCapital: autoDraw = False
+73.1557 	EXP 	image1: image = 'cards/7.png'
+73.1557 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+73.1557 	EXP 	handCapital: text = 'Current Pot: \n 2'
+73.1557 	EXP 	handOpponentCapital: autoDraw = False
+73.1557 	EXP 	image1: autoDraw = True
+73.1557 	EXP 	image: autoDraw = True
+73.1557 	EXP 	hand2Capital: autoDraw = True
+73.1557 	EXP 	handCapital: autoDraw = True
+73.1557 	EXP 	hand2OpponentCapital: autoDraw = True
+73.1557 	EXP 	decks2: autoDraw = True
+73.1557 	EXP 	P2WaitingWords: autoDraw = True
+73.1557 	EXP 	decks2: autoDraw = True
+82.6558 	DATA 	Keypress: space
+83.1405 	DATA 	Keypress: h
+86.0750 	DATA 	Keypress: h
+86.0751 	DATA 	Keypress: h
+86.0751 	DATA 	Keypress: h
+86.3689 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+89.4181 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+93.4504 	EXP 	image1: autoDraw = False
+93.4504 	EXP 	image: autoDraw = False
+93.4504 	EXP 	hand2Capital: autoDraw = False
+93.4504 	EXP 	hand2OpponentCapital: autoDraw = False
+93.4504 	EXP 	P2WaitingWords: autoDraw = False
+93.4504 	EXP 	decks2: autoDraw = False
+93.4504 	EXP 	handCapital: autoDraw = False
+93.4504 	EXP 	handOpponentCapital: autoDraw = True
+93.4504 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+95.4580 	EXP 	New trial (rep=5, index=0): None
+95.5165 	EXP 	hand2Capital: autoDraw = False
+95.5165 	EXP 	decks2: autoDraw = False
+95.5165 	EXP 	P2WaitingWords: autoDraw = False
+95.5165 	EXP 	image1: autoDraw = False
+95.5165 	EXP 	handCapital: autoDraw = False
+95.5165 	EXP 	image1: image = 'cards/6.png'
+95.5165 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+95.5165 	EXP 	handCapital: text = 'Current Pot: \n 2'
+95.5165 	EXP 	handOpponentCapital: autoDraw = False
+95.5165 	EXP 	image1: autoDraw = True
+95.5165 	EXP 	image: autoDraw = True
+95.5165 	EXP 	hand2Capital: autoDraw = True
+95.5165 	EXP 	handCapital: autoDraw = True
+95.5165 	EXP 	hand2OpponentCapital: autoDraw = True
+95.5165 	EXP 	decks2: autoDraw = True
+95.5165 	EXP 	P2WaitingWords: autoDraw = True
+95.5165 	EXP 	decks2: autoDraw = True
+97.5368 	DATA 	Keypress: h
+100.8984 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+103.9476 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+107.9799 	EXP 	image1: autoDraw = False
+107.9799 	EXP 	image: autoDraw = False
+107.9799 	EXP 	hand2Capital: autoDraw = False
+107.9799 	EXP 	hand2OpponentCapital: autoDraw = False
+107.9799 	EXP 	P2WaitingWords: autoDraw = False
+107.9799 	EXP 	decks2: autoDraw = False
+107.9799 	EXP 	handCapital: autoDraw = False
+107.9799 	EXP 	handOpponentCapital: autoDraw = True
+107.9799 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+109.9874 	EXP 	New trial (rep=6, index=0): None
+110.0460 	EXP 	hand2Capital: autoDraw = False
+110.0460 	EXP 	decks2: autoDraw = False
+110.0460 	EXP 	P2WaitingWords: autoDraw = False
+110.0460 	EXP 	image1: autoDraw = False
+110.0460 	EXP 	handCapital: autoDraw = False
+110.0460 	EXP 	image1: image = 'cards/7.png'
+110.0460 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+110.0460 	EXP 	handCapital: text = 'Current Pot: \n 2'
+110.0460 	EXP 	handOpponentCapital: autoDraw = False
+110.0460 	EXP 	image1: autoDraw = True
+110.0460 	EXP 	image: autoDraw = True
+110.0460 	EXP 	hand2Capital: autoDraw = True
+110.0460 	EXP 	handCapital: autoDraw = True
+110.0460 	EXP 	hand2OpponentCapital: autoDraw = True
+110.0460 	EXP 	decks2: autoDraw = True
+110.0460 	EXP 	P2WaitingWords: autoDraw = True
+110.0460 	EXP 	decks2: autoDraw = True
+111.9996 	DATA 	Keypress: h
+115.1780 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+118.2272 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+122.2594 	EXP 	image1: autoDraw = False
+122.2594 	EXP 	image: autoDraw = False
+122.2594 	EXP 	hand2Capital: autoDraw = False
+122.2594 	EXP 	hand2OpponentCapital: autoDraw = False
+122.2594 	EXP 	P2WaitingWords: autoDraw = False
+122.2594 	EXP 	decks2: autoDraw = False
+122.2594 	EXP 	handCapital: autoDraw = False
+122.2594 	EXP 	handOpponentCapital: autoDraw = True
+122.2594 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+124.2667 	EXP 	New trial (rep=7, index=0): None
+124.3256 	EXP 	hand2Capital: autoDraw = False
+124.3256 	EXP 	decks2: autoDraw = False
+124.3256 	EXP 	P2WaitingWords: autoDraw = False
+124.3256 	EXP 	image1: autoDraw = False
+124.3256 	EXP 	handCapital: autoDraw = False
+124.3256 	EXP 	image1: image = 'cards/4.png'
+124.3256 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+124.3256 	EXP 	handCapital: text = 'Current Pot: \n 2'
+124.3256 	EXP 	handOpponentCapital: autoDraw = False
+124.3256 	EXP 	image1: autoDraw = True
+124.3256 	EXP 	image: autoDraw = True
+124.3256 	EXP 	hand2Capital: autoDraw = True
+124.3256 	EXP 	handCapital: autoDraw = True
+124.3256 	EXP 	hand2OpponentCapital: autoDraw = True
+124.3256 	EXP 	decks2: autoDraw = True
+124.3256 	EXP 	P2WaitingWords: autoDraw = True
+124.3256 	EXP 	decks2: autoDraw = True
+127.4273 	DATA 	Keypress: h
+130.5907 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+133.6399 	EXP 	P2WaitingWords: text = 'Your card is smaller.\nYou earn -1'
+137.6720 	EXP 	image1: autoDraw = False
+137.6720 	EXP 	image: autoDraw = False
+137.6720 	EXP 	hand2Capital: autoDraw = False
+137.6720 	EXP 	hand2OpponentCapital: autoDraw = False
+137.6720 	EXP 	P2WaitingWords: autoDraw = False
+137.6720 	EXP 	decks2: autoDraw = False
+137.6720 	EXP 	handCapital: autoDraw = False
+137.6720 	EXP 	handOpponentCapital: autoDraw = True
+137.6720 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+139.6794 	EXP 	New trial (rep=8, index=0): None
+139.7382 	EXP 	hand2Capital: autoDraw = False
+139.7382 	EXP 	decks2: autoDraw = False
+139.7382 	EXP 	P2WaitingWords: autoDraw = False
+139.7382 	EXP 	image1: autoDraw = False
+139.7382 	EXP 	handCapital: autoDraw = False
+139.7382 	EXP 	image1: image = 'cards/6.png'
+139.7382 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+139.7382 	EXP 	handCapital: text = 'Current Pot: \n 2'
+139.7382 	EXP 	handOpponentCapital: autoDraw = False
+139.7382 	EXP 	image1: autoDraw = True
+139.7382 	EXP 	image: autoDraw = True
+139.7382 	EXP 	hand2Capital: autoDraw = True
+139.7382 	EXP 	handCapital: autoDraw = True
+139.7382 	EXP 	hand2OpponentCapital: autoDraw = True
+139.7382 	EXP 	decks2: autoDraw = True
+139.7382 	EXP 	P2WaitingWords: autoDraw = True
+139.7382 	EXP 	decks2: autoDraw = True
+141.9254 	DATA 	Keypress: h
+145.0368 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+148.0860 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+152.1183 	EXP 	image1: autoDraw = False
+152.1183 	EXP 	image: autoDraw = False
+152.1183 	EXP 	hand2Capital: autoDraw = False
+152.1183 	EXP 	hand2OpponentCapital: autoDraw = False
+152.1183 	EXP 	P2WaitingWords: autoDraw = False
+152.1183 	EXP 	decks2: autoDraw = False
+152.1183 	EXP 	handCapital: autoDraw = False
+152.1183 	EXP 	handOpponentCapital: autoDraw = True
+152.1183 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+154.1249 	EXP 	New trial (rep=9, index=0): None
+154.1844 	EXP 	hand2Capital: autoDraw = False
+154.1844 	EXP 	decks2: autoDraw = False
+154.1844 	EXP 	P2WaitingWords: autoDraw = False
+154.1844 	EXP 	image1: autoDraw = False
+154.1844 	EXP 	handCapital: autoDraw = False
+154.1844 	EXP 	image1: image = 'cards/4.png'
+154.1844 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+154.1844 	EXP 	handCapital: text = 'Current Pot: \n 2'
+154.1844 	EXP 	handOpponentCapital: autoDraw = False
+154.1844 	EXP 	image1: autoDraw = True
+154.1844 	EXP 	image: autoDraw = True
+154.1844 	EXP 	hand2Capital: autoDraw = True
+154.1844 	EXP 	handCapital: autoDraw = True
+154.1844 	EXP 	hand2OpponentCapital: autoDraw = True
+154.1844 	EXP 	decks2: autoDraw = True
+154.1844 	EXP 	P2WaitingWords: autoDraw = True
+154.1844 	EXP 	decks2: autoDraw = True
+154.8053 	DATA 	Keypress: h
+157.9501 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+160.9993 	EXP 	P2WaitingWords: text = 'Your card is smaller.\nYou earn -1'
+165.0316 	EXP 	image1: autoDraw = False
+165.0316 	EXP 	image: autoDraw = False
+165.0316 	EXP 	hand2Capital: autoDraw = False
+165.0316 	EXP 	hand2OpponentCapital: autoDraw = False
+165.0316 	EXP 	P2WaitingWords: autoDraw = False
+165.0316 	EXP 	decks2: autoDraw = False
+165.0316 	EXP 	handCapital: autoDraw = False
+165.0316 	EXP 	handOpponentCapital: autoDraw = True
+165.0316 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+167.0393 	EXP 	New trial (rep=10, index=0): None
+167.0978 	EXP 	hand2Capital: autoDraw = False
+167.0978 	EXP 	decks2: autoDraw = False
+167.0978 	EXP 	P2WaitingWords: autoDraw = False
+167.0978 	EXP 	image1: autoDraw = False
+167.0978 	EXP 	handCapital: autoDraw = False
+167.0978 	EXP 	image1: image = 'cards/7.png'
+167.0978 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+167.0978 	EXP 	handCapital: text = 'Current Pot: \n 2'
+167.0978 	EXP 	handOpponentCapital: autoDraw = False
+167.0978 	EXP 	image1: autoDraw = True
+167.0978 	EXP 	image: autoDraw = True
+167.0978 	EXP 	hand2Capital: autoDraw = True
+167.0978 	EXP 	handCapital: autoDraw = True
+167.0978 	EXP 	hand2OpponentCapital: autoDraw = True
+167.0978 	EXP 	decks2: autoDraw = True
+167.0978 	EXP 	P2WaitingWords: autoDraw = True
+167.0978 	EXP 	decks2: autoDraw = True
+170.0178 	DATA 	Keypress: h
+173.1128 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+176.1620 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+180.0429 	DATA 	Keypress: h
+180.1943 	EXP 	image1: autoDraw = False
+180.1943 	EXP 	image: autoDraw = False
+180.1943 	EXP 	hand2Capital: autoDraw = False
+180.1943 	EXP 	hand2OpponentCapital: autoDraw = False
+180.1943 	EXP 	P2WaitingWords: autoDraw = False
+180.1943 	EXP 	decks2: autoDraw = False
+180.1943 	EXP 	handCapital: autoDraw = False
+180.1943 	EXP 	handOpponentCapital: autoDraw = True
+180.1943 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+182.2020 	EXP 	New trial (rep=11, index=0): None
+182.2605 	EXP 	hand2Capital: autoDraw = False
+182.2605 	EXP 	decks2: autoDraw = False
+182.2605 	EXP 	P2WaitingWords: autoDraw = False
+182.2605 	EXP 	image1: autoDraw = False
+182.2605 	EXP 	handCapital: autoDraw = False
+182.2605 	EXP 	image1: image = 'cards/3.png'
+182.2605 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+182.2605 	EXP 	handCapital: text = 'Current Pot: \n 2'
+182.2605 	EXP 	handOpponentCapital: autoDraw = False
+182.2605 	EXP 	image1: autoDraw = True
+182.2605 	EXP 	image: autoDraw = True
+182.2605 	EXP 	hand2Capital: autoDraw = True
+182.2605 	EXP 	handCapital: autoDraw = True
+182.2605 	EXP 	hand2OpponentCapital: autoDraw = True
+182.2605 	EXP 	decks2: autoDraw = True
+182.2605 	EXP 	P2WaitingWords: autoDraw = True
+182.2605 	EXP 	decks2: autoDraw = True
+185.5452 	DATA 	Keypress: h
+188.6754 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+191.7246 	EXP 	P2WaitingWords: text = 'Your card is smaller.\nYou earn -1'
+195.7569 	EXP 	image1: autoDraw = False
+195.7569 	EXP 	image: autoDraw = False
+195.7569 	EXP 	hand2Capital: autoDraw = False
+195.7569 	EXP 	hand2OpponentCapital: autoDraw = False
+195.7569 	EXP 	P2WaitingWords: autoDraw = False
+195.7569 	EXP 	decks2: autoDraw = False
+195.7569 	EXP 	handCapital: autoDraw = False
+195.7569 	EXP 	handOpponentCapital: autoDraw = True
+195.7569 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+197.7645 	EXP 	New trial (rep=12, index=0): None
+197.8230 	EXP 	hand2Capital: autoDraw = False
+197.8230 	EXP 	decks2: autoDraw = False
+197.8230 	EXP 	P2WaitingWords: autoDraw = False
+197.8230 	EXP 	image1: autoDraw = False
+197.8230 	EXP 	handCapital: autoDraw = False
+197.8230 	EXP 	image1: image = 'cards/6.png'
+197.8230 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+197.8230 	EXP 	handCapital: text = 'Current Pot: \n 2'
+197.8230 	EXP 	handOpponentCapital: autoDraw = False
+197.8230 	EXP 	image1: autoDraw = True
+197.8230 	EXP 	image: autoDraw = True
+197.8230 	EXP 	hand2Capital: autoDraw = True
+197.8230 	EXP 	handCapital: autoDraw = True
+197.8230 	EXP 	hand2OpponentCapital: autoDraw = True
+197.8230 	EXP 	decks2: autoDraw = True
+197.8230 	EXP 	P2WaitingWords: autoDraw = True
+197.8230 	EXP 	decks2: autoDraw = True
+198.2921 	DATA 	Keypress: h
+201.3554 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+204.4046 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+208.4370 	EXP 	image1: autoDraw = False
+208.4370 	EXP 	image: autoDraw = False
+208.4370 	EXP 	hand2Capital: autoDraw = False
+208.4370 	EXP 	hand2OpponentCapital: autoDraw = False
+208.4370 	EXP 	P2WaitingWords: autoDraw = False
+208.4370 	EXP 	decks2: autoDraw = False
+208.4370 	EXP 	handCapital: autoDraw = False
+208.4370 	EXP 	handOpponentCapital: autoDraw = True
+208.4370 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+210.4444 	EXP 	New trial (rep=13, index=0): None
+210.5031 	EXP 	hand2Capital: autoDraw = False
+210.5031 	EXP 	decks2: autoDraw = False
+210.5031 	EXP 	P2WaitingWords: autoDraw = False
+210.5031 	EXP 	image1: autoDraw = False
+210.5031 	EXP 	handCapital: autoDraw = False
+210.5031 	EXP 	image1: image = 'cards/6.png'
+210.5031 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+210.5031 	EXP 	handCapital: text = 'Current Pot: \n 2'
+210.5031 	EXP 	handOpponentCapital: autoDraw = False
+210.5031 	EXP 	image1: autoDraw = True
+210.5031 	EXP 	image: autoDraw = True
+210.5031 	EXP 	hand2Capital: autoDraw = True
+210.5031 	EXP 	handCapital: autoDraw = True
+210.5031 	EXP 	hand2OpponentCapital: autoDraw = True
+210.5031 	EXP 	decks2: autoDraw = True
+210.5031 	EXP 	P2WaitingWords: autoDraw = True
+210.5031 	EXP 	decks2: autoDraw = True
+211.0906 	DATA 	Keypress: h
+214.2687 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+217.3180 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+221.3502 	EXP 	image1: autoDraw = False
+221.3502 	EXP 	image: autoDraw = False
+221.3502 	EXP 	hand2Capital: autoDraw = False
+221.3502 	EXP 	hand2OpponentCapital: autoDraw = False
+221.3502 	EXP 	P2WaitingWords: autoDraw = False
+221.3502 	EXP 	decks2: autoDraw = False
+221.3502 	EXP 	handCapital: autoDraw = False
+221.3502 	EXP 	handOpponentCapital: autoDraw = True
+221.3502 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+223.3570 	EXP 	New trial (rep=14, index=0): None
+223.4163 	EXP 	hand2Capital: autoDraw = False
+223.4163 	EXP 	decks2: autoDraw = False
+223.4163 	EXP 	P2WaitingWords: autoDraw = False
+223.4163 	EXP 	image1: autoDraw = False
+223.4163 	EXP 	handCapital: autoDraw = False
+223.4163 	EXP 	image1: image = 'cards/6.png'
+223.4163 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+223.4163 	EXP 	handCapital: text = 'Current Pot: \n 2'
+223.4163 	EXP 	handOpponentCapital: autoDraw = False
+223.4163 	EXP 	image1: autoDraw = True
+223.4163 	EXP 	image: autoDraw = True
+223.4163 	EXP 	hand2Capital: autoDraw = True
+223.4163 	EXP 	handCapital: autoDraw = True
+223.4163 	EXP 	hand2OpponentCapital: autoDraw = True
+223.4163 	EXP 	decks2: autoDraw = True
+223.4163 	EXP 	P2WaitingWords: autoDraw = True
+223.4163 	EXP 	decks2: autoDraw = True
+224.1520 	DATA 	Keypress: h
+227.3486 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+230.3978 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+234.4301 	EXP 	image1: autoDraw = False
+234.4301 	EXP 	image: autoDraw = False
+234.4301 	EXP 	hand2Capital: autoDraw = False
+234.4301 	EXP 	hand2OpponentCapital: autoDraw = False
+234.4301 	EXP 	P2WaitingWords: autoDraw = False
+234.4301 	EXP 	decks2: autoDraw = False
+234.4301 	EXP 	handCapital: autoDraw = False
+234.4301 	EXP 	handOpponentCapital: autoDraw = True
+234.4301 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+236.4368 	EXP 	New trial (rep=15, index=0): None
+236.4962 	EXP 	hand2Capital: autoDraw = False
+236.4962 	EXP 	decks2: autoDraw = False
+236.4962 	EXP 	P2WaitingWords: autoDraw = False
+236.4962 	EXP 	image1: autoDraw = False
+236.4962 	EXP 	handCapital: autoDraw = False
+236.4962 	EXP 	image1: image = 'cards/3.png'
+236.4962 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+236.4962 	EXP 	handCapital: text = 'Current Pot: \n 2'
+236.4962 	EXP 	handOpponentCapital: autoDraw = False
+236.4962 	EXP 	image1: autoDraw = True
+236.4962 	EXP 	image: autoDraw = True
+236.4962 	EXP 	hand2Capital: autoDraw = True
+236.4962 	EXP 	handCapital: autoDraw = True
+236.4962 	EXP 	hand2OpponentCapital: autoDraw = True
+236.4962 	EXP 	decks2: autoDraw = True
+236.4962 	EXP 	P2WaitingWords: autoDraw = True
+236.4962 	EXP 	decks2: autoDraw = True
+239.7979 	DATA 	Keypress: h
+243.0945 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+246.1437 	EXP 	P2WaitingWords: text = 'Your card is smaller.\nYou earn -1'
+250.1760 	EXP 	image1: autoDraw = False
+250.1760 	EXP 	image: autoDraw = False
+250.1760 	EXP 	hand2Capital: autoDraw = False
+250.1760 	EXP 	hand2OpponentCapital: autoDraw = False
+250.1760 	EXP 	P2WaitingWords: autoDraw = False
+250.1760 	EXP 	decks2: autoDraw = False
+250.1760 	EXP 	handCapital: autoDraw = False
+250.1760 	EXP 	handOpponentCapital: autoDraw = True
+250.1760 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+252.1837 	EXP 	New trial (rep=16, index=0): None
+252.2421 	EXP 	hand2Capital: autoDraw = False
+252.2421 	EXP 	decks2: autoDraw = False
+252.2421 	EXP 	P2WaitingWords: autoDraw = False
+252.2421 	EXP 	image1: autoDraw = False
+252.2421 	EXP 	handCapital: autoDraw = False
+252.2421 	EXP 	image1: image = 'cards/5.png'
+252.2421 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+252.2421 	EXP 	handCapital: text = 'Current Pot: \n 2'
+252.2421 	EXP 	handOpponentCapital: autoDraw = False
+252.2421 	EXP 	image1: autoDraw = True
+252.2421 	EXP 	image: autoDraw = True
+252.2421 	EXP 	hand2Capital: autoDraw = True
+252.2421 	EXP 	handCapital: autoDraw = True
+252.2421 	EXP 	hand2OpponentCapital: autoDraw = True
+252.2421 	EXP 	decks2: autoDraw = True
+252.2421 	EXP 	P2WaitingWords: autoDraw = True
+252.2421 	EXP 	decks2: autoDraw = True
+256.4269 	DATA 	Keypress: h
+259.7735 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+262.8227 	EXP 	P2WaitingWords: text = 'Your card is smaller.\nYou earn -1'
+266.8550 	EXP 	image1: autoDraw = False
+266.8550 	EXP 	image: autoDraw = False
+266.8550 	EXP 	hand2Capital: autoDraw = False
+266.8550 	EXP 	hand2OpponentCapital: autoDraw = False
+266.8550 	EXP 	P2WaitingWords: autoDraw = False
+266.8550 	EXP 	decks2: autoDraw = False
+266.8550 	EXP 	handCapital: autoDraw = False
+266.8550 	EXP 	handOpponentCapital: autoDraw = True
+266.8550 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+268.8615 	EXP 	New trial (rep=17, index=0): None
+268.9211 	EXP 	hand2Capital: autoDraw = False
+268.9211 	EXP 	decks2: autoDraw = False
+268.9211 	EXP 	P2WaitingWords: autoDraw = False
+268.9211 	EXP 	image1: autoDraw = False
+268.9211 	EXP 	handCapital: autoDraw = False
+268.9211 	EXP 	image1: image = 'cards/4.png'
+268.9211 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+268.9211 	EXP 	handCapital: text = 'Current Pot: \n 2'
+268.9211 	EXP 	handOpponentCapital: autoDraw = False
+268.9211 	EXP 	image1: autoDraw = True
+268.9211 	EXP 	image: autoDraw = True
+268.9211 	EXP 	hand2Capital: autoDraw = True
+268.9211 	EXP 	handCapital: autoDraw = True
+268.9211 	EXP 	hand2OpponentCapital: autoDraw = True
+268.9211 	EXP 	decks2: autoDraw = True
+268.9211 	EXP 	P2WaitingWords: autoDraw = True
+268.9211 	EXP 	decks2: autoDraw = True
+270.1232 	DATA 	Keypress: h
+273.2366 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+276.2859 	EXP 	P2WaitingWords: text = 'Your card is smaller.\nYou earn -1'
+280.3181 	EXP 	image1: autoDraw = False
+280.3181 	EXP 	image: autoDraw = False
+280.3181 	EXP 	hand2Capital: autoDraw = False
+280.3181 	EXP 	hand2OpponentCapital: autoDraw = False
+280.3181 	EXP 	P2WaitingWords: autoDraw = False
+280.3181 	EXP 	decks2: autoDraw = False
+280.3181 	EXP 	handCapital: autoDraw = False
+280.3181 	EXP 	handOpponentCapital: autoDraw = True
+280.3181 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+282.3258 	EXP 	New trial (rep=18, index=0): None
+282.3842 	EXP 	hand2Capital: autoDraw = False
+282.3842 	EXP 	decks2: autoDraw = False
+282.3842 	EXP 	P2WaitingWords: autoDraw = False
+282.3842 	EXP 	image1: autoDraw = False
+282.3842 	EXP 	handCapital: autoDraw = False
+282.3842 	EXP 	image1: image = 'cards/7.png'
+282.3842 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+282.3842 	EXP 	handCapital: text = 'Current Pot: \n 2'
+282.3842 	EXP 	handOpponentCapital: autoDraw = False
+282.3842 	EXP 	image1: autoDraw = True
+282.3842 	EXP 	image: autoDraw = True
+282.3842 	EXP 	hand2Capital: autoDraw = True
+282.3842 	EXP 	handCapital: autoDraw = True
+282.3842 	EXP 	hand2OpponentCapital: autoDraw = True
+282.3842 	EXP 	decks2: autoDraw = True
+282.3842 	EXP 	P2WaitingWords: autoDraw = True
+282.3842 	EXP 	decks2: autoDraw = True
+282.9052 	DATA 	Keypress: h
+285.9166 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+288.9658 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+292.9981 	EXP 	image1: autoDraw = False
+292.9981 	EXP 	image: autoDraw = False
+292.9981 	EXP 	hand2Capital: autoDraw = False
+292.9981 	EXP 	hand2OpponentCapital: autoDraw = False
+292.9981 	EXP 	P2WaitingWords: autoDraw = False
+292.9981 	EXP 	decks2: autoDraw = False
+292.9981 	EXP 	handCapital: autoDraw = False
+292.9981 	EXP 	handOpponentCapital: autoDraw = True
+292.9981 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+295.0058 	EXP 	New trial (rep=19, index=0): None
+295.0643 	EXP 	hand2Capital: autoDraw = False
+295.0643 	EXP 	decks2: autoDraw = False
+295.0643 	EXP 	P2WaitingWords: autoDraw = False
+295.0643 	EXP 	image1: autoDraw = False
+295.0643 	EXP 	handCapital: autoDraw = False
+295.0643 	EXP 	image1: image = 'cards/6.png'
+295.0643 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+295.0643 	EXP 	handCapital: text = 'Current Pot: \n 2'
+295.0643 	EXP 	handOpponentCapital: autoDraw = False
+295.0643 	EXP 	image1: autoDraw = True
+295.0643 	EXP 	image: autoDraw = True
+295.0643 	EXP 	hand2Capital: autoDraw = True
+295.0643 	EXP 	handCapital: autoDraw = True
+295.0643 	EXP 	hand2OpponentCapital: autoDraw = True
+295.0643 	EXP 	decks2: autoDraw = True
+295.0643 	EXP 	P2WaitingWords: autoDraw = True
+295.0643 	EXP 	decks2: autoDraw = True
+295.4668 	DATA 	Keypress: h
+298.5467 	EXP 	P2WaitingWords: text = 'Player 1 chose to check,\nyou do not need to make a decision'
+301.5958 	EXP 	P2WaitingWords: text = 'Your card is larger\nYou earn +1'
+305.6282 	EXP 	image1: autoDraw = False
+305.6282 	EXP 	image: autoDraw = False
+305.6282 	EXP 	hand2Capital: autoDraw = False
+305.6282 	EXP 	hand2OpponentCapital: autoDraw = False
+305.6282 	EXP 	P2WaitingWords: autoDraw = False
+305.6282 	EXP 	decks2: autoDraw = False
+305.6282 	EXP 	handCapital: autoDraw = False
+305.6282 	EXP 	handOpponentCapital: autoDraw = True
+305.6282 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+308.0763 	EXP 	window1: mouseVisible = True
