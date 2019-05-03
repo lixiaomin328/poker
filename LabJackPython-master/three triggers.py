@@ -11,12 +11,12 @@ from EyeLinkCoreGraphicsPsychoPy import EyeLinkCoreGraphicsPsychoPy
 import earnings2
 import os  # handy system and path functions
 import sys  # to get file system encoding
+#sys.path.append("/Users/slab/poker/LabJackPython-master")
 import random
 import pandas
 from enum import Enum
 useGUI = True #  use the Psychopy GUI module to collect subject information
-dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
-
+dummyMode = False # Simulated connection to the tracker; press ESCAPE to skip calibration/validataion
 #LABJACK
 #note--need all the labjack files in the same dir
 #ADD IMPORT LINE IF NEEDED
@@ -55,7 +55,7 @@ else:
  #SETP II: established a link to the tracker
 
 if not dummyMode: 
-    tk = pylink.EyeLink('100.1.1.1')
+    tk = pylink.EyeLink('100.1.1.11')
 else:
     tk = pylink.EyeLink(None)
 
@@ -219,7 +219,7 @@ if eyeTracked==2:
 
 #Eyetracker 2
 if not dummyMode: 
-    tk2 = pylink.EyeLink('100.1.1.11')
+    tk2 = pylink.EyeLink('100.1.1.1')
 else:
     tk2 = pylink.EyeLink(None)
 dataFileName1 = expInfo['SubjectNO'] + '_'+'.EDF'
@@ -328,7 +328,7 @@ if eyeTracked==2:
 #messy set ups for game
 deckRange = range(2,9)
 cardImageDir = 'cards/'
-TrialNum = 40 #CHANGE HERE
+TrialNum = 5 #CHANGE HERE
 timeLimit = 10
 rewardRevealTime = 4
 sessionBreakN = 20
