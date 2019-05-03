@@ -911,12 +911,12 @@ tk2.receiveDataFile(dataFileName1, dataFolder + dataFileName1)
  #close the link to the tracker
 
 tk2.close()
-if not dummyMode: 
-    tk3 = pylink.EyeLink('100.1.1.1')
-else:
-    tk3 = pylink.EyeLink(None)
-tk3.receiveDataFile(dataFileName, dataFolder + dataFileName)
-tk3.close()
+#if not dummyMode: 
+#    tk3 = pylink.EyeLink('100.1.1.1')
+#else:
+#    tk3 = pylink.EyeLink(None)
+#tk3.receiveDataFile(dataFileName, dataFolder + dataFileName)
+#tk3.close()
  # close the graphics
 pylink.closeGraphics()
 # these shouldn't be strictly necessary (should auto-save)
