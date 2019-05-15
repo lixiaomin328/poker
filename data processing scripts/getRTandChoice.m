@@ -18,3 +18,4 @@ for i = 1:length(dataFiles)
     p1rt = [p1rt;dataStructure.player1ActionCheck_rt/p1AverageRT];
     p2rt = [p2rt;dataStructure.player2ActionCheck_rt/p2AverageRT];
 end
+found 

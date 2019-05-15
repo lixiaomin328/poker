@@ -1,4 +1,4 @@
-function [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt] = getIndividualRTandChoice(subId)
+function [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt, p1AverageRT, p2AverageRT] = getIndividualRTandChoice(subId)
 dataFolder = 'dataMat/';
 dataFiles = dir([dataFolder,'*.mat']);
 p1Cards = [];
