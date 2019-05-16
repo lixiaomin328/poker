@@ -10,23 +10,28 @@ binIndex = zeros(howMany/binSize, 1);
 for i = 1:length(dataFiles)
     fileName = dataFiles(i).name;
     load([dataFolder,fileName]);
-
     
+    [~,~,~,~,~,~, p1AverageRT, ~] = getIndividualRTandChoice(i);
     
     start = 1;
     
     for j = 1:binSize:howMany  %approx 1:5:100
-        binIndex(start) = binIndex(start) + sum(dataStructure.player1ActionCheck_keys(j:(j+binSize-1)));
+        segment = ((dataStructure.player1ActionCheck_rt(j:(j+binSize-1))));
+        whereNaN = find(isnan(segment));
+        if ~isempty(whereNaN)
+            segment(whereNaN) = [];
+        end
+        binIndex(start) = binIndex(start) + sum(segment)/p1AverageRT;
         if start ~= 20
             start = start+1;
         end
     end
-    
 end
 
-binIndex = binIndex/6;
+
+binIndex = binIndex/30;
 
 bar(binIndex)
-title('bet rate over experiment for p1')
+title('Normalized RT over experiment for p1')
 xlabel('bin number (each bin = 5 trials)')
-ylabel('number of bet decisions seconds')
+ylabel('RT in seconds')
