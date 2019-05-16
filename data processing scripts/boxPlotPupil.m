@@ -5,9 +5,7 @@ for k = 2:8
     allEntries = findConditionalTrial(k);
     pupilOfInterestAllPeople = [];
     for i = 1:length(allEntries)
-        pupilOfInterest = [];
-        
-        
+        pupilOfInterest = [];        
         subId = allEntries(i).subjectId;
         filesContain = dir(sprintf('%s%02d_._*.mat',gazeFolder,subId));
         if isempty(filesContain)
