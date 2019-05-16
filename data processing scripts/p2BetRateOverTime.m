@@ -20,7 +20,7 @@ for i = 1:length(dataFiles)
         if ~isempty(whereNaN)
             segment(whereNaN) = [];
         end
-        noChoice = sum(binTrials == -1);
+        noChoice = sum(segment == -1);
         betProportion = sum(segment == 1)/ (length(segment) - noChoice);
         binIndex(start) = binIndex(start) + betProportion;
         

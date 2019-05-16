@@ -6,34 +6,27 @@ fullStruct = struct;
 howMany = 100 %length(dataStructure.P1card);
 binSize = round(howMany/20);
 binIndex = zeros(howMany/binSize, 1);
+howManyChoices = zeros(20,1);
 
 for i = 1:length(dataFiles)
     fileName = dataFiles(i).name;
     load([dataFolder,fileName]);
     
-    [~,~,~,~,~,~, ~, p2AverageRT] = getIndividualRTandChoice(i);
-    
     start = 1;
+
     
     for j = 1:binSize:howMany  %approx 1:5:100
-        segment = ((dataStructure.player2ActionCheck_rt(j:(j+binSize-1))));
-        whereNaN = find(isnan(segment));
-        if ~isempty(whereNaN)
-            segment(whereNaN) = [];
-        end
-        binIndex(start) = binIndex(start) + sum(segment)/p2AverageRT;
+        segment = ((dataStructure.P1card(j:(j+binSize-1))));
+        
+        binIndex(start,1) = binIndex(start,1) + sum(segment)
         if start ~= 20
             start = start+1;
         end
     end
     
-    howManyChoices = zeros(1,7);
 end
-
-
 binIndex = binIndex/30;
-
 bar(binIndex)
-title('Normalized RT over experiment for p2')
+title('card values over experiment for p1')
 xlabel('bin number (each bin = 5 trials)')
-ylabel('RT in seconds')
+ylabel('average card value per bin')
