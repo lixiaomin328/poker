@@ -5,7 +5,6 @@ dataMatrix = [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt];
 %for P1 bet
 betChoicesP1 = p1Cards .* p1Actions;
 %betChoicesP1(betChoicesP1 <= 0) = [];
-betChoicesP1(betChoicesP1 <0) = [];
 proportionsBetP1byCard = zeros(1, 7);
 %for P1 check
 checkChoicesP1 = p1Cards .* (p1Actions == 0);
