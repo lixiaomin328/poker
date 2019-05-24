@@ -1,10 +1,11 @@
 %%With different card
 gazeFolder = 'processedGazeDataMat/';
+dataFolder = 'DataMat/';
 pupilInAllCards= cell(8,1);
-for k = 2:8
+    for i = 1:length(dir('DataMat/*.mat'));
+        for k = 2:8
     allEntries = findConditionalTrial(k);
-    pupilOfInterestAllPeople = [];
-    for i = 1:length(allEntries)
+    
         pupilOfInterest = [];        
         subId = allEntries(i).subjectId;
         filesContain = dir(sprintf('%s%02d_._*.mat',gazeFolder,subId));
@@ -24,16 +25,17 @@ for k = 2:8
             %per person per trial all pupil and timestamp
             new=[data_et.pupilSize(where)./baseline,data_et.time(where)];
             cluster = new(:,2)-new(1,2);
-            cluster = cluster/300;
+            cluster = cluster/60;
             cluster = round(cluster);
             new = [new,cluster];
             pupilOfInterest = [pupilOfInterest;new];
         end
         pupilOfInterest = pupilOfInterest(~isnan(pupilOfInterest(:,1)),:);
-        pupilOfInterestAllPeople = [pupilOfInterestAllPeople;pupilOfInterest];
+        pupilInAllCards{k} = [pupilInAllCards{k};pupilOfInterest];
+        end
     end
-    pupilInAllCards{k} = pupilOfInterestAllPeople;
-end
+    
+
 %% plot out
 meanVector = cell(length(pupilInAllCards),1);
 countVector = cell(length(pupilInAllCards),1);
@@ -48,8 +50,11 @@ for i = 2:length(pupilInAllCards)
 end
 %%
 for i = 2:8
-    lastBin = find(countVector{i}>1000,1,'last');
-plot(0.6*[1:1:lastBin],meanVector{i}(1:lastBin))
+    meanVector{i} = meanVector{i} -meanVector{i}(1);
+end
+%%
+for i = 2:8
+plot([1:1:10],meanVector{i}(1:10))
 hold on
 end
 
