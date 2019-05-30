@@ -3,7 +3,7 @@ dataFiles = dir([dataFolder,'*.mat'] );
 allEntries = repmat(table(),[length(dataFiles),1]);
 fullStruct = struct;
 
-howMany = 100 %length(dataStructure.P1card);
+howMany = 100; %length(dataStructure.P1card);
 binSize = round(howMany/20);
 binIndex = zeros(howMany/binSize, 1);
 

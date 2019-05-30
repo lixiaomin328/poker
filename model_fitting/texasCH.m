@@ -5,8 +5,9 @@ numberLevel = poisspdf(0,tau);
 nCard =7;
 %p1level0 = b*ones(nCard,1);
 p1level0 = [b:(1-b)/(nCard-1):1]';
+%p1level0 = [0;0;0;0;1;1;1];
 if p1level0(1)==0
-p1level0(1) = p1level0(1)+1e-6;
+p1level0(1) = 1e-6;
 end
 %p2last = p1last;
 p2level0 = p1level0;
