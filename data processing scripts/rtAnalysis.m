@@ -13,6 +13,8 @@ p2CallRT = zeros(1,7);
 p2FoldRT = zeros(1,7);
 callChoicesP2 = p2Cards .* (p2Actions == 1);
 foldChoicesP2 = p2Cards .* (p2Actions == 0);
+p1RtAll = cell(7,1);
+p2RtAll = cell(7,1);
 for i = 2:8
     whenBet = find((p1Cards == i) & (betChoicesP1 == i)); %give indexes
     p1BetRT(1, i-1) = mean(p1rt(whenBet));
@@ -24,6 +26,8 @@ for i = 2:8
     p2FoldRT(1, i-1) = mean(p2rt(whenFold));
     p2rtCardi = p2rt(find(p2Cards ==i));
     p1rtCardi = p1rt(find(p1Cards ==i));
+    p1RtAll{i} = p1rtCardi(~isnan(p1rtCardi));
+    p2RtAll{i} = p2rtCardi(~isnan(p2rtCardi));
     p1RtByCard = [p1RtByCard;mean(p1rtCardi(~isnan(p1rtCardi)))];
 
     p2RtByCard = [p2RtByCard;mean(p2rtCardi(~isnan(p2rtCardi)))];
