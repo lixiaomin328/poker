@@ -8,8 +8,8 @@ for i = 1:numel(lines)
 end
 
 %% add x, y label
-xlabel('Time');
-ylabel('Pupil Size');
+%xlabel('Time');
+%ylabel('Pupil Size');
 set(gca,'FontSize',20);
 
 %% add legend
