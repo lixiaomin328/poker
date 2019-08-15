@@ -1,6 +1,6 @@
 import time
 import os
-os.chdir("/Users/virginiafedrigo/poker/LabJackPython-master")
+#os.chdir("/Users/virginiafedrigo/poker/LabJackPython-master")
 from psychopy.hardware.labjacks import u3
 
 
@@ -16,13 +16,12 @@ configDict["FIOAnalog"]
 d.configIO(FIOAnalog = 15)
 d.getFeedback(u3.BitDirWrite(4,0)) #set low setup
 #the following after every event
-for i in range(1,10,1):
+for i in range(1,5,1):
     d.getFeedback(u3.BitStateWrite(4,0)) #set low 
-    time.sleep(5)
+    time.sleep(0.5)
     d.getFeedback(u3.BitStateWrite(4,1)) #set high
-    time.sleep(5)
-end
-
+    time.sleep(0.5)
+    d.getFeedback(u3.BitStateWrite(4,0)) #set low setup
 
 #d.setData(byte, endian='big', address=6700) #6008
 

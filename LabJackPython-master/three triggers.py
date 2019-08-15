@@ -29,16 +29,19 @@ configDict = d.configIO()
 configDict["FIOAnalog"]
 d.configIO(FIOAnalog = 15)
 d.getFeedback(u3.BitDirWrite(4,0)) #set low setup
+d.getFeedback(u3.BitStateWrite(4,0)) #set low 
 #TEST CODE set to FIO5 : for decision made (ending of P1, P2 decision period)
 configDict = d.configIO()
 configDict["FIOAnalog"]
 d.configIO(FIOAnalog = 15)
 d.getFeedback(u3.BitDirWrite(5,0)) #set low setup
+d.getFeedback(u3.BitStateWrite(5,0)) #set low
 #TEST CODE set to FIO6 : for outcome revealed (any)
 configDict = d.configIO()
 configDict["FIOAnalog"]
 d.configIO(FIOAnalog = 15)
 d.getFeedback(u3.BitDirWrite(6,0)) #set low setup
+d.getFeedback(u3.BitStateWrite(6,0)) #set low
 
 
 # STEP I: get subject info
@@ -328,7 +331,7 @@ if eyeTracked==2:
 #messy set ups for game
 deckRange = range(2,9)
 cardImageDir = 'cards/'
-TrialNum = 120 #CHANGE HERE
+TrialNum = 120    #CHANGE HERE
 timeLimit = 10
 rewardRevealTime = 4
 sessionBreakN = 20
