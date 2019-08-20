@@ -24,6 +24,7 @@ dummyMode = True # Simulated connection to the tracker; press ESCAPE to skip cal
 import time
 from psychopy.hardware.labjacks import u3
 d = u3.U3() #d is the object labjack
+
 #WORKING CODE set to FIO4 : for starting decisions (when P1, P2 decision periods start)
 configDict = d.configIO()
 configDict["FIOAnalog"]
@@ -38,10 +39,38 @@ d.getFeedback(u3.BitDirWrite(5,0)) #set low setup
 d.getFeedback(u3.BitStateWrite(5,0)) #set low
 #TEST CODE set to FIO6 : for outcome revealed (any)
 configDict = d.configIO()
-configDict["FIOAnalog"]
+configDict["FIOAnalog"] 
 d.configIO(FIOAnalog = 15)
 d.getFeedback(u3.BitDirWrite(6,0)) #set low setup
 d.getFeedback(u3.BitStateWrite(6,0)) #set low
+##TEST CODE set to FIO0 : P1 start decision
+#configDict = d.configIO()
+#configDict["FIOAnalog"] 
+#d.configIO(FIOAnalog = 15)
+#d.getFeedback(u3.BitDirWrite(0,0)) #set low setup
+#d.getFeedback(u3.BitStateWrite(0,0)) #set low
+##TEST CODE set to FIO1 : for P1 make decision
+#configDict = d.configIO()
+#configDict["FIOAnalog"] 
+#d.configIO(FIOAnalog = 15)
+#d.getFeedback(u3.BitDirWrite(1,0)) #set low setup
+#d.getFeedback(u3.BitStateWrite(1,0)) #set low
+##TEST CODE set to FIO2 : for P2 start decision
+#configDict = d.configIO()
+#configDict["FIOAnalog"] 
+#d.configIO(FIOAnalog = 15)
+#d.getFeedback(u3.BitDirWrite(2,0)) #set low setup
+#d.getFeedback(u3.BitStateWrite(2,0)) #set low
+##TEST CODE set to FIO3 : for p2 make decision
+#configDict = d.configIO()
+#configDict["FIOAnalog"] 
+#d.configIO(FIOAnalog = 15)
+#d.getFeedback(u3.BitDirWrite(3,0)) #set low setup
+#d.getFeedback(u3.BitStateWrite(3,0)) #set low
+
+
+
+
 
 
 # STEP I: get subject info
@@ -639,8 +668,10 @@ for thisTrial in trials:
             win1.callOnFlip(player1ActionCheck.clock.reset)
             tk.sendMessage("P1 prechoose")
             
-            #LABJACK : FIO4 FOR DECISION START
+            #LABJACK : FIO4 FOR DECISION START 
+            #P1 starts decision
             d.getFeedback(u3.BitStateWrite(4,1)) #set high
+            time.sleep(0.1)
             d.getFeedback(u3.BitStateWrite(4,0)) #set low
 
 
@@ -658,7 +689,9 @@ for thisTrial in trials:
                     tk.sendMessage("P1 choose time")
                     
                     #LABJACK : FIO5 FOR DECISION MADE
+                    #P1 makes decision
                     d.getFeedback(u3.BitStateWrite(5,1)) #set high
+                    time.sleep(0.1)
                     d.getFeedback(u3.BitStateWrite(5,0)) #set low
 
 
@@ -696,7 +729,9 @@ for thisTrial in trials:
             tk2.sendMessage("P2 prechoose")
             
             #LABJACK : FIO4 FOR DECISION START
+            #P2 start decision
             d.getFeedback(u3.BitStateWrite(4,1)) #set high
+            time.sleep(0.1)
             d.getFeedback(u3.BitStateWrite(4,0)) #set low
 
 
@@ -731,7 +766,9 @@ for thisTrial in trials:
             tk2.sendMessage("check result revealed")
             
             #LABJACK : FIO6 FOR OUTCOME SHOWN
+            #check result shown
             d.getFeedback(u3.BitStateWrite(6,1)) #set high
+            time.sleep(0.1)
             d.getFeedback(u3.BitStateWrite(6,0)) #set low
 
 
@@ -752,7 +789,9 @@ for thisTrial in trials:
                     tk2.sendMessage("P2 choose timed")
                     
                     #LABJACK : FIO5 FOR DECISION MADE
+                    #P2 makes decision
                     d.getFeedback(u3.BitStateWrite(5,1)) #set high
+                    time.sleep(0.1)
                     d.getFeedback(u3.BitStateWrite(5,0)) #set low
 
 
@@ -787,7 +826,9 @@ for thisTrial in trials:
             tk.sendMessage("bet result revealed")
             
             #LABJACK : FIO6 FOR RESULT REVEALED
+            #bet/bet outcome revealed
             d.getFeedback(u3.BitStateWrite(6,1)) #set high
+            time.sleep(0.1)
             d.getFeedback(u3.BitStateWrite(6,0)) #set low
 
 
@@ -807,7 +848,9 @@ for thisTrial in trials:
             tk.sendMessage("fold result revealed")
             
             #LABJACK : FIO6 FOR RESULT REVEALED
+            #bet fold outcome revealed
             d.getFeedback(u3.BitStateWrite(6,1)) #set high
+            time.sleep(0.1)
             d.getFeedback(u3.BitStateWrite(6,0)) #set low
 
 
@@ -936,6 +979,7 @@ logging.flush()
 # make sure everything is closed down
 thisExp.abort()  # or data files will save again on exit
 
+#LABJACK close
 #LABJACK close
 d.close()
 
