@@ -9,7 +9,7 @@ dataTable = readtable([dataPath,'/',filename], 'ReadRowNames', true); %data into
 
 participantNumber = table2array(dataTable(1,10)); %hard coded bc of change in col. name
 
-numPractice = 3; %number of practice trials
+numPractice = 0; %number of practice trials
 if height(dataTable) > numPractice
     dataTable = dataTable(((numPractice+1):end),:);
 end
