@@ -49,10 +49,6 @@ else
     
 end
 %% RT normalization
-p1RtForMean = dataStructure.player1ActionCheck_rt(2:end);
-p2RtForMean = dataStructure.player2ActionCheck_rt(2:end);
-dataStructure.p1normalizedRt = dataStructure.player1ActionCheck_rt./mean(p1RtForMean(~isnan(p1RtForMean)));
-dataStructure.p2normalizedRt = dataStructure.player2ActionCheck_rt./mean(p2RtForMean(~isnan(p2RtForMean)));
 %% write data to a structure saved as a .mat, file named participant #
 
 name = cat(2, 'participant_', int2str(participantNumber));
