@@ -1,4 +1,4 @@
-function [dataStructure] = fileread(filename)
+function [dataStructure] = behavioralFileRead(filename)
 dataPath = '../data';
 if ~exist('DataMat')
     mkdir('DataMat')
@@ -40,7 +40,7 @@ varNames = dataTable.Properties.VariableNames;
 for i = 1:length(varNames)  
     dataStructure.(varNames{i}) = table2array(dataTable(:,i));
 end
-dataStructure.trials_thisN = dataStructure.trials_thisN -3;
+dataStructure.trials_thisN = dataStructure.trials_thisN -numPractice;
 if participantNumber<10&&participantNumber>4
     dataStructure.player1ActionCheck_rt(dataStructure.player1ActionCheck_rt>3) = dataStructure.player1ActionCheck_rt(dataStructure.player1ActionCheck_rt>3) -3;
 elseif participantNumber<4
@@ -48,6 +48,11 @@ elseif participantNumber<4
 else
     
 end
+%% RT normalization
+p1RtForMean = dataStructure.player1ActionCheck_rt(2:end);
+p2RtForMean = dataStructure.player2ActionCheck_rt(2:end);
+dataStructure.p1normalizedRt = dataStructure.player1ActionCheck_rt./mean(p1RtForMean(~isnan(p1RtForMean)));
+dataStructure.p2normalizedRt = dataStructure.player2ActionCheck_rt./mean(p2RtForMean(~isnan(p2RtForMean)));
 %% write data to a structure saved as a .mat, file named participant #
 
 name = cat(2, 'participant_', int2str(participantNumber));
