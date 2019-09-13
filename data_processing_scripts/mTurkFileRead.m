@@ -18,7 +18,7 @@ type = strfind(filename, 'p1');
 if isempty(type)
     type = 2; %type 2 means it's a p2 file
 else
-    type =1; %type 1 means it's a p1 file
+    type = 1; %type 1 means it's a p1 file
 end
 
 
@@ -46,12 +46,16 @@ dataTable.Properties.VariableNames = {'Index', 'AmazonID', 'Card', 'Action', 'RT
 
 %% Code moves numerically rather than with words
 
+%address time out trial
+whereTO = find(ismember(dataTable{:,4}, 'timeout'));
+dataTable{whereTO, 5} = NaN;
+
 % make p1Move numerical-- bet=1, check=0, noAction = -1
 if type == 1
     p1Move = array2table(dataTable.Action);
     p1Move = char(p1Move{:,:});
     p1Move = p1Move(:,1);
-    p1Move = (p1Move == 'b') + (-1)*(p1Move == 'c');
+    p1Move = (p1Move == 'b') + (-1)*(p1Move == 't');
     dataTable.Action = p1Move;
 end
 
@@ -60,9 +64,11 @@ if type == 2
     p2Move = array2table(dataTable.Action);
     p2Move = char(p2Move{:,:});
     p2Move = p2Move(:,2);
-    p2Move = (p2Move == 'ca') + (-1)*(p2Move == 'ch');
+    p2Move = (p2Move == 'ca') + (-1)*((p2Move == 'ch') || (p2Move == 'ti'));
     dataTable.Action = p2Move;
 end
+
+
 
 
 %% slice and dice by subject
@@ -82,8 +88,13 @@ for i = 1:length(whichIDs)
     %find the first unique ID, find where it is, and save the name for the
     %file right away
     wherePerson = ismember(dataTable{:,2}, char(whichIDs(i)));
-    wherePerson = wherePerson == 1;
+    wherePerson = find(wherePerson == 1);
     name = cat(2, 'participant_', char(whichIDs(i)));
+    
+    %remove if there's too few trials of this one person
+    if length(wherePerson) < 10
+        continue;
+    end
     
     %set up the data structure
     dataTable = dataTable(:, {'Index', 'AmazonID', 'Card', 'Action', 'RT'});
@@ -95,6 +106,10 @@ for i = 1:length(whichIDs)
     for j = 1:length(varNames)
         dataStructure.(varNames{j}) = table2array(dataTable(wherePerson,j));
     end
+    
+    %adjust the unit of the RT
+    dataStructure.RT = dataStructure.RT/1000;
+    
     
     %rename columns to match old ones, making it match if we're using P1 or
     %P2
