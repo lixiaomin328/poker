@@ -1,9 +1,9 @@
-function [dataStructure] = mTurkFileRead(filename)
+function mTurkFileRead(filename)
 
-dataPath = '../data';
+dataPath = '../mTurk_data';
 
-if ~exist('DataMat')
-    mkdir('DataMat')
+if ~exist('mTurkDataMat')
+    mkdir('mTurkDataMat')
 end
 
 dataTable = readtable([dataPath,'/',filename], 'ReadRowNames', false); %data into table form
@@ -12,7 +12,7 @@ dataTable = readtable([dataPath,'/',filename], 'ReadRowNames', false); %data int
 %WARNING: requires consistent csvfile naming conventionm, so all downloaded
 %files from mTurk should say 'p1' or 'p2'
 
-numPractice = 0; %number of practice trials
+%numPractice = 0; %number of practice trials
 
 type = strfind(filename, 'p1');
 if isempty(type)
@@ -82,7 +82,7 @@ for i = 1:length(whichIDs)
     %find the first unique ID, find where it is, and save the name for the
     %file right away
     wherePerson = ismember(dataTable{:,2}, char(whichIDs(i)));
-    wherePerson = find(wherePerson == 1);
+    wherePerson = wherePerson == 1;
     name = cat(2, 'participant_', char(whichIDs(i)));
     
     %set up the data structure
@@ -131,7 +131,7 @@ for i = 1:length(whichIDs)
     end
     
     %FINAL STEP TO SAVE
-    save(['DataMat','/',name], 'dataStructure')
+    save(['mTurkDataMat','/',name], 'dataStructure')
     
     
 end
