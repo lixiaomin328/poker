@@ -1,4 +1,4 @@
-function [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt, p1AverageRT, p2AverageRT] = getIndividualRTandChoice(subId)
+function [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt, p1AverageRT, p2AverageRT,p1NormRt,p2NormRt] = getIndividualRTandChoice(subId)
 dataFolder = 'dataMat/';
 dataFiles = dir([dataFolder,'*.mat']);
 p1Cards = [];
@@ -7,7 +7,8 @@ p1Actions = [];
 p2Actions = [];
 p1rt = [];
 p2rt = [];
-    load([dataFolder,dataFiles(subId).name]);
+ fileName = [dataFolder,'participant_',num2str(subId),'.mat'];
+    load(fileName);
     p1Cards = [p1Cards;dataStructure.P1card];
     p2Cards = [p2Cards;dataStructure.P2card];
     p1Actions = [p1Actions;dataStructure.player1ActionCheck_keys];
@@ -16,3 +17,5 @@ p2rt = [];
     p2AverageRT = mean(dataStructure.player2ActionCheck_rt(~isnan(dataStructure.player2ActionCheck_rt)));
     p1rt = [p1rt;dataStructure.player1ActionCheck_rt/p1AverageRT];
     p2rt = [p2rt;dataStructure.player2ActionCheck_rt/p2AverageRT];
+    p1NormRt = dataStructure.p1normalizedRt;
+    p2NormRt = dataStructure.p2normalizedRt;
