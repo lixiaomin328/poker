@@ -1,5 +1,5 @@
 function [proportionsBetP1,proportionsBetP2,p1RtperRate,p2RtperRate] = perCardPersonBettingRate(subId)    
-[p1Actions,p1Cards,~,p2Actions,p2Cards,~, ~, ~,p1rt,p2rt] = getIndividualRTandChoice(subId);    
+[p1Actions,p1Cards,~,p2Actions,p2Cards,~, ~,~,p1rt,p2rt] = getIndividualRTandChoice(subId);    
 %% set up P1
 p1RtperRate = zeros(1, 7); 
 p2RtperRate = zeros(1, 7); 

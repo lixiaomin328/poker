@@ -1,7 +1,7 @@
 %% initialize things
 %looks if there is a correlation between proportion of correct answers on a
 %5 (tricky 'middle' value) and how long they thought about it
-dataFolder = 'dataMat/';
+dataFolder = 'DataMat/';
 dataFiles = dir([dataFolder,'*.mat']);
 for k = 1:length(dataFiles)
 load([dataFolder,dataFiles(k).name])

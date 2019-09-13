@@ -1,3 +1,4 @@
+function [rtPerPersonPerCardp1,rtPerPersonPerCardp2] = psychoMetricCurveInput()
 dataFolder = 'dataMat/';
 rtPerPersonPerCardp1 = [];
 rtPerPersonPerCardp2 = [];
@@ -10,7 +11,3 @@ for subId = 3:15
 rtPerPersonPerCardp1 = [rtPerPersonPerCardp1;proportionsBetP1',p1RtperRate'];
 rtPerPersonPerCardp2 = [rtPerPersonPerCardp2;proportionsBetP2',p2RtperRate'];
 end
-%Scatter the result
-scatter(rtPerPersonPerCardp1(:,1),rtPerPersonPerCardp1(:,2))
-xlabel('probability to bet')
-ylabel('Mean Rt')
