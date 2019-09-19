@@ -76,8 +76,8 @@ end
 %take out any Amazon ID with "test"
 %NB: for our future testing, we should always use a fake amazonID that
 %includes the word "test" so it is automatically removed by this.
-whereTest = (contains(dataTable{:,2},'test'));
-dataTable(whereTest==1, :) = [];
+%whereTest = (contains(dataTable{:,2},'test'));
+%dataTable(whereTest==1, :) = [];
 
 %List of which amazon IDs do we have (no repeats)
 whichIDs = unique(dataTable{:,2});
