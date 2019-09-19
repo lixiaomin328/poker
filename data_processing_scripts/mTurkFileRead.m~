@@ -2,6 +2,10 @@ function mTurkFileRead(filename)
 %Reads in behavioral data from a batch of mTurk
 dataPath = '../mTurk_data';
 
+if ~exist('mTurkDataMat')
+    mkdir('mTurkDataMat')
+end
+
 dataTable = readtable([dataPath,'/',filename], 'ReadRowNames', false); %data into table form
 
 %% how to classify if it's a p1 or p2 file
@@ -18,7 +22,7 @@ else
     type = 1; %type 1 means it's a p1 file
     otherType = 2;
 end
-saveDir = ['mTurkDataMat',num2str(type)];
+saveDir = mTurkDataMat
 
 %% COLUMN ORDER OF DOWNLOADED mTURK (as of 9/2019)
 
@@ -204,12 +208,14 @@ for i = 1:length(whichIDs)
     end
     
     %FINAL STEP TO SAVE
-    if ~exist(saveDir)
-        mkdir(saveDir)
+    
+    if type ==1
+        saveDir = 
+    save(['mTurkDataMatP1','/',name], 'dataStructure')
+    else
+    save(['mTurkDataMatP2','/',name], 'dataStructure')
     end
-    save([saveDir,'/',name], 'dataStructure')
-
-   
+    if ~exist('mTurkDataMatP1')
     
     
 end

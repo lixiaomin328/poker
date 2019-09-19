@@ -22,7 +22,7 @@ proportionsBetP2 = zeros(1, 7);
 
 for i = 2:8
     howManyBets = length(find(betChoicesP2 == i)); 
-    howManyChances = sum((p2Opportunities == 1) & (p2Cards == i&p1Actions>-0.5));
+    howManyChances = sum((p2Opportunities == 1) & (p2Cards == i&p2Actions>-0.5));
     proportionsBetP2(1, i-1) = howManyBets/howManyChances;
 end
 

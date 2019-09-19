@@ -1,6 +1,5 @@
-function [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt, p1AverageRT, p2AverageRT,p1NormRt,p2NormRt] = getIndividualRTandChoice(subId)
+function [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt, p1AverageRT, p2AverageRT,p1NormRt,p2NormRt] = getIndividualRTandChoice(subId,dataFolder)
 starting = 4;
-dataFolder = 'dataMat/';
 dataFiles = dir([dataFolder,'*.mat']);
 p1Cards = [];
 p2Cards = [];
@@ -8,7 +7,11 @@ p1Actions = [];
 p2Actions = [];
 p1rt = [];
 p2rt = [];
+if ischar(subId)
+    fileName = [dataFolder,'participant_',subId,'.mat'];
+else
  fileName = [dataFolder,'participant_',num2str(subId),'.mat'];
+end
     load(fileName);
     p1Cards = dataStructure.P1card(starting:end);
     p2Cards = dataStructure.P2card(starting:end);
