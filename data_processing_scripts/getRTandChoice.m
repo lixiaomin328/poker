@@ -1,5 +1,5 @@
 function [p1Actions,p1Cards,p1rtNorm,p2Actions,p2Cards,p2rtNorm,p1rt,p2rt] = getRTandChoice()
-dataFolder = 'mTurkDataMatP1/';
+dataFolder = 'DataMat/';
 dataFiles = dir([dataFolder,'*.mat']);
 p1Cards = [];
 p2Cards = [];
