@@ -110,12 +110,11 @@ if type == 2
     p2Move = array2table(dataTable.Action);
     p2Move = char(p2Move{:,:});
     p2Move = p2Move(:,2);
-    p2Move = (p2Move == 'ca') + (-1)*((p2Move == 'ch') || (p2Move == 'ti'));
+    %call, checked, folded
+    p2Move = (p2Move == 'a') + ... %1 for call
+        (-1)* ((p2Move == 'h') | (p2Move == 'i')); %-1 for check or timeout
     dataTable.Action = p2Move;
 end
-
-
-
 
 %% slice and dice by subject
 
