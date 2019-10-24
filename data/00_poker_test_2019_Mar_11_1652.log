@@ -1,0 +1,143 @@
+3.6108 	WARNING 	Monitor specification not found. Creating a temporary one...
+4.5274 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x10df79e80>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x110418710>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=1, size=array([3840, 2160]), stereo=False, units='pix', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+4.5279 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [2560, 1440]. Using actual size
+10.3028 	DATA 	Keypress: space
+10.6510 	DATA 	Keypress: return
+10.7946 	DATA 	Keypress: return
+11.2589 	DATA 	Keypress: escape
+11.2592 	EXP 	window1: units = 'pix'
+11.3807 	EXP 	window1: mouseVisible = False
+11.3816 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=24.0, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([   0., -264.]), rgb=array([1., 1., 1.]), text='', units='pix', win=Window(...), wrapWidth=1024)
+11.4071 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='left', alignVert='top', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=24.0, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-512.,  384.]), rgb=array([1., 1., 1.]), text=str(...), units='pix', win=Window(...), wrapWidth=500)
+11.4080 	EXP 	Created unnamed Line = Line(__class__=<class 'psychopy.visual.line.Line'>, autoDraw=False, autoLog=True, closeShape=False, contrast=1.0, depth=0, fillColor=None, fillColorSpace='rgb', interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineWidth=2.0, name='unnamed Line', opacity=1.0, ori=array(0.), pos=array([0., 0.]), size=array([1., 1.]), units='pix', vertices=array([[0., 0.],
+       [0., 0.]]), win=Window(...), windingRule=None)
+11.4095 	EXP 	window1: recordFrameIntervals = False
+11.6948 	EXP 	window1: recordFrameIntervals = True
+12.0606 	EXP 	window1: recordFrameIntervals = False
+14.3307 	DATA 	Keypress: escape
+14.3310 	EXP 	window1: units = 'pix'
+14.3311 	EXP 	window1: color = <class 'numpy.ndarray'>
+14.3503 	EXP 	unnamed TextStim: autoDraw = True
+14.3503 	EXP 	unnamed TextStim: autoDraw = False
+14.3503 	EXP 	unnamed TextStim: autoDraw = False
+14.4653 	EXP 	Created hand2Capital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-672.,  432.]), rgb=array([255., 255., 255.]), text='Your card', units='pix', win=Window(...), wrapWidth=500)
+14.4779 	EXP 	Created handCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 672., -270.]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='pix', win=Window(...), wrapWidth=500)
+14.4795 	EXP 	Created image1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-672. ,  291.6]), size=array([192. , 183.6]), texRes=128, units='pix', win=Window(...))
+14.4908 	EXP 	Created P2WaitingWords = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=37.800000000000004, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='pix', win=Window(...), wrapWidth=1000)
+14.5006 	EXP 	Created hand2OpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([672., 432.]), rgb=array([255., 255., 255.]), text='Your opponent card', units='pix', win=Window(...), wrapWidth=500)
+14.5670 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([576. , 291.6]), size=array([192. , 183.6]), texRes=128, units='pix', win=Window(...))
+14.5862 	EXP 	Created decks2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=32.4, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([   0., -378.]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='pix', win=Window(...), wrapWidth=500)
+14.6057 	EXP 	Created handOpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='pix', win=Window(...), wrapWidth=500)
+14.6060 	EXP 	Created sequence: random, trialTypes=1, nReps=3, seed=None
+14.6063 	EXP 	New trial (rep=0, index=0): None
+14.6670 	EXP 	P2WaitingWords: text = 'You will have three practice trials,\nit will not count towards the payment'
+14.6670 	EXP 	P2WaitingWords: autoDraw = True
+16.8994 	DATA 	Keypress: space
+16.9673 	EXP 	P2WaitingWords: autoDraw = False
+16.9673 	EXP 	image1: image = 'cards/5.png'
+16.9673 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+16.9673 	EXP 	handCapital: text = 'Current Pot: \n 2'
+16.9673 	EXP 	handOpponentCapital: autoDraw = False
+16.9673 	EXP 	image1: autoDraw = True
+16.9673 	EXP 	image: autoDraw = True
+16.9673 	EXP 	hand2Capital: autoDraw = True
+16.9673 	EXP 	handCapital: autoDraw = True
+16.9673 	EXP 	hand2OpponentCapital: autoDraw = True
+16.9673 	EXP 	decks2: autoDraw = True
+16.9673 	EXP 	P2WaitingWords: autoDraw = True
+16.9673 	EXP 	decks2: autoDraw = True
+17.9522 	DATA 	Keypress: b
+21.2175 	EXP 	window1: mouseVisible = True
+3.8679 	WARNING 	Monitor specification not found. Creating a temporary one...
+6.3606 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x10de73e80>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x110ced710>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=1, size=array([3840, 2160]), stereo=False, units='pix', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.3612 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [2560, 1440]. Using actual size
+10.5995 	DATA 	Keypress: space
+11.0192 	DATA 	Keypress: return
+11.2989 	DATA 	Keypress: return
+11.5309 	DATA 	Keypress: escape
+11.5311 	EXP 	window1: units = 'pix'
+11.6510 	EXP 	window1: mouseVisible = False
+11.6519 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=24.0, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([   0., -264.]), rgb=array([1., 1., 1.]), text='', units='pix', win=Window(...), wrapWidth=1024)
+11.6775 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='left', alignVert='top', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=24.0, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-512.,  384.]), rgb=array([1., 1., 1.]), text=str(...), units='pix', win=Window(...), wrapWidth=500)
+11.6782 	EXP 	Created unnamed Line = Line(__class__=<class 'psychopy.visual.line.Line'>, autoDraw=False, autoLog=True, closeShape=False, contrast=1.0, depth=0, fillColor=None, fillColorSpace='rgb', interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineWidth=2.0, name='unnamed Line', opacity=1.0, ori=array(0.), pos=array([0., 0.]), size=array([1., 1.]), units='pix', vertices=array([[0., 0.],
+       [0., 0.]]), win=Window(...), windingRule=None)
+11.6798 	EXP 	window1: recordFrameIntervals = False
+11.9561 	EXP 	window1: recordFrameIntervals = True
+12.3236 	EXP 	window1: recordFrameIntervals = False
+15.0993 	DATA 	Keypress: space
+15.6110 	DATA 	Keypress: return
+17.5636 	DATA 	Keypress: b
+18.3229 	DATA 	Keypress: escape
+18.3232 	EXP 	window1: units = 'pix'
+18.3234 	EXP 	window1: color = <class 'numpy.ndarray'>
+18.3385 	EXP 	unnamed TextStim: autoDraw = True
+18.3385 	EXP 	unnamed TextStim: autoDraw = False
+18.3385 	EXP 	unnamed TextStim: autoDraw = False
+18.4539 	EXP 	Created hand2Capital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='hand2Capital', opacity=1.0, ori=0, pos=array([-672.,  432.]), rgb=array([255., 255., 255.]), text='Your card', units='pix', win=Window(...), wrapWidth=500)
+18.4664 	EXP 	Created handCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='handCapital', opacity=1.0, ori=0, pos=array([ 672., -270.]), rgb=array([255., 255., 255.]), text='Current Pot: \n 2', units='pix', win=Window(...), wrapWidth=500)
+18.4680 	EXP 	Created image1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1.0, ori=0.0, pos=array([-672. ,  291.6]), size=array([192. , 183.6]), texRes=128, units='pix', win=Window(...))
+18.4792 	EXP 	Created P2WaitingWords = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='Blue', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=37.800000000000004, italic=False, languageStyle='LTR', name='P2WaitingWords', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='pix', win=Window(...), wrapWidth=1000)
+18.4886 	EXP 	Created hand2OpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='hand2OpponentCapital', opacity=1.0, ori=0, pos=array([672., 432.]), rgb=array([255., 255., 255.]), text='Your opponent card', units='pix', win=Window(...), wrapWidth=500)
+18.5530 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='cards/back.png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([576. , 291.6]), size=array([192. , 183.6]), texRes=128, units='pix', win=Window(...))
+18.5722 	EXP 	Created decks2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=32.4, italic=False, languageStyle='LTR', name='decks2', opacity=1.0, ori=0, pos=array([   0., -378.]), rgb=array([255., 255., 255.]), text='Current decks\n2,3,4,5,6,7,8', units='pix', win=Window(...), wrapWidth=500)
+18.5926 	EXP 	Created handOpponentCapital = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=43.2, italic=False, languageStyle='LTR', name='handOpponentCapital', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='pix', win=Window(...), wrapWidth=500)
+18.5930 	EXP 	Created sequence: random, trialTypes=1, nReps=3, seed=None
+18.5932 	EXP 	New trial (rep=0, index=0): None
+18.6551 	EXP 	P2WaitingWords: text = 'You will have three practice trials,\nit will not count towards the payment'
+18.6551 	EXP 	P2WaitingWords: autoDraw = True
+28.2752 	DATA 	Keypress: space
+28.3413 	EXP 	P2WaitingWords: autoDraw = False
+28.3413 	EXP 	image1: image = 'cards/5.png'
+28.3413 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+28.3413 	EXP 	handCapital: text = 'Current Pot: \n 2'
+28.3413 	EXP 	handOpponentCapital: autoDraw = False
+28.3413 	EXP 	image1: autoDraw = True
+28.3413 	EXP 	image: autoDraw = True
+28.3413 	EXP 	hand2Capital: autoDraw = True
+28.3413 	EXP 	handCapital: autoDraw = True
+28.3413 	EXP 	hand2OpponentCapital: autoDraw = True
+28.3413 	EXP 	decks2: autoDraw = True
+28.3413 	EXP 	P2WaitingWords: autoDraw = True
+28.3413 	EXP 	decks2: autoDraw = True
+29.2419 	DATA 	Keypress: b
+32.3260 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+32.3260 	EXP 	P2WaitingWords: text = 'Player one bets,\n press (c) to call and (f) to fold'
+38.3932 	EXP 	P2WaitingWords: text = 'Time out, you earn -2'
+42.4284 	EXP 	image1: autoDraw = False
+42.4284 	EXP 	image: autoDraw = False
+42.4284 	EXP 	hand2Capital: autoDraw = False
+42.4284 	EXP 	hand2OpponentCapital: autoDraw = False
+42.4284 	EXP 	P2WaitingWords: autoDraw = False
+42.4284 	EXP 	decks2: autoDraw = False
+42.4284 	EXP 	handCapital: autoDraw = False
+42.4284 	EXP 	handOpponentCapital: autoDraw = True
+42.4284 	EXP 	handOpponentCapital: text = 'Waiting for P1 to get prepared for the next trial'
+43.0269 	DATA 	Keypress: escape
+44.1074 	DATA 	Keypress: space
+44.1458 	EXP 	handOpponentCapital: text = 'P1 is prepared, press (RETURN) to next trial'
+44.7788 	DATA 	Keypress: return
+44.8292 	EXP 	handOpponentCapital: text = 'Reshuffling in 2s...\nContributing 1 point to the pot. \n'
+46.8324 	EXP 	New trial (rep=1, index=0): None
+46.8967 	EXP 	hand2Capital: autoDraw = False
+46.8967 	EXP 	decks2: autoDraw = False
+46.8967 	EXP 	P2WaitingWords: autoDraw = False
+46.8967 	EXP 	image1: autoDraw = False
+46.8967 	EXP 	handCapital: autoDraw = False
+46.8967 	EXP 	image1: image = 'cards/6.png'
+46.8967 	EXP 	P2WaitingWords: text = 'Wait for player 1 making decision'
+46.8967 	EXP 	handCapital: text = 'Current Pot: \n 2'
+46.8967 	EXP 	handOpponentCapital: autoDraw = False
+46.8967 	EXP 	image1: autoDraw = True
+46.8967 	EXP 	image: autoDraw = True
+46.8967 	EXP 	hand2Capital: autoDraw = True
+46.8967 	EXP 	handCapital: autoDraw = True
+46.8967 	EXP 	hand2OpponentCapital: autoDraw = True
+46.8967 	EXP 	decks2: autoDraw = True
+46.8967 	EXP 	P2WaitingWords: autoDraw = True
+46.8967 	EXP 	decks2: autoDraw = True
+48.6819 	DATA 	Keypress: b
+51.7646 	EXP 	handCapital: text = 'Current Pot: \n 2 + 2 =4'
+51.7646 	EXP 	P2WaitingWords: text = 'Player one bets,\n press (c) to call and (f) to fold'
+57.8001 	EXP 	P2WaitingWords: text = 'Time out, you earn -2'
+61.6019 	DATA 	Keypress: escape
+62.0643 	EXP 	window1: mouseVisible = True
