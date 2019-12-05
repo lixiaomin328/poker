@@ -1,6 +1,18 @@
-function [proportionsBetP1,proportionsBetP2] = individualStrategy(subId)
+function [proportionsBetP1,proportionsBetP2,p1rt,p2rt] = individualStrategy(subId,dataFolder)
 %individual strategies
-[p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt] = getIndividualRTandChoice(subId);
+if ischar(subId)
+    fileName = [dataFolder,'participant_',subId,'.mat'];
+else
+ fileName = [dataFolder,'participant_',num2str(subId),'.mat'];
+end
+if ~exist(fileName)
+    proportionsBetP1 =[];
+    proportionsBetP2=[];
+    p1rt =[];
+    p2rt =[];
+    return
+end
+[p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt] = getIndividualRTandChoice(fileName,dataFolder);
 dataMatrix = [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt];
 %% set up P1
 betChoicesP1 = p1Cards .* p1Actions;
@@ -25,6 +37,10 @@ proportionsBetP2 = zeros(1, 7);
 for i = 2:8
     howManyBets = length(find(betChoicesP2 == i)); 
     howManyChances = sum((p2Opportunities == 1) & (p2Cards == i&p1Actions>-0.5));
+    if isempty(howManyChances)
+        proportionsBetP2(1, i-1) = NaN;
+        continue;
+    end
     proportionsBetP2(1, i-1) = howManyBets/howManyChances;
 end
 
