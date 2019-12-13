@@ -5,7 +5,7 @@
 %%saliencyResampled: saliency distribution
 %% Optimazion
 %x = fmincon(@(x)modelDiff(x,proportionsBetP1,proportionsBetP2),[3.4,2.7,2,3,2,0.5,3,1,100],[],[],[],[],[0,0,0,0,0,0,0,0.5,100],[5,5,5,5,5,5,5,1,100]);%x = lambda,taus,tauh,miu
-x =fmincon(@(x)modelDiff(x,proportionsBetP1,proportionsBetP2),[2,1,0.7,100],[],[],[],[],[0,1,0,100],[5,1,1,200]);%entropy tau/%
+x =fmincon(@(x)modelDiff(x,proportionsBetP1,proportionsBetP2),[2,1,0.7,0],[],[],[],[],[0,1,0,0],[5,1,1,200]);%entropy tau/%
 %x = fmincon(@(x)modelDiff(x,proportionsBetP1,proportionsBetP2),[1,0.3,20],[],[],[],[],[1,0,10],[5,1,100]);%x = lambda,taus,tauh,miu
 %%
 %modelDiff(x,proportionsBetP1,proportionsBetP2)

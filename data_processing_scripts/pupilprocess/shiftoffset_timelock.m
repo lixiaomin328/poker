@@ -3,7 +3,7 @@ function [ data ] = shiftoffset_timelock( data, trials, offset, prestim, poststi
 
 warning off;
 ft_defaults;
-pupilchan           = find(strcmp(data.label, 'EyePupil')==1);
+pupilchan = find(strcmp(data.label, 'EyePupil')==1);
 
 if baseline == 2, % take globalmean
     pupildat    = cell2mat(data.trial);

@@ -1,7 +1,0 @@
-%% get overall density
-[p1Actions,p1Cards,p1rtNorm,p2Actions,p2Cards,p2rtNorm,p1rt,p2rt] = getRTandChoice();
-cardsActions1 = [p1Actions,p1Cards];
-cardsActions2 = [p2Actions,p2Cards];
-cardsActions1(cardsActions1(:,1)<0,:)= [];
-cardsActions2(cardsActions2(:,1)<0,:)= [];
-grpstats(cardsActions,p1Cards,'std')
