@@ -1,11 +1,16 @@
 # Camerer Group Poker EEG Project
 Author: Xiaomin Li, Daw-an Wu and Virginia Fedrigo
-
 Main script for task, eeg and eyetracking: LabJackPython-master/mainExperiment.py
 EEG API: LabJackPython
 https://github.com/labjack/LabJackPython
 Eye tracking API: eyelink
 https://www.sr-support.com/showthread.php?14-Pylink
+
+The main behavioral task is written in python with toolbox psychopy.
+Download and instruction: https://www.psychopy.org/
+
+Behavioral only code: 
+poker/task_behavior_only
 
 mTurk task code: poker/mTurkTaskCode, written in javascript. Task is the same, but but for behavior only.
 
