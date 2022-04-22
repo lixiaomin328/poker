@@ -8,3 +8,4 @@ foldpay = payoffparams(2);
 pior = 1/(length(p1)-1);
 u2 = sum(tril(qreBelief,-1),2)*2*b-b;
 u1 = cumsum([0;p2(1:end-1)])*pior*b-b*pior*(sum(p2)-cumsum(p2))+foldpay*(1-pior*sum(p2)+pior*p2);
+%u1 u2 are utility of play bet for each card.

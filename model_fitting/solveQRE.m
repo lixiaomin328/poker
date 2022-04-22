@@ -19,13 +19,13 @@ plot([1:20],x(21:end));
 hold off
 end
 %%
-% subplot(2,1,1)
-% plot([1:20]./20,x(1:20));
-% hold on
-% plot([1:20]./20,x(21:end));
-% hold off
-% subplot(2,1,2)
-% plot([1:20]./20,x1(1:20));
-% hold on
-% plot([1:20]./20,x1(21:end));
-% hold off
+ subplot(2,1,1)
+ plot([1:20]./20,x(1:20));
+ hold on
+ plot([1:20]./20,x(21:end));
+ hold off
+ subplot(2,1,2)
+ plot([1:20]./20,x1(1:20));
+ hold on
+ plot([1:20]./20,x1(21:end));
+ hold off

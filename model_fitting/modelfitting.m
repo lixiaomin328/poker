@@ -1,6 +1,8 @@
 %% main function for estimation
 %% load data first: hidehis is the data for hiding, hists is the data for seekers
-
+load('nObsPoker.mat')
+load('modelSource.mat')
+load('nObsPoker.mat')
 %%seeking.
 %%saliencyResampled: saliency distribution
 %% Optimazion
@@ -19,27 +21,33 @@ tau = x(1)*ones(7,1)';
 %x =  (xs+xh)./2; if doing matching, uncomment this line.
 [betRatep1,~,~,p1,~] = texasCH(tau,x(end-1),x(end));
 [~,betRatep2,~,~,p2] = texasCH(tau,x(end-1),x(end));
+
 % plot comparison figure
+stdP1 = sqrt(proportionsBetP1.*(1-proportionsBetP1)./nP1);
+stdP2 = sqrt(proportionsBetP2.*(1-proportionsBetP2)./nP2);
 figure
-logLikelihood(betRatep1,proportionsBetP1)
+logLikelihood(betRatep1,proportionsBetP1,nP1)
 subplot(2,1,1)
-plot([2:1:8],proportionsBetP1)
+w = [2:1:8];
+errorbar(w, proportionsBetP1,stdP1,'--','MarkerSize',10,...
+    'MarkerEdgeColor','red','MarkerFaceColor','red')
 hold on
-plot([2:1:8],betRatep1)
+plot(w,betRatep1)
 legend('real population','predicted')
-xlabel('hands')
+xlabel('cards')
 ylabel('bet rate')
-title('p1 model comparison')
+title('Player 1 model comparison')
 hold off
 subplot(2,1,2)
-logLikelihood(betRatep2,proportionsBetP2)
-plot([2:1:8],proportionsBetP2)
+logLikelihood(betRatep2,proportionsBetP2,nP2)
+
+errorbar(w, proportionsBetP2,stdP2,'--')
 hold on
-plot([2:1:8],betRatep2)
+plot(w,betRatep2)
 legend('real population','predicted')
-xlabel('hands')
+xlabel('cards')
 ylabel('bet rate')
-title('p2 model comparison')
+title('Player 2 model comparison')
 hold off
 % %%
 % all levels

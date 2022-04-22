@@ -8,6 +8,6 @@ for i = 1:numel(lines)
 end
 
 %% add x, y label
-set(gca,'FontSize',36);
+set(gca,'FontSize',30);
 
 %% add legend

@@ -1,6 +1,8 @@
 %%target function for optimization
 function difference = modelDiff(parameters,truthp1,truthp2)%x = lambda,taus,tauh,mu
 card = [2:8];
+load('nObsPoker.mat')
+
 %tau = parameters(1:7);
 %tau =parameters(1)*ones(7,1)';
 entroVec = [0;0.45;0.63;0.7;0.63;0.45;0]';
@@ -15,8 +17,8 @@ lambda = parameters(end);
 [betRatep1,betRatep2] = texasCH(tau,b,lambda);
 
 
-differenceh = -logLikelihood(betRatep1,truthp1);
+differenceh = -logLikelihood(betRatep1,truthp1,nP1);
 
-differences = -logLikelihood(betRatep2,truthp2);
+differences = -logLikelihood(betRatep2,truthp2,nP2);
 
 difference = differenceh+differences;

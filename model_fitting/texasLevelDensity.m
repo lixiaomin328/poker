@@ -1,5 +1,5 @@
 %% This function output the poker strategy of a particular level given all parameters.
-function [bResponse1,bResponse2] = texasLevelDensity(p1last,p2last,payoffparams,level0p1,level0p2,lambda)
+function [bResponse1,bResponse2] = texasLevelDensity(p1last,p2last,payoffparams,lambda)
 %n is number of card
 [u1,u2]= utilityTexas(p1last,p2last,payoffparams);%utility of betting
 %U = [0:1/(length(plast)-1):1]';
