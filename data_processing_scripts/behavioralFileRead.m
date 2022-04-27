@@ -1,3 +1,4 @@
+%%%Read csv file to matlab .mat format
 function [dataStructure] = behavioralFileRead(filename)
 dataPath = '../data';
 if ~exist('DataMat')

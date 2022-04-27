@@ -32,4 +32,4 @@ end
 rtB(rtB>8)=[];
 rtN(rtN>8)=[];
 
-[h,t] = ttest2(rtB,rtN)%mean(bluffRt(find(bluffRt(:,1)==2),2))
+[h,t] = ttest2(rtB,rtN);%mean(bluffRt(find(bluffRt(:,1)==2),2))

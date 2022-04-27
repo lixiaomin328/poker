@@ -1,3 +1,4 @@
+%%%%%%
 [p1Actions,p1Cards,p1rt,p2Actions,p2Cards,p2rt] = getRTandChoice();
 
 %% set up P1

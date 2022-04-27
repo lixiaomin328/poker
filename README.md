@@ -34,6 +34,9 @@ All data processing script in: poker/data_processing scripts
 
 poker/psPM: a python toolbox for pupil analysis, we didn't use it in the end.
 
+poker/model_fitting:
+model fitting scripts for all behavioral models: cognitive hierarchy, level-k, QRE, cursed equilibrium (separate readme doc)
+
 Source Image for Experiment: poker/cards
 
 contact Daw-An Wu for hardware problems.

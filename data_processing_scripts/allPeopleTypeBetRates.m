@@ -1,3 +1,4 @@
+%%%Plot individual wise strategy curve
 dataFolder = 'DataMat/';
 
 dataFiles = dir([dataFolder,'*.mat']);
