@@ -1,0 +1,149 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Arial-BoldMT;\f1\froman\fcharset0 Times-Roman;\f2\fswiss\fcharset0 ArialMT;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red251\green0\blue7;\red16\green60\blue192;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c0\c0;\cssrgb\c6667\c33333\c80000;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat8\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat4\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid301\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid401\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat2\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid501\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat4\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid601\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid7}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\li960\sl662\qc\partightenfactor0
+
+\f0\b\fs48 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Modified doc for EEG poker
+\f1\b0\fs24 \
+\pard\pardeftab720\li960\sl515\qc\partightenfactor0
+
+\f2\fs37\fsmilli18667 \cf2 Xiaomin Li,\'a0 Virginia Fedrigo and Yanrong Xu
+\f1\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\
+\pard\pardeftab720\li960\sl404\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf3 \strokec3 STEP 0: MANUAL WORK, CHECK TRIGGER
+\f1\fs24 \cf2 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl404\partightenfactor0
+\ls1\ilvl0
+\f2\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Check trigger sequence. Make sure everything is correct. See Xiaomin\'92s toolbox.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Insert/delete trigger manually to make sure the trigger sequence matches perfectly with behavioral data.\'a0\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If step 2 not passed, manually insert trigger from behavioral data using RT and choices.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Match behavior data with event data at this stage. Attach trial number at eeg time stamp and also modify player2\'92s timestamp.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Slice the data into two. Do this within step 0, specifically before channel read.\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	6.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Resample all data file into 500hz\uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	7.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save the current dataset as a mile stone.\uc0\u8232 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \
+\
+\pard\pardeftab720\li960\sl404\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf3 \strokec3 STEP 1: RAW PROCESSING (with help from pipeline)
+\f1\fs24 \cf2 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl404\partightenfactor0
+\ls2\ilvl0
+\f2\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	8.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Load in channel locations (use an *.elp file), make sure cz is the reference\uc0\u8232 \
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	9.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Remove bad channel: pop_interp\uc0\u8232 \
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	10.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Filter the data from 1hz to 50hz. Line noise happens at 50-60hz. At the moment, the higher frequency might not be useful for us. (do it in two steps, due to eeg lab)\uc0\u8232 \
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	11.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Re-referencing the data. E.g., to average level\'a0\uc0\u8232 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \
+\pard\pardeftab720\li960\sl404\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf3 \strokec3 STEP 2: EPOCHING AND EVENT PROCESSING
+\f1\fs24 \cf2 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl404\partightenfactor0
+\ls3\ilvl0
+\f2\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Epoch the data and adjust to the baseline accordingly.\uc0\u8232 \
+\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Rejecting bad epoched data, can do it manually or through algorithm.\uc0\u8232 \
+\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Partition data into target groups. E.g., control and treatment\uc0\u8232 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \
+\pard\pardeftab720\li960\sl404\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf3 \strokec3 STEP 3: ARTIFACT REJECTION
+\f1\fs24 \cf2 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl404\partightenfactor0
+\ls4\ilvl0
+\f2\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ICA step: {\field{\*\fldinst{HYPERLINK "https://sccn.ucsd.edu/wiki/Chapter_09:_Decomposing_Data_Using_ICA"}}{\fldrslt \cf4 \ul \ulc4 \strokec4 https://sccn.ucsd.edu/wiki/Chapter_09:_Decomposing_Data_Using_ICA}}\uc0\u8232 \
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Remove eye blinks by removing components (ICA based)\uc0\u8232 \
+\pard\pardeftab720\li960\sl404\partightenfactor0
+\cf3 \strokec3 STEP 3: ANALYSIS
+\f1\fs24 \cf2 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl404\partightenfactor0
+\ls5\ilvl0
+\f2\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Check the existence of some well-established signal according to the task.\uc0\u8232 \
+\pard\pardeftab720\li960\sl404\partightenfactor0
+\cf2 E.g., attention signal
+\f1\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl404\partightenfactor0
+\ls6\ilvl0
+\f2\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If the target signal is known in previous study and the task has clear stimulus onset, check ERP signal directly locating in certain brain regions.\'a0\uc0\u8232 \
+\ls6\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If the signal is related to a period of time, check the event related time frequency\'a0\uc0\u8232 \
+\pard\pardeftab720\fi960\sl404\partightenfactor0
+\cf2 analysis and spectrum analysis. Signal should be fourier transformed and plotted in\'a0 \'a0 frequency space.
+\f1\fs24 \
+\pard\pardeftab720\li960\sl404\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf2 \'a0{\field{\*\fldinst{HYPERLINK "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2632478/"}}{\fldrslt \cf4 \ul \ulc4 \strokec4 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2632478}}
+\f1\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl404\partightenfactor0
+\ls7\ilvl0
+\f2\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If signal is very novel and little previous work can be referred to, do source localization. Reading and package are attached in the end.\uc0\u8232 \
+\ls7\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If interested in connectivity analysis, https://sccn.ucsd.edu/wiki/SIFT\uc0\u8232 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \
+\
+\
+\
+\
+\pard\pardeftab720\li960\sl404\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf2 Package for EEG data:\'a0 EEGLAB, fieldtrip toolbox
+\f1\fs24 \
+
+\f2\fs29\fsmilli14667 Package for brain region visualization: brainstorm
+\f1\fs24 \
+
+\f2\fs29\fsmilli14667 Package for source localization: sloreta, besa
+\f1\fs24 \
+\pard\pardeftab720\li960\sl404\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://www.scholarpedia.org/article/Source_localization"}}{\fldrslt 
+\f2\fs29\fsmilli14667 \cf4 \ul \ulc4 \strokec4 http://www.scholarpedia.org/article/Source_localization}}\
+\pard\pardeftab720\li960\sl404\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf2 Package for connectivity analysis: https://sccn.ucsd.edu/wiki/SIFT
+\f1\fs24 \
+}
